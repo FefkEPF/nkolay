@@ -46,8 +46,18 @@ export default function ServiceDetail() {
     return <Navigate to={ROUTES.services} replace />;
   }
 
+  const serviceJsonLd = serviceSchema({
+    title: service.title,
+    description: service.description,
+    badge: service.badge,
+  });
+
   return (
     <div className="bg-surface min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* HERO HEADER */}
       <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 bg-gradient-to-br from-gray-50 via-white to-primary/[0.03] overflow-hidden">
         <div className="absolute top-[-15%] left-[-8%] w-[450px] h-[450px] bg-primary/[0.06] rounded-full blur-[100px]"></div>
