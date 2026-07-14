@@ -157,7 +157,19 @@ export default function Hero({
               viewport={{ once: false, amount: 0.6 }}
               className="relative z-10 w-80 h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem]"
             >
-              <Logo className="w-full h-full" />
+              <picture>
+                <source srcSet="/hero_n.512.webp" type="image/webp" />
+                <img
+                  src="/hero_n.opt.png"
+                  alt="NKolay Medya"
+                  width={512}
+                  height={512}
+                  decoding="async"
+                  loading="eager"
+                  draggable={false}
+                  className="w-full h-full object-contain drop-shadow-[0_20px_50px_rgba(196,30,42,0.22)]"
+                />
+              </picture>
             </motion.div>
 
             <div className="absolute top-[18%] right-[12%] w-2 h-2 rounded-full bg-primary/70" aria-hidden="true" />
