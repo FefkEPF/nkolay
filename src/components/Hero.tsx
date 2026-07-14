@@ -1,6 +1,7 @@
 import { ArrowRight, PhoneCall, Sparkles, Check } from "lucide-react";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 import { COMPANY, ROUTES } from "../lib/constants";
 
 interface HeroProps {
