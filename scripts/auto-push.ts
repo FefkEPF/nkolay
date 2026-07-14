@@ -54,7 +54,7 @@ console.log(`🌿 Branch: ${GIT_BRANCH}`);
 console.log(`🔄 Auto-push enabled\n`);
 
 const watcher = chokidar.watch(PROJECT_DIR, {
-  ignored: /(^|[\/\\])\../, // ignore dotfiles
+  ignored: /(^|[\/\\])\../,
   persistent: true,
   depth: 10,
 });
