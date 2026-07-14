@@ -38,18 +38,15 @@ export default function Services() {
         {/* Refined Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {SERVICES_DATA.map((service, index) => (
-            <motion.div
+            <motion.button
               key={service.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] } }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: index * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
-              className="group relative bg-white border border-gray-200/60 rounded-3xl p-8 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:border-primary/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_8px_24px_rgba(0,0,0,0.06)]"
               onClick={() => handleServiceClick(service.id)}
-              role="link"
-              tabIndex={0}
-              onKeyDown={(e) => { if (e.key === "Enter") handleServiceClick(service.id); }}
+              className="group relative bg-white border border-gray-200/60 rounded-3xl p-8 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:border-primary/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_8px_24px_rgba(0,0,0,0.06)] text-left w-full"
             >
               <div className="space-y-5">
                 <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:scale-105 group-hover:bg-primary-light group-hover:border-primary/10 transition-all duration-500 ease-out">
@@ -72,7 +69,7 @@ export default function Services() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 
