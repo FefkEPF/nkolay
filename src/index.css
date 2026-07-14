@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-primary: #C41E2A;
+  --color-primary-dark: #9B1720;
+  --color-primary-light: #FEF2F2;
+
+  --color-surface: #FAFAFA;
+  --color-surface-card: #FFFFFF;
+  --color-dark-surface: #0A0A0A;
+
+  --shadow-subtle: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.06);
+  --shadow-elevated: 0 12px 40px rgba(0,0,0,0.1);
+
+  --animate-marquee: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAFAFA;
+}
+
+body {
+  @apply font-sans antialiased bg-surface text-gray-900 selection:bg-primary selection:text-white;
+}
+
+:focus-visible {
+  @apply outline-none ring-2 ring-primary/30 ring-offset-2 rounded-lg;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   SKEUOMORPHIC DESIGN TOKENS
+   ============================================ */
+
+:root {
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+  --shadow-resting: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06);
+  --shadow-raised: 0 2px 4px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.10);
+  --shadow-float: 0 4px 8px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.14);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.7), inset 0 2px 4px rgba(0,0,0,0.06);
+  --surface-texture: none;
+}
+
+[data-theme="skeuomorphic"] {
+  --radius-card: 0.75rem;
+  --radius-pill: 9999px;
+  --shadow-resting: 0 1px 2px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.10);
+  --shadow-raised: 0 2px 4px rgba(0,0,0,0.08), 0 10px 30px rgba(0,0,0,0.14);
+  --shadow-float: 0 4px 8px rgba(0,0,0,0.10), 0 20px 60px rgba(0,0,0,0.18);
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 2px 6px rgba(0,0,0,0.08);
+  --surface-texture:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+[data-theme="skeuomorphic"] body {
+  background-image:
+    var(--surface-texture),
+    radial-gradient(1200px 600px at 10% -20%, rgba(196,30,42,0.05), transparent 60%),
+    radial-gradient(800px 400px at 110% 0%, rgba(0,0,0,0.04), transparent 60%);
+}
+
+[data-theme="skeuomorphic"] h1,
+[data-theme="skeuomorphic"] h2,
+[data-theme="skeuomorphic"] h3 {
+  text-shadow: 0 1px 1px rgba(0,0,0,0.06);
+}
+
+/* Token utility classes */
+.token-card {
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-resting);
+  border-style: solid;
+}
+
+.token-pill {
+  border-radius: var(--radius-pill);
+}
+
+.token-surface {
+  background-image: var(--surface-texture);
+}
+
+.token-bevel {
+  box-shadow: var(--shadow-inset);
+}
+
+/* Dev toggle */
+.design-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+}
+.design-toggle button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(140%) blur(10px);
+  color: #374151;
+  cursor: pointer;
+}
+.design-toggle button:hover {
+  background: #ffffff;
+}

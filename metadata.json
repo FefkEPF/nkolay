@@ -1,0 +1,6 @@
+{
+  "name": "Nkolay Medya",
+  "description": "Nkolay Medya - Akıllı Coğrafi Konum Uyumlu ve Yapay Zeka Destekli Yeni Nesil Sosyal Medya Ajansı",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
