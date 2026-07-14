@@ -104,13 +104,13 @@ export default function Navbar() {
         <div className="md:hidden flex items-center space-x-3 z-10">
           <button
             onClick={() => go(ROUTES.contact)}
-            className="bg-primary text-white text-[13px] font-medium px-4 py-2 rounded-full"
+            className="bg-primary text-white text-[13px] font-medium px-4 py-2.5 rounded-full min-h-[44px]"
           >
             Teklif Al
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 text-gray-600 hover:text-gray-900 focus:outline-none"
+            className="p-3 text-gray-600 hover:text-gray-900 focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Menü"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -128,8 +128,8 @@ export default function Navbar() {
               className="absolute top-[calc(100%+12px)] left-0 right-0 bg-white border border-gray-300 shadow-float hidden md:block token-card overflow-hidden z-40"
               onMouseEnter={() => setIsMegaMenuOpen(true)}
             >
-              <div className="p-8">
-                <div className="grid grid-cols-4 gap-5">
+               <div className="p-8">
+                 <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
                   {SERVICES_DATA.slice(0, 16).map((service) => (
                     <button
                       key={service.id}
