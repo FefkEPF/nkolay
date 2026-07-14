@@ -58,6 +58,7 @@ export default function App() {
         <AnimatedRoutes />
       </main>
       <Footer />
+      <SeoSchema />
     </div>
   );
 }
