@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SeoSchema from "./components/SeoSchema";
 import { COMPANY } from "./lib/constants";
 
 const Home = React.lazy(() => import("./components/Home"));
