@@ -135,11 +135,10 @@ body {
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: saturate(140%) blur(10px);
+  background: #ffffff;
   color: #374151;
   cursor: pointer;
 }
 .design-toggle button:hover {
-  background: #ffffff;
+  background: #f9fafb;
 }

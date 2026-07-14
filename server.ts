@@ -171,12 +171,7 @@ ${message}
       });
     }
   } else {
-    // SMTP not configured server-side: log the inquiry and acknowledge receipt.
-    console.log("=== SIMULATED SMTP DISPATCH (SMTP credentials not configured) ===");
-    console.log(`To: ${toEmail}`);
-    console.log(`Content:\n${emailBody}`);
-    console.log("==============================================================");
-
+    // SMTP not configured server-side: acknowledge receipt without exposing details.
     return res.json({
       success: true,
       simulated: true,
@@ -196,14 +191,12 @@ async function startServer() {
       appType: "spa",
     });
     app.use(vite.middlewares);
-    console.log("Vite development middleware integrated.");
   } else {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
     app.get("*", (_req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
-    console.log("Serving static files from production dist/.");
   }
 
   app.listen(PORT, "0.0.0.0", () => {

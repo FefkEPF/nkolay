@@ -46,7 +46,7 @@ export default function Navbar() {
       }`}
       onMouseLeave={() => setIsMegaMenuOpen(false)}
     >
-      <div className={`max-w-7xl mx-auto flex items-center justify-between relative transition-all duration-500 bg-white border border-gray-300 token-card px-6 ${
+      <div className={`max-w-7xl mx-auto flex items-center justify-between relative transition-all duration-500 bg-white/80 backdrop-blur-xl border border-white/40 token-card px-6 ${
         isScrolled ? "py-2.5 shadow-raised" : "py-3.5 shadow-resting"
       }`}>
         {/* BRAND LOGO */}
