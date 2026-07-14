@@ -175,8 +175,11 @@ export default function References() {
                 <div className="flex items-center space-x-4 pt-6 border-t border-gray-200/60 mt-8 relative z-10">
                   <img
                     src={item.avatarUrl}
-                    alt={item.name}
+                    alt={`${item.name} - ${item.company}`}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
+                    width={150}
+                    height={150}
                     className="w-12 h-12 rounded-full object-cover shadow-sm border border-gray-100"
                   />
                   <div>
