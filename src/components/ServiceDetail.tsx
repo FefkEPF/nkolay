@@ -28,10 +28,11 @@ export default function ServiceDetail() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  useSeo(
-    service ? `${service.title} | NKolay Medya` : "Hizmet Bulunamadı",
-    service?.description
-  );
+  useSeo({
+    title: service ? `${service.title} | NKolay Medya` : "Hizmet Bulunamadı",
+    description: service?.description,
+    path: id ? ROUTES.service(id) : ROUTES.services,
+  });
 
   useEffect(() => {
     // Restores the default title on unmount.
