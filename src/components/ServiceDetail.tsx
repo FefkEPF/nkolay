@@ -4,6 +4,7 @@ import { ArrowRight, Check, Sparkles, PhoneCall } from "lucide-react";
 import { SERVICES_DATA } from "../data";
 import { ServiceIcon } from "../lib/serviceIcons";
 import { useSeo } from "../lib/seo";
+import { serviceSchema } from "../lib/schema";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { COMPANY, ROUTES } from "../lib/constants";
 
