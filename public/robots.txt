@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /iletisim
+Disallow: /kvkk
+Disallow: /terms
+Disallow: /privacy
+
+Sitemap: https://nkolaymedya.com/sitemap.xml
