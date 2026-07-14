@@ -8,7 +8,10 @@ export default function LegalPage({ page }: { page: "kvkk" | "terms" | "privacy"
   const navigate = useNavigate();
   const doc = LEGAL_DOCS[page];
 
-  useSeo(doc?.title ?? "Yasal Bilgilendirme");
+  useSeo({
+    title: doc?.title ?? "Yasal Bilgilendirme",
+    path: ROUTES.legal(page),
+  });
 
   if (!doc) {
     return (
