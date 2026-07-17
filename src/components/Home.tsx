@@ -1,4 +1,4 @@
-import Hero from "./Hero";
+import HeroGeometric from "./HeroGeometric";
 import ReferencesTicker from "./ReferencesTicker";
 import Services from "./Services";
 import { useSeo } from "../lib/seo";
@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
+      <HeroGeometric />
       <ReferencesTicker />
       <Services />
     </>

@@ -4,6 +4,7 @@ import { TESTIMONIALS_DATA } from "../data";
 import { motion, AnimatePresence } from "motion/react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { COMPANY, ROUTES } from "../lib/constants";
+import { useReducedMotion } from "../lib/useReducedMotion";
 
 export default function References() {
   const navigate = useNavigate();
@@ -29,6 +30,10 @@ export default function References() {
     navigate(ROUTES.contact);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const reduced = useReducedMotion();
+  const noMotion = { opacity: 1, y: 0, scale: 1, height: "auto" } as const;
+  const instant = { duration: 0.01 } as const;
+  const spring = { type: "spring", stiffness: 80, damping: 18, mass: 0.8 } as const;
 
   return (
     <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-white min-h-screen" id="references-page">
@@ -54,10 +59,10 @@ export default function References() {
         <AnimatePresence>
           {selectedReference && (
             <motion.div
-              initial={{ opacity: 0, height: 0, scale: 0.96 }}
-              animate={{ opacity: 1, height: "auto", scale: 1 }}
-              exit={{ opacity: 0, height: 0, scale: 0.96 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              initial={reduced ? noMotion : { opacity: 0, height: 0, scale: 0.96 }}
+              animate={reduced ? noMotion : { opacity: 1, height: "auto", scale: 1 }}
+              exit={reduced ? noMotion : { opacity: 0, height: 0, scale: 0.96 }}
+              transition={reduced ? instant : spring}
               className="overflow-hidden"
             >
               <div
@@ -140,13 +145,21 @@ export default function References() {
             const isSelected = item.id === selectedReferenceId;
             return (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -5 }}
+                initial={reduced ? noMotion : { opacity: 0, y: 30 }}
+                whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
+                whileHover={reduced ? undefined : { y: -5 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={reduced ? instant : { ...spring, delay: index * 0.05 }}
                 key={item.id}
                 onClick={() => setSearchParams({ ref: item.id })}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSearchParams({ ref: item.id });
+                  }
+                }}
                 className={`bg-gray-50 border p-8 rounded-3xl flex flex-col justify-between relative cursor-pointer transition-all duration-300 group shadow-sm text-left overflow-hidden ${
                   isSelected
                     ? "border-primary ring-4 ring-primary/10 scale-[1.02] bg-white"
@@ -196,10 +209,10 @@ export default function References() {
 
         {/* Call to action section at the bottom */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={reduced ? noMotion : { opacity: 0, y: 30 }}
+          whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={reduced ? instant : spring}
           className="mt-24 bg-gray-50 rounded-3xl border border-gray-200/60 p-10 md:p-16 text-center max-w-4xl mx-auto space-y-8 shadow-[var(--shadow-subtle)]"
         >
           <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center mx-auto">

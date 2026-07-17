@@ -2,23 +2,28 @@ import { motion } from "motion/react";
 import { Home, ArrowLeft } from "lucide-react";
 import GeometricBackground from "./GeometricBackground";
 import { useNavigate } from "react-router-dom";
+import { useReducedMotion } from "../lib/useReducedMotion";
 
 export default function NotFound() {
   const navigate = useNavigate();
+  const reduced = useReducedMotion();
+  const noMotion = { opacity: 1, scale: 1 } as const;
+  const instant = { duration: 0.01 } as const;
+  const spring = { type: "spring", stiffness: 80, damping: 18, mass: 0.8 } as const;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface">
       {/* Geometric background — no blur */}
       <div className="absolute inset-0 z-0">
-        <GeometricBackground color1="#FFF1F2" color2="#FCA5A5" />
+        <GeometricBackground color1="#FEF2F2" color2="#FCA5A5" />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          initial={reduced ? noMotion : { opacity: 0, scale: 0.92 }}
+          animate={reduced ? noMotion : { opacity: 1, scale: 1 }}
+          transition={reduced ? instant : spring}
           className="space-y-8"
         >
           <div className="space-y-4">

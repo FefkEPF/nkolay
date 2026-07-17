@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, Sparkles, Check, AlertCircle } from "lucide-
 import { motion } from "motion/react";
 import { SERVICES_DATA } from "../data";
 import { COMPANY } from "../lib/constants";
+import { useReducedMotion } from "../lib/useReducedMotion";
 
 interface ContactFormProps {
   prefilledService?: string;
@@ -14,6 +15,8 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState(prefilledService || "Genel Teklif Talebi");
   const [message, setMessage] = useState("");
+  const reduced = useReducedMotion();
+  const noMotion = { opacity: 1, y: 0 } as const;
 
   const [formStatus, setFormStatus] = useState<{
     type: "idle" | "loading" | "success" | "error";
@@ -84,7 +87,7 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
               İletişim
             </span>
           </div>
-          <h2 className="font-display font-bold text-4xl md:text-5xl text-gray-900 tracking-tight leading-tight">
+          <h2 className="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-gray-900 tracking-tight leading-tight">
             Bize <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark">Ulaşın</span>
           </h2>
           <p className="font-sans text-gray-500 text-lg font-light max-w-2xl mx-auto leading-relaxed">
@@ -160,26 +163,30 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
 
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Name */}
-                <div className="space-y-2">
-                  <label className="text-[13px] font-medium text-gray-700">Adınız Soyadınız *</label>
-                  <input
-                    type="text"
-                    required
-                    value={name}
+                 {/* Name */}
+                 <div className="space-y-2">
+                   <label htmlFor="contact-name" className="text-[13px] font-medium text-gray-700">Adınız Soyadınız *</label>
+                   <input
+                     id="contact-name"
+                     type="text"
+                     required
+                     autoComplete="name"
+                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Adınızı yazın"
                     className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all"
                   />
                 </div>
 
-                {/* Email */}
-                <div className="space-y-2">
-                  <label className="text-[13px] font-medium text-gray-700">E-posta Adresiniz *</label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
+                 {/* Email */}
+                 <div className="space-y-2">
+                   <label htmlFor="contact-email" className="text-[13px] font-medium text-gray-700">E-posta Adresiniz *</label>
+                   <input
+                     id="contact-email"
+                     type="email"
+                     required
+                     autoComplete="email"
+                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="mail@adresiniz.com"
                     className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all"
@@ -188,24 +195,27 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Phone */}
-                <div className="space-y-2">
-                  <label className="text-[13px] font-medium text-gray-700">Telefon Numaranız *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={phone}
+                 {/* Phone */}
+                 <div className="space-y-2">
+                   <label htmlFor="contact-phone" className="text-[13px] font-medium text-gray-700">Telefon Numaranız *</label>
+                   <input
+                     id="contact-phone"
+                     type="tel"
+                     required
+                     autoComplete="tel"
+                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="05XX XXX XX XX"
                     className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all"
                   />
                 </div>
 
-                {/* Subject */}
-                <div className="space-y-2">
-                  <label className="text-[13px] font-medium text-gray-700">İlgilendiğiniz Hizmet</label>
-                  <select
-                    value={subject}
+                 {/* Subject */}
+                 <div className="space-y-2">
+                   <label htmlFor="contact-subject" className="text-[13px] font-medium text-gray-700">İlgilendiğiniz Hizmet</label>
+                   <select
+                     id="contact-subject"
+                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 transition-all cursor-pointer"
                   >
@@ -219,11 +229,12 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
                 </div>
               </div>
 
-              {/* Message */}
-              <div className="space-y-2">
-                <label className="text-[13px] font-medium text-gray-700">Mesajınız / Sorunuz *</label>
-                <textarea
-                  required
+               {/* Message */}
+               <div className="space-y-2">
+                 <label htmlFor="contact-message" className="text-[13px] font-medium text-gray-700">Mesajınız / Sorunuz *</label>
+                 <textarea
+                   id="contact-message"
+                   required
                   rows={5}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -235,8 +246,8 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
               {/* Form Status Notification */}
               {formStatus.type !== "idle" && (
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={reduced ? noMotion : { opacity: 0, y: -10 }}
+                  animate={reduced ? noMotion : { opacity: 1, y: 0 }}
                   className={`p-4 text-sm font-medium rounded-xl flex items-start gap-3 border ${
                     formStatus.type === "loading"
                       ? "bg-gray-50 border-gray-200 text-gray-700"

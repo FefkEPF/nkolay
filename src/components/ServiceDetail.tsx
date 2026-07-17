@@ -7,10 +7,14 @@ import { useSeo } from "../lib/seo";
 import { serviceSchema } from "../lib/schema";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { COMPANY, ROUTES } from "../lib/constants";
+import { useReducedMotion } from "../lib/useReducedMotion";
 
 export default function ServiceDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const reduced = useReducedMotion();
+  const noMotion = { opacity: 1, y: 0, scale: 1 } as const;
+  const instant = { duration: 0.01 } as const;
   const service = SERVICES_DATA.find((s) => s.id === id);
   const related = SERVICES_DATA.filter((s) => s.id !== id).slice(0, 3);
 
@@ -63,8 +67,9 @@ export default function ServiceDetail() {
         <div className="absolute top-[-15%] left-[-8%] w-[450px] h-[450px] bg-primary/[0.06] rounded-full blur-[100px]"></div>
         <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={reduced ? noMotion : { opacity: 0 }}
+            animate={reduced ? noMotion : { opacity: 1 }}
+            transition={reduced ? instant : { duration: 0.5 }}
             onClick={goServices}
             className="inline-flex items-center gap-2 text-[14px] font-medium text-gray-500 hover:text-primary transition-colors mb-8"
           >
@@ -74,9 +79,9 @@ export default function ServiceDetail() {
 
           <div className="flex flex-col md:flex-row md:items-center gap-6">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              initial={reduced ? noMotion : { opacity: 0, scale: 0.9 }}
+              animate={reduced ? noMotion : { opacity: 1, scale: 1 }}
+              transition={reduced ? instant : { duration: 0.5 }}
               className="w-20 h-20 rounded-3xl bg-white border border-gray-200 shadow-[var(--shadow-card)] flex items-center justify-center shrink-0"
             >
               <ServiceIcon name={service.iconName} className="w-10 h-10 text-primary" />
@@ -93,18 +98,18 @@ export default function ServiceDetail() {
           </div>
 
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            initial={reduced ? noMotion : { opacity: 0, y: 15 }}
+            animate={reduced ? noMotion : { opacity: 1, y: 0 }}
+            transition={reduced ? instant : { duration: 0.6, delay: 0.1 }}
             className="text-lg md:text-xl text-gray-500 font-light max-w-3xl leading-relaxed mt-8"
           >
             {service.description}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={reduced ? noMotion : { opacity: 0, y: 15 }}
+            animate={reduced ? noMotion : { opacity: 1, y: 0 }}
+            transition={reduced ? instant : { duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 mt-10"
           >
             <button
@@ -131,10 +136,10 @@ export default function ServiceDetail() {
           <div className="grid md:grid-cols-2 gap-10">
             {/* Features */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={reduced ? noMotion : { opacity: 0, y: 20 }}
+              whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={reduced ? instant : { duration: 0.5 }}
             >
               <h2 className="font-display font-semibold text-2xl text-gray-900 tracking-tight mb-6">Hizmet Kapsamı</h2>
               <ul className="space-y-4">
@@ -152,10 +157,10 @@ export default function ServiceDetail() {
             {/* Benefits */}
             {service.benefits && (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={reduced ? noMotion : { opacity: 0, y: 20 }}
+                whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={reduced ? instant : { duration: 0.5, delay: 0.1 }}
               >
                 <h2 className="font-display font-semibold text-2xl text-gray-900 tracking-tight mb-6">Kazançlarınız</h2>
                 <ul className="space-y-4">
@@ -174,10 +179,10 @@ export default function ServiceDetail() {
 
           {/* Detailed Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={reduced ? noMotion : { opacity: 0, y: 20 }}
+            whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={reduced ? instant : { duration: 0.5 }}
             className="mt-14 bg-white border border-gray-200/60 rounded-3xl p-8 md:p-10 shadow-[var(--shadow-subtle)]"
           >
             <h2 className="font-display font-semibold text-2xl text-gray-900 tracking-tight mb-4">{service.metric}</h2>
@@ -188,10 +193,10 @@ export default function ServiceDetail() {
 
           {/* CTA banner */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={reduced ? noMotion : { opacity: 0, y: 20 }}
+            whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={reduced ? instant : { duration: 0.5 }}
             className="mt-10 bg-gradient-to-r from-primary to-primary-dark rounded-3xl p-8 md:p-10 text-center shadow-[var(--shadow-card)]"
           >
             <h3 className="font-display font-bold text-2xl md:text-3xl text-white tracking-tight">

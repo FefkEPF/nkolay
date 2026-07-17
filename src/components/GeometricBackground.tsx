@@ -162,19 +162,21 @@ export default function GeometricBackground({
     let onScreen = true;
     let pageVisible = !document.hidden;
 
-    const render = (now: number) => {
-      const dt = lastTs ? now - lastTs : 0;
+    // Guard against a huge delta after the tab/section was paused (lastTs reset to 0).
+    const renderSafe = (now: number) => {
+      if (lastTs === 0) lastTs = now;
+      const dt = Math.min(now - lastTs, 64);
       lastTs = now;
       elapsed += dt;
       gl.uniform1f(uTime, elapsed / 1000);
       gl.drawArrays(gl.TRIANGLES, 0, 6);
-      raf = requestAnimationFrame(render);
+      raf = requestAnimationFrame(renderSafe);
     };
 
-    const startLoop = () => {
+    const startLoopSafe = () => {
       if (raf || !onScreen || !pageVisible) return;
       lastTs = 0;
-      raf = requestAnimationFrame(render);
+      raf = requestAnimationFrame(renderSafe);
     };
     const stopLoop = () => {
       if (raf) {
@@ -186,7 +188,7 @@ export default function GeometricBackground({
     const onVisibility = () => {
       pageVisible = !document.hidden;
       if (pageVisible) {
-        startLoop();
+        startLoopSafe();
       } else {
         stopLoop();
       }
@@ -197,7 +199,7 @@ export default function GeometricBackground({
         ([entry]) => {
           onScreen = entry.isIntersecting;
           if (onScreen) {
-            startLoop();
+            startLoopSafe();
           } else {
             stopLoop();
           }

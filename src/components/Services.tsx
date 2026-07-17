@@ -4,9 +4,14 @@ import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { ServiceIcon } from "../lib/serviceIcons";
 import { ROUTES } from "../lib/constants";
+import { useReducedMotion } from "../lib/useReducedMotion";
 
 export default function Services() {
   const navigate = useNavigate();
+  const reduced = useReducedMotion();
+  const noMotion = { opacity: 1, y: 0 } as const;
+  const instant = { duration: 0.01 } as const;
+  const spring = { type: "spring", stiffness: 80, damping: 18, mass: 0.8 } as const;
 
   const handleServiceClick = (id: string) => {
     navigate(ROUTES.service(id));
@@ -40,11 +45,11 @@ export default function Services() {
           {SERVICES_DATA.map((service, index) => (
             <motion.button
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.25, 0.1, 0.25, 1] } }}
+              initial={reduced ? noMotion : { opacity: 0, y: 30 }}
+              whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
+              whileHover={reduced ? undefined : { y: -4, transition: { type: "spring", stiffness: 120, damping: 14 } }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: index * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={reduced ? instant : { ...spring, delay: index * 0.04 }}
               onClick={() => handleServiceClick(service.id)}
               className="group relative bg-white border border-gray-200/60 rounded-3xl p-8 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:border-primary/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_8px_24px_rgba(0,0,0,0.06)] text-left w-full"
             >
