@@ -54,6 +54,8 @@ export interface GeneratedStrategy {
   recommendedAction: string;
 }
 
+export type ServiceCategory = "performance" | "creative" | "technical";
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -62,6 +64,7 @@ export interface ServiceItem {
   badge: string;
   metric: string;
   iconName: string;
+  category: ServiceCategory;
   detailedContent?: string;
   benefits?: string[];
 }

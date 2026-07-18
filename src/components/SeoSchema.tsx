@@ -1,4 +1,5 @@
-import { organizationSchema, localBusinessSchema } from "../lib/schema";
+import { organizationSchema, localBusinessSchema, faqSchema } from "../lib/schema";
+import { HOME_FAQ } from "../data";
 
 export default function SeoSchema() {
   return (
@@ -10,6 +11,10 @@ export default function SeoSchema() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(HOME_FAQ)) }}
       />
     </>
   );

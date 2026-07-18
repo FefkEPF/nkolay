@@ -1,6 +1,9 @@
 import HeroGeometric from "./HeroGeometric";
 import ReferencesTicker from "./ReferencesTicker";
 import Services from "./Services";
+import ProcessSection from "./ProcessSection";
+import CtaBanner from "./CtaBanner";
+import HomeFaq from "./HomeFaq";
 import { useSeo } from "../lib/seo";
 
 export default function Home() {
@@ -18,6 +21,9 @@ export default function Home() {
       </div>
       <ReferencesTicker />
       <Services />
+      <ProcessSection />
+      <CtaBanner variant="split" />
+      <HomeFaq />
     </>
   );
 }

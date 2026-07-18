@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -235,9 +234,8 @@ export default function HeroGeometric({
     const spring = { type: "spring", stiffness: 80, damping: 18, mass: 0.8 } as const;
 
     const stats = [
-        { value: "4.8x",  label: "Ortalama ROAS Oranı",   highlight: false },
-        { value: "+340%", label: "Erişim Artışı",          highlight: true  },
-        { value: "2.4M",  label: "Aylık Aktif Etkileşim", highlight: false },
+        { value: "4.8x",  label: "Ortalama ROAS Oranı",   highlight: true  },
+        { value: "+340%", label: "Erişim Artışı",          highlight: false },
     ];
 
     const features = ["Veriye Dayalı Strateji", "Ölçülebilir Büyüme", "Kurumsal İletişim"];
@@ -366,9 +364,9 @@ export default function HeroGeometric({
                                 initial={reduced ? noMotion : { opacity: 0 }}
                                 animate={reduced ? noMotion : { opacity: 1 }}
                                 transition={reduced ? instant : { ...spring, delay: 0.44 }}
-                                className="mt-5 text-[13px] font-medium text-white/80 hero-text-shadow text-center md:text-left gpu-accelerated"
+                                className="mt-6 text-[12.5px] font-normal text-white/70 hero-text-shadow text-center md:text-left gpu-accelerated"
                             >
-                                İlk strateji raporu 7 gün içinde • Özel hesap sorumlusu • Esnek iptal politikası
+                                İlk strateji raporu 7 gün içinde <span className="text-white/40 px-1.5">•</span> Özel hesap sorumlusu <span className="text-white/40 px-1.5">•</span> Esnek iptal politikası
                             </motion.p>
                         </div>
 

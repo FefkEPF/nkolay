@@ -106,7 +106,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "google-ads",
     title: "Google Ads Reklam Danışmanlığı",
-    description: "Hedef kitlenizin tam aradığı anda karşısına çıkın. Yüksek dönüşüm odaklı arama ağı, görüntülü ve video reklam kampanyaları ile Google'da zirveyi hedefliyoruz.",
+    description: "Arama ve görüntülü ağda dönüşüm odaklı kampanyalarla markanızı tam arama anında hedef kitlenizin karşısına çıkarıyoruz.",
+    category: "performance",
     features: [
       "Arama Ağı ve Display Reklamları",
       "Negatif Kelime Optimizasyonu",
@@ -122,7 +123,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "meta-ads",
     title: "Meta (Facebook-Instagram) Reklam",
-    description: "Instagram ve Facebook'ta nokta atışı kitle hedeflemesiyle markanızın satışlarını ve bilinirliğini katlayacak stratejik reklam kurguları oluşturuyoruz.",
+    description: "Pixel ve CAPI entegrasyonuyla Instagram ile Facebook'ta satış odaklı, ölçeklenebilir reklam kurguları kuruyoruz.",
+    category: "performance",
     features: [
       "Piksel Kurulumu & Olay İzleme",
       "Lookalike & Retargeting Kitleleri",
@@ -138,7 +140,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "ui-ux-design",
     title: "Grafik ve UI/UX Tasarım",
-    description: "Kullanıcı deneyimini (UX) merkeze alan, estetik (UI) ve modern tasarımlarla markanızın dijital yüzünü sıfırdan yaratıyor veya yeniliyoruz.",
+    description: "Kullanıcı deneyimini merkeze alan, modern ve markanıza özel arayüz ve kurumsal kimlik tasarımları üretiyoruz.",
+    category: "creative",
     features: [
       "Web & Mobil Arayüz Tasarımı (Figma)",
       "Kurumsal Kimlik & Logo Tasarımı",
@@ -154,7 +157,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "software-dev",
     title: "Yazılım Hizmetleri",
-    description: "İş süreçlerinizi hızlandıracak, güvenilir ve ölçeklenebilir özel web tabanlı yazılımlar ve otomasyon sistemleri geliştiriyoruz.",
+    description: "İşletmenize özel, bulut tabanlı ve ölçeklenebilir web yazılımları ile süreçlerinizi otomatikleştiriyoruz.",
+    category: "technical",
     features: [
       "Özel Web Uygulamaları",
       "CRM & ERP Geliştirme",
@@ -170,7 +174,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "mobile-app",
     title: "Mobil Uygulama Geliştirme",
-    description: "iOS ve Android platformlarında yüksek performanslı, kullanıcı dostu ve yenilikçi mobil uygulamalar ile müşterilerinizin cebine giriyoruz.",
+    description: "iOS ve Android için native ve cross-platform mobil uygulamalarla markanızı kullanıcıların cebine taşıyoruz.",
+    category: "technical",
     features: [
       "Native & Cross-Platform Çözümler",
       "Kullanıcı Odaklı Arayüzler",
@@ -186,7 +191,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "seo-services",
     title: "SEO Hizmetleri",
-    description: "Web sitenizi Google'da üst sıralara taşıyacak kapsamlı teknik SEO, içerik optimizasyonu ve otorite inşası stratejileri sunuyoruz.",
+    description: "Teknik SEO, içerik optimizasyonu ve kaliteli backlink ile sitenizi Google'da kalıcı bir yere taşıyoruz.",
+    category: "performance",
     features: [
       "Teknik & On-Page SEO",
       "Kelime ve Rakip Analizi",
@@ -202,7 +208,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "printing-services",
     title: "Matbaa ve Baskı Hizmetleri",
-    description: "Kurumsal kimliğinizi fiziksel dünyaya taşıyın. Yüksek kaliteli baskı materyalleri ile müşterilerinizde kalıcı bir iz bırakın.",
+    description: "Kurumsal kimliğinizi kartvizitten ambalaja kadar premium baskı çözümleriyle fiziksel dünyaya taşıyoruz.",
+    category: "creative",
     features: [
       "Kartvizit & Katalog Basımı",
       "Promosyon Ürünleri",
@@ -218,7 +225,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "wordpress",
     title: "WordPress Hizmetleri",
-    description: "Hızlı, güvenli ve SEO uyumlu WordPress siteleri tasarlıyor, mevcut siteleriniz için bakım ve optimizasyon destekleri sağlıyoruz.",
+    description: "Ultra hızlı, güvenli ve tam SEO uyumlu WordPress siteleri kuruyor; mevcut siteleriniz için bakım sağlıyoruz.",
+    category: "technical",
     features: [
       "Özel Tema Geliştirme",
       "Eklenti Optimizasyonu",
@@ -234,7 +242,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "server-services",
     title: "Sunucu Hizmetleri",
-    description: "Web projeleriniz için yüksek erişilebilirlik (uptime), güvenlik ve hız garantili bulut sunucu (Cloud) ve barındırma (Hosting) çözümleri.",
+    description: "Yüksek erişilebilirlik ve %99.9 uptime garantili bulut sunucu ile barındırma çözümleri sunuyoruz.",
+    category: "technical",
     features: [
       "Bulut (Cloud) Mimarisi",
       "7/24 Sunucu İzleme",
@@ -250,7 +259,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "social-media",
     title: "Sosyal Medya Yönetimi",
-    description: "Markanızın dijitaldeki sesini belirliyoruz. Stratejik içerik planlaması ve profesyonel hesap yönetimi ile sadık bir topluluk yaratıyoruz.",
+    description: "Stratejik içerik planlaması ve profesyonel hesap yönetimiyle markanız için sadık bir topluluk inşa ediyoruz.",
+    category: "performance",
     features: [
       "Aylık İçerik ve Konsept Planlaması",
       "Görsel ve Metin (Copywriting) Üretimi",
@@ -266,7 +276,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "reputation-management",
     title: "İtibar Yönetimi",
-    description: "Dijital ayak izinizi kontrol altına alın. Hakkınızda çıkan içerikleri yöneterek marka algınızı koruyor ve pozitif yönde geliştiriyoruz.",
+    description: "Dijital PR ve kriz yönetimi ile marka algınızı koruyup Google aramalarında pozitif bir imaj oluşturuyoruz.",
+    category: "performance",
     features: [
       "Dijital Basın Bültenleri (PR)",
       "Kriz Yönetimi Stratejileri",
@@ -282,7 +293,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "brand-consulting",
     title: "Marka Danışmanlığı",
-    description: "Sıfırdan marka yaratma veya mevcut markanızı yeniden konumlandırma süreçlerinde vizyoner stratejiler ve yol haritaları çiziyoruz.",
+    description: "Marka konumlandırma ve hedef kitle analiziyle sıfırdan veya yeniden konumlandırma için yol haritası çiziyoruz.",
+    category: "creative",
     features: [
       "Marka Konumlandırma",
       "Hedef Kitle ve Rakip Analizi",
@@ -298,7 +310,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "ecommerce-consulting",
     title: "E-Ticaret Danışmanlığı",
-    description: "Online satışlarınızı maksimize edecek altyapı kurulumundan, sepet ortalamasını artıracak pazarlama stratejilerine kadar uçtan uca rehberlik.",
+    description: "Altyapı kurulumundan sepet optimizasyonuna kadar online satışlarınızı uçtan uca büyüten stratejiler sunuyoruz.",
+    category: "performance",
     features: [
       "Platform Seçimi ve Kurulumu",
       "Dönüşüm Oranı Optimizasyonu (CRO)",
@@ -314,7 +327,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "video-production",
     title: "Video Prodüksiyon",
-    description: "Marka hikayenizi sinematik kalitede anlatın. Kurumsal tanıtım filmlerinden, viral potansiyelli kısa videolara kadar profesyonel prodüksiyon.",
+    description: "Senaryodan post-prodüksiyona kurumsal tanıtım ve Reels/TikTok videolarıyla marka hikayenizi sinematik kalitede anlatıyoruz.",
+    category: "creative",
     features: [
       "Senaryo ve Kurgu",
       "Profesyonel Kamera & Drone Çekimi",
@@ -330,7 +344,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "voiceover",
     title: "Seslendirme Hizmetleri",
-    description: "Reklam filmleriniz, tanıtım videolarınız veya santral anonslarınız için profesyonel yerli ve yabancı seslendirme çözümleri.",
+    description: "Reklam, tanıtım ve santral anonsları için profesyonel stüdyo kalitesinde yerli ve yabancı seslendirme çözümleri.",
+    category: "creative",
     features: [
       "Reklam ve Tanıtım Seslendirmesi",
       "IVR ve Santral Anonsları",
@@ -346,7 +361,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "strategy-dev",
     title: "Strateji Geliştirme",
-    description: "İşletmenizin uzun vadeli hedeflerine ulaşması için veri odaklı, uygulanabilir ve sürdürülebilir büyüme planları tasarlıyoruz.",
+    description: "Veri analizi ve büyüme metodolojileriyle işletmenize sürdürülebilir, ölçülebilir dijital dönüşüm yol haritaları çiziyoruz.",
+    category: "performance",
     features: [
       "Büyüme (Growth) Stratejileri",
       "Veri Analizi ve Pazar Araştırması",
@@ -362,7 +378,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "automation",
     title: "Otomasyon Bot Hizmetleri",
-    description: "Müşteri ilişkileri, rezervasyon sistemleri veya süreç tekrarlarını ortadan kaldıracak yapay zeka destekli akıllı bot yazılımları.",
+    description: "WhatsApp ve web üzerinde 7/24 çalışan yapay zeka destekli botlarla müşteri süreçlerinizi tamamen otomatikleştiriyoruz.",
+    category: "technical",
     features: [
       "WhatsApp & DM Botları",
       "CRM Otomasyon Entegrasyonları",
@@ -378,7 +395,8 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "cyber-security",
     title: "Siber Güvenlik",
-    description: "Dijital varlıklarınızı siber tehditlere karşı koruyoruz. Sistem açıkları tespiti, güvenli veri depolama ve sızma testleri.",
+    description: "Sızma testleri ve DDoS korumasıyla web sitenizi, uygulamanızı ve verilerinizi siber tehditlere karşı güvence altına alıyoruz.",
+    category: "technical",
     features: [
       "Sızma (Penetrasyon) Testleri",
       "Güvenlik Açığı Taraması",
@@ -463,4 +481,83 @@ export const SUPPORTED_CITIES = [
   { id: "bursa", name: "Bursa", region: "Marmara Bölgesi" },
   { id: "antalya", name: "Antalya", region: "Akdeniz Bölgesi" },
   { id: "diger", name: "Diğer (Tüm Türkiye)", region: "Genel Türkiye" }
+];
+
+export const SERVICE_CATEGORIES: {
+  id: import("./types").ServiceCategory;
+  label: string;
+  description: string;
+}[] = [
+  {
+    id: "performance",
+    label: "Performans & Reklam",
+    description:
+      "Google Ads, Meta reklamları ve SEO ile ölçülebilir büyüme ve satış odaklı kampanyalar.",
+  },
+  {
+    id: "creative",
+    label: "Yaratıcı & Tasarım",
+    description:
+      "Video prodüksiyon, UI/UX tasarım ve marka danışmanlığı ile dijitalde fark yaratan görsellik.",
+  },
+  {
+    id: "technical",
+    label: "Teknik & Altyapı",
+    description:
+      "Yazılım, sunucu, siber güvenlik ve otomasyon ile kesintisiz ve güvenli dijital altyapı.",
+  },
+];
+
+export const WORK_PROCESS: {
+  step: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    step: "01",
+    title: "Keşif & Analiz",
+    description:
+      "Markanızı, sektörünüzü ve rakiplerinizi derinlemesine analiz ederek net bir başlangıç noktası belirliyoruz.",
+  },
+  {
+    step: "02",
+    title: "Strateji & Yol Haritası",
+    description:
+      "Veriye dayalı, ölçülebilir hedeflerle markanıza özel dijital büyüme stratejisi ve aksiyon planı çıkarıyoruz.",
+  },
+  {
+    step: "03",
+    title: "Üretim & Yayın",
+    description:
+      "Reklam, tasarım ve içerik üretimini üstlenerek kampanyaları yayına alıyor ve sürekli optimize ediyoruz.",
+  },
+  {
+    step: "04",
+    title: "Ölçüm & Raporlama",
+    description:
+      "Şeffaf raporlarla sonuçları takip ediyor, ROI odaklı düzenli iyileştirmelerle büyümeyi sürdürüyoruz.",
+  },
+];
+
+export const HOME_FAQ: { question: string; answer: string }[] = [
+  {
+    question: "NKolay Medya hangi dijital hizmetleri sunuyor?",
+    answer:
+      "Google Ads ve Meta reklam yönetimi, SEO, sosyal medya yönetimi, video prodüksiyon, UI/UX tasarım, yazılım ve mobil uygulama geliştirme ile siber güvenlik dahil 16 farklı dijital hizmet sunuyoruz.",
+  },
+  {
+    question: "Reklam bütçemi nasıl yönetiyorsunuz?",
+    answer:
+      "Performans odaklı bütçe planlaması yaparak her kuruşun dönüşümünü şeffaf raporlarla ölçüyor, negatif kelime ve A/B testleriyle maliyet kontrolünü sürekli optimize ediyoruz.",
+  },
+  {
+    question: "İlk sonuçları ne zaman görürüm?",
+    answer:
+      "Strateji raporunuzu 7 gün içinde teslim ediyoruz. Performans kampanyalarında ilk ölçülebilir sonuçlar genellikle ilk ay içinde görülmeye başlanır.",
+  },
+  {
+    question: "Hangi şehirlerde hizmet veriyorsunuz?",
+    answer:
+      "Merkezimiz İstanbul Esenyurt'ta olmakla birlikte tüm Türkiye'ye uzaktan dijital ajans hizmeti sunuyoruz.",
+  },
 ];
