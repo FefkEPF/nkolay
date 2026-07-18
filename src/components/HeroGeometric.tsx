@@ -110,10 +110,10 @@ void main() {
         color = paleBlue;
     }
 
-    // Softer fade to white - only at extreme bottom-left
+    // Softer fade at extreme bottom-left to preserve depth
     vec2 cornerDist = vec2(uv.x, uv.y);
     float fadeMask = smoothstep(0.0, 0.25, length(cornerDist));
-    color = mix(vec3(1.0), color, fadeMask);
+    color = mix(deepBlue, color, fadeMask);
 
     // Add subtle vignette to emphasize corners
     float vignette = smoothstep(1.2, 0.3, length(uv - 0.5));
