@@ -1,5 +1,6 @@
 import HeroGeometric from "./HeroGeometric";
 import ReferencesTicker from "./ReferencesTicker";
+import TechStack from "./TechStack";
 import Services from "./Services";
 import ProcessSection from "./ProcessSection";
 import CtaBanner from "./CtaBanner";
@@ -26,6 +27,7 @@ export default function Home() {
         <HeroGeometric />
       </div>
       <ReferencesTicker />
+      <TechStack />
       <ImpactBand />
       <WhyUs />
       <Services />
