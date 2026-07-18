@@ -5,7 +5,7 @@ import { getBlogPost, BLOG_POSTS } from "../data";
 import { ROUTES } from "../lib/constants";
 import { useReducedMotion } from "../lib/useReducedMotion";
 import { useSeo } from "../lib/seo";
-import { blogPostSchema } from "../lib/schema";
+import { blogPostSchema, breadcrumbSchema } from "../lib/schema";
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
@@ -47,11 +47,21 @@ export default function BlogPost() {
     url: `https://nkolaymedya.com${ROUTES.blogPost(post.slug)}`,
   });
 
+  const breadcrumb = breadcrumbSchema([
+    { name: "Ana Sayfa", url: "https://nkolaymedya.com/" },
+    { name: "Blog", url: "https://nkolaymedya.com/blog" },
+    { name: post.title, url: `https://nkolaymedya.com${ROUTES.blogPost(post.slug)}` },
+  ]);
+
   return (
     <article className="pt-32 pb-24 md:pt-40 md:pb-32 bg-white min-h-screen" id="blog-post">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <button

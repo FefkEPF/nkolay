@@ -15,6 +15,7 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
   const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState(prefilledService || "Genel Teklif Talebi");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState<{ name?: string; email?: string; phone?: string; message?: string }>({});
   const reduced = useReducedMotion();
   const noMotion = { opacity: 1, y: 0 } as const;
 
@@ -29,8 +30,19 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
     }
   }, [prefilledService]);
 
+  const validate = () => {
+    const next: { name?: string; email?: string; phone?: string; message?: string } = {};
+    if (!name.trim()) next.name = "Adınızı soyadınızı girin.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Geçerli bir e-posta adresi girin.";
+    if (!/^[0-9+\s()-]{7,}$/.test(phone)) next.phone = "Geçerli bir telefon numarası girin.";
+    if (!message.trim()) next.message = "Mesajınızı yazın.";
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
+
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     setFormStatus({ type: "loading", message: "Mesajınız iletiliyor, lütfen bekleyin..." });
 
     try {
@@ -166,31 +178,35 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
                  {/* Name */}
                  <div className="space-y-2">
                    <label htmlFor="contact-name" className="text-[13px] font-medium text-gray-700">Adınız Soyadınız *</label>
-                   <input
-                     id="contact-name"
-                     type="text"
-                     required
-                     autoComplete="name"
-                     value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Adınızı yazın"
-                    className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all"
-                  />
+                    <input
+                      id="contact-name"
+                      type="text"
+                      required
+                      autoComplete="name"
+                      value={name}
+                     onChange={(e) => setName(e.target.value)}
+                     placeholder="Adınızı yazın"
+                     aria-describedby={errors.name ? "contact-name-error" : undefined}
+                     className={`w-full bg-gray-50 border rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all ${errors.name ? "border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/10" : "border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10"}`}
+                   />
+                   {errors.name && <p id="contact-name-error" role="alert" className="text-rose-600 text-[12px] mt-1">{errors.name}</p>}
                 </div>
 
                  {/* Email */}
                  <div className="space-y-2">
                    <label htmlFor="contact-email" className="text-[13px] font-medium text-gray-700">E-posta Adresiniz *</label>
-                   <input
-                     id="contact-email"
-                     type="email"
-                     required
-                     autoComplete="email"
-                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="mail@adresiniz.com"
-                    className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all"
-                  />
+                    <input
+                      id="contact-email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      value={email}
+                     onChange={(e) => setEmail(e.target.value)}
+                     placeholder="mail@adresiniz.com"
+                     aria-describedby={errors.email ? "contact-email-error" : undefined}
+                     className={`w-full bg-gray-50 border rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all ${errors.email ? "border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/10" : "border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10"}`}
+                   />
+                   {errors.email && <p id="contact-email-error" role="alert" className="text-rose-600 text-[12px] mt-1">{errors.email}</p>}
                 </div>
               </div>
 
@@ -198,16 +214,18 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
                  {/* Phone */}
                  <div className="space-y-2">
                    <label htmlFor="contact-phone" className="text-[13px] font-medium text-gray-700">Telefon Numaranız *</label>
-                   <input
-                     id="contact-phone"
-                     type="tel"
-                     required
-                     autoComplete="tel"
-                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="05XX XXX XX XX"
-                    className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all"
-                  />
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      required
+                      autoComplete="tel"
+                      value={phone}
+                     onChange={(e) => setPhone(e.target.value)}
+                     placeholder="05XX XXX XX XX"
+                     aria-describedby={errors.phone ? "contact-phone-error" : undefined}
+                     className={`w-full bg-gray-50 border rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all ${errors.phone ? "border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/10" : "border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10"}`}
+                   />
+                   {errors.phone && <p id="contact-phone-error" role="alert" className="text-rose-600 text-[12px] mt-1">{errors.phone}</p>}
                 </div>
 
                  {/* Subject */}
@@ -232,15 +250,17 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
                {/* Message */}
                <div className="space-y-2">
                  <label htmlFor="contact-message" className="text-[13px] font-medium text-gray-700">Mesajınız / Sorunuz *</label>
-                 <textarea
-                   id="contact-message"
-                   required
-                  rows={5}
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Hedeflerinizi bize kısaca anlatın..."
-                  className="w-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10 rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all resize-none"
-                />
+                  <textarea
+                    id="contact-message"
+                    required
+                   rows={5}
+                   value={message}
+                   onChange={(e) => setMessage(e.target.value)}
+                   placeholder="Hedeflerinizi bize kısaca anlatın..."
+                   aria-describedby={errors.message ? "contact-message-error" : undefined}
+                   className={`w-full bg-gray-50 border rounded-xl px-4 py-3.5 text-sm outline-none text-gray-900 placeholder-gray-400 transition-all resize-none ${errors.message ? "border-rose-300 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/10" : "border-gray-200 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/10"}`}
+                  />
+                  {errors.message && <p id="contact-message-error" role="alert" className="text-rose-600 text-[12px] mt-1">{errors.message}</p>}
               </div>
 
               {/* Form Status Notification */}

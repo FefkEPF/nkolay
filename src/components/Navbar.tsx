@@ -11,6 +11,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const reduced = useReducedMotion();
@@ -23,6 +24,14 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: none)");
+    setIsTouchDevice(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsTouchDevice(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
   }, []);
 
   const isActive = (path: string) =>
@@ -49,7 +58,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 ${
         isScrolled ? "pt-3" : "pt-5 md:pt-6"
       }`}
-      onMouseLeave={() => setIsMegaMenuOpen(false)}
+      onMouseLeave={() => !isTouchDevice && setIsMegaMenuOpen(false)}
     >
       <div className={`max-w-7xl mx-auto flex items-center justify-between relative transition-all duration-500 bg-white/85 backdrop-blur-2xl border border-white/50 rounded-full px-6 ${
         isScrolled ? "py-2.5 shadow-raised" : "py-3.5 shadow-resting"

@@ -4,7 +4,7 @@ import { ArrowRight, Check, Sparkles, PhoneCall } from "lucide-react";
 import { SERVICES_DATA } from "../data";
 import { ServiceIcon } from "../lib/serviceIcons";
 import { useSeo } from "../lib/seo";
-import { serviceSchema } from "../lib/schema";
+import { serviceSchema, breadcrumbSchema } from "../lib/schema";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { COMPANY, ROUTES } from "../lib/constants";
 import { useReducedMotion } from "../lib/useReducedMotion";
@@ -40,11 +40,11 @@ export default function ServiceDetail() {
   });
 
   useEffect(() => {
-    // Restores the default title on unmount.
+    // Seo hook already sets the title; cleanup restores site name.
     return () => {
       document.title = "NKolay Medya";
     };
-  }, []);
+  }, [service?.id]);
 
   if (!service) {
     return <Navigate to={ROUTES.services} replace />;
@@ -56,11 +56,21 @@ export default function ServiceDetail() {
     badge: service.badge,
   });
 
+  const breadcrumb = breadcrumbSchema([
+    { name: "Ana Sayfa", url: "https://nkolaymedya.com/" },
+    { name: "Hizmetler", url: "https://nkolaymedya.com/hizmetler" },
+    { name: service.title, url: `https://nkolaymedya.com${ROUTES.service(service.id)}` },
+  ]);
+
   return (
     <div className="bg-surface min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       {/* HERO HEADER */}
       <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 bg-gradient-to-br from-gray-50 via-white to-primary/[0.03] overflow-hidden">

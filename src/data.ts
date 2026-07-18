@@ -627,18 +627,18 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "blog-1",
     title: "2026'da Google Ads ile Dönüşüm Oranını Artırmanın 7 Yolu",
-    slug: "google-ads-donusum-orani-2026",
+    slug: "google-ads-donusum-orani-2025",
     excerpt:
       "Google Ads kampanyalarınızdan daha fazla satış çıkmıyorsa, dönüşüm hunisi ve teklif stratejilerinizi bu 7 yöntemle optimize edin.",
     category: "Dijital Pazarlama",
     tags: ["Google Ads", "ROI", "Dönüşüm"],
     author: "NKolay Medya Strateji Ekibi",
-    publishedAt: "2026-06-28",
+    publishedAt: "2025-06-28",
     readTime: "7 dk",
     coverEmoji: "🎯",
     content: [
       {
-        body: "Google Ads, doğru kurulduğunda işletmeler için en ölçülebilir büyüme kanalıdır. Ancak birçok marka yalnızca tıklama satın alır, dönüşüm satın almayı unutur. Bu yazıda 2026'da geçerli olan 7 pratik optimizasyonu özetliyoruz.",
+        body: "Google Ads, doğru kurulduğunda işletmeler için en ölçülebilir büyüme kanalıdır. Ancak birçok marka yalnızca tıklama satın alır, dönüşüm satın almayı unutur. Bu yazıda güncel 7 pratik optimizasyonu özetliyoruz.",
       },
       {
         heading: "1. Dönüşüm İzlemeyi Gerçek Anlama Kurun",
@@ -682,7 +682,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "SEO",
     tags: ["Teknik SEO", "Core Web Vitals", "Hız"],
     author: "NKolay Medya SEO Ekibi",
-    publishedAt: "2026-07-05",
+    publishedAt: "2025-07-05",
     readTime: "9 dk",
     coverEmoji: "🚀",
     content: [
@@ -719,12 +719,12 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Sosyal Medya",
     tags: ["Instagram", "Reels", "Video"],
     author: "NKolay Medya İçerik Ekibi",
-    publishedAt: "2026-07-10",
+    publishedAt: "2025-07-10",
     readTime: "6 dk",
     coverEmoji: "🎬",
     content: [
       {
-        body: "Reels, 2026'da markalar için en düşük maliyetli erişim kanalı. Ancak rastgele içerik üretmek işe yaramaz; algoritma belirli sinyalleri ödüllendirir.",
+        body: "Reels, markalar için en düşük maliyetli erişim kanalı. Ancak rastgele içerik üretmek işe yaramaz; algoritma belirli sinyalleri ödüllendirir.",
       },
       {
         heading: "İlk 3 Saniye Kuralı",
@@ -752,7 +752,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "E-Ticaret",
     tags: ["E-Ticaret", "CRO", "Pazaryeri"],
     author: "NKolay Medya E-Ticaret Ekibi",
-    publishedAt: "2026-07-14",
+    publishedAt: "2025-07-14",
     readTime: "8 dk",
     coverEmoji: "🛒",
     content: [
@@ -779,18 +779,18 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "blog-5",
     title: "UI/UX Tasarımda 2026 Trendleri: Sadelik ve Hız",
-    slug: "ui-ux-tasarim-2026-trendleri",
+    slug: "ui-ux-tasarim-2025-trendleri",
     excerpt:
       "Web tasarımında yeni nesil eğilimler: mikro etkileşimler, koyu mod, erişilebilirlik ve yapay zeka destekli arayüzler.",
     category: "Tasarım & Teknoloji",
     tags: ["UI/UX", "Tasarım", "Trend"],
     author: "NKolay Medya Tasarım Ekibi",
-    publishedAt: "2026-07-16",
+    publishedAt: "2025-07-16",
     readTime: "5 dk",
     coverEmoji: "🎨",
     content: [
       {
-        body: "İyi tasarım satar; kötü tasarım terk ettirir. 2026'da kullanıcıların beklediği deneyim daha akıcı, daha hızlı ve daha erişilebilir.",
+        body: "İyi tasarım satar; kötü tasarım terk ettirir. Güncel kullanıcı beklentisi daha akıcı, daha hızlı ve daha erişilebilir deneyim.",
       },
       {
         heading: "Mikro Etkileşimler",

@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowRight, PhoneCall, Sparkles, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { COMPANY, ROUTES } from "../lib/constants";
@@ -228,6 +228,23 @@ export default function HeroGeometric({
 }: HeroGeometricProps) {
     const navigate = useNavigate();
     const reduced = useReducedMotion();
+    const [inView, setInView] = useState(true);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el || reduced) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setInView(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [reduced]);
 
     const noMotion = { opacity: 1, y: 0 } as const;
     const instant = { duration: 0.01 } as const;
@@ -242,11 +259,12 @@ export default function HeroGeometric({
 
     return (
         <div
+            ref={containerRef}
             className={cn("relative w-full overflow-hidden", className)}
             style={{ minHeight: "100vh", minHeight: "100dvh", backgroundColor: color1 }}
         >
             {/* WebGL animated background — componentry.dev Hero Geometric shader layer */}
-            <WebGLBackground color1={color1} color2={color2} speed={speed} />
+            {inView && <WebGLBackground color1={color1} color2={color2} speed={speed} />}
             <div className="absolute inset-0 z-[5] pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.15) 100%)" }} />
 
             {/* Page content */}
