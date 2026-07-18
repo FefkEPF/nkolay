@@ -79,3 +79,17 @@ export interface TestimonialItem {
   avatarUrl: string;
   statGrew: string;
 }
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  category: string;
+  tags: string[];
+  author: string;
+  publishedAt: string;
+  readTime: string;
+  coverEmoji: string;
+  content: { heading?: string; body: string }[];
+}

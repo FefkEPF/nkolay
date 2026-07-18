@@ -10,6 +10,7 @@ import ResultSpotlight from "./ResultSpotlight";
 import WhyUs from "./WhyUs";
 import TrustBadges from "./TrustBadges";
 import TestimonialCarousel from "./TestimonialCarousel";
+import LatestPosts from "./LatestPosts";
 import StickyCta from "./StickyCta";
 import { useSeo } from "../lib/seo";
 
@@ -34,6 +35,7 @@ export default function Home() {
       <ResultSpotlight />
       <ProcessSection />
       <TestimonialCarousel />
+      <LatestPosts />
       <CtaBanner variant="split" />
       <HomeFaq />
       <TrustBadges />

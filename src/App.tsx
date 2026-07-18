@@ -12,6 +12,8 @@ const Services = React.lazy(() => import("./components/Services"));
 const ServiceDetail = React.lazy(() => import("./components/ServiceDetail"));
 const References = React.lazy(() => import("./components/References"));
 const ContactForm = React.lazy(() => import("./components/ContactForm"));
+const BlogList = React.lazy(() => import("./components/BlogList"));
+const BlogPost = React.lazy(() => import("./components/BlogPost"));
 const LegalPage = React.lazy(() => import("./components/LegalPage"));
 const NotFound = React.lazy(() => import("./components/NotFound"));
 
@@ -41,6 +43,8 @@ function AnimatedRoutes() {
           <Route path="/hizmetler" element={<PageTransition><Services /></PageTransition>} />
           <Route path="/hizmet/:id" element={<PageTransition><ServiceDetail /></PageTransition>} />
           <Route path="/referanslar" element={<PageTransition><References /></PageTransition>} />
+          <Route path="/blog" element={<PageTransition><BlogList /></PageTransition>} />
+          <Route path="/blog/:slug" element={<PageTransition><BlogPost /></PageTransition>} />
           <Route path="/iletisim" element={<PageTransition><ContactForm /></PageTransition>} />
           <Route path="/kvkk" element={<PageTransition><LegalPage page="kvkk" /></PageTransition>} />
           <Route path="/terms" element={<PageTransition><LegalPage page="terms" /></PageTransition>} />

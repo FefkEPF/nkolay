@@ -44,6 +44,9 @@ export default function Footer() {
               <li>
                 <button onClick={() => go(ROUTES.references)} className="hover:text-primary transition-colors cursor-pointer">Referanslar</button>
               </li>
+              <li>
+                <button onClick={() => go(ROUTES.blog)} className="hover:text-primary transition-colors cursor-pointer">Blog</button>
+              </li>
             </ul>
           </div>
 

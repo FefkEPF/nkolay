@@ -77,3 +77,37 @@ export const faqSchema = (faqs: { question: string; answer: string }[]) => ({
     },
   })),
 });
+
+export const blogPostSchema = (post: {
+  title: string;
+  excerpt: string;
+  author: string;
+  publishedAt: string;
+  url: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.excerpt,
+  author: { "@type": "Organization", name: post.author },
+  publisher: {
+    "@type": "Organization",
+    name: "NKolay Medya",
+    logo: { "@type": "ImageObject", url: `${BASE_URL}/nkolay_logo.png` },
+  },
+  datePublished: post.publishedAt,
+  dateModified: post.publishedAt,
+  mainEntityOfPage: { "@type": "WebPage", "@id": post.url },
+  keywords: "",
+});
+
+export const blogListSchema = (posts: { title: string; url: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: posts.map((post, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    name: post.title,
+    url: post.url,
+  })),
+});

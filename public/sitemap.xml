@@ -16,6 +16,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nkolaymedya.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nkolaymedya.com/blog/google-ads-donusum-orani-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nkolaymedya.com/blog/seo-core-web-vitals-rehberi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nkolaymedya.com/blog/instagram-reels-viral-strateji</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nkolaymedya.com/blog/eticaret-sepet-terk-etme-cozumleri</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nkolaymedya.com/blog/ui-ux-tasarim-2026-trendleri</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://nkolaymedya.com/iletisim</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

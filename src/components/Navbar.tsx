@@ -39,6 +39,7 @@ export default function Navbar() {
     { path: ROUTES.home, label: "Ana Sayfa" },
     { path: ROUTES.services, label: "Hizmetlerimiz", hasDropdown: true },
     { path: ROUTES.references, label: "Referanslar" },
+    { path: ROUTES.blog, label: "Blog" },
     { path: ROUTES.contact, label: "İletişim" },
   ];
 

@@ -614,3 +614,202 @@ export const TRUST_BADGES: {
   { label: "Google & Meta", sub: "Sertifikalı Ekip" },
   { label: "KVKK Uyumlu", sub: "Güvenli Veri" },
 ];
+
+export const BLOG_CATEGORIES = [
+  "Dijital Pazarlama",
+  "SEO",
+  "Sosyal Medya",
+  "Tasarım & Teknoloji",
+  "E-Ticaret",
+] as const;
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "blog-1",
+    title: "2026'da Google Ads ile Dönüşüm Oranını Artırmanın 7 Yolu",
+    slug: "google-ads-donusum-orani-2026",
+    excerpt:
+      "Google Ads kampanyalarınızdan daha fazla satış çıkmıyorsa, dönüşüm hunisi ve teklif stratejilerinizi bu 7 yöntemle optimize edin.",
+    category: "Dijital Pazarlama",
+    tags: ["Google Ads", "ROI", "Dönüşüm"],
+    author: "NKolay Medya Strateji Ekibi",
+    publishedAt: "2026-06-28",
+    readTime: "7 dk",
+    coverEmoji: "🎯",
+    content: [
+      {
+        body: "Google Ads, doğru kurulduğunda işletmeler için en ölçülebilir büyüme kanalıdır. Ancak birçok marka yalnızca tıklama satın alır, dönüşüm satın almayı unutur. Bu yazıda 2026'da geçerli olan 7 pratik optimizasyonu özetliyoruz.",
+      },
+      {
+        heading: "1. Dönüşüm İzlemeyi Gerçek Anlama Kurun",
+        body: "Google Ads hesabınıza yalnızca 'form gönderimi' değil, telefon, WhatsApp ve satın alma olaylarını da tanımlayın. Enhanced Conversions ile çevrimdışı dönüşümleri geri besleyin.",
+      },
+      {
+        heading: "2. Negatif Kelime Listesini Aylık Temizleyin",
+        body: "Bütçenizin çeyreği ilgisiz aramalara gidiyor olabilir. Arama terimi raporunu haftalık inceleyip negatif kelimeleri güncelleyin.",
+      },
+      {
+        heading: "3. Akıllı Teklif Stratejilerine Geçin",
+        body: "Hedef ROAS ve Maximize Conversions, makine öğrenimiyle teklifleri optimize eder. En az 30 dönüşüm/ay verisi birikince açın.",
+      },
+      {
+        heading: "4. Açılış Sayfası (Landing Page) Uyumunu Artırın",
+        body: "Reklam metni ile açılış sayfası mesajı birebir örtüşmeli. Teklif, başlık ve görsel tutarlılığı CRO'yu doğrudan yükseltir.",
+      },
+      {
+        heading: "5. Reklam Uzantılarını Tam Kullanın",
+        body: "Site bağlantıları, çağrı, konum ve fiyat uzantıları tıklama oranını (CTR) ve kalite puanını iyileştirir.",
+      },
+      {
+        heading: "6. Coğrafi Hedeflemeyi Sıkılaştırın",
+        body: "Sadece dönüşüm gelen şehirleri hedefleyin; düşük performanslı bölgeleri hariç tutun.",
+      },
+      {
+        heading: "7. A/B Testi ile Kreatifleri Yarıştırın",
+        body: "Başlık ve görsel varyasyonlarını sürekli test edin; kazananı bütçeyle ödüllendirin.",
+      },
+      {
+        body: "Bu adımları NKolay Medya olarak her hesapta düzenli uyguluyoruz. Ücretsiz strateji raporu için iletişime geçin.",
+      },
+    ],
+  },
+  {
+    id: "blog-2",
+    title: "SEO'da Teknik Optimizasyon: Core Web Vitals Rehberi",
+    slug: "seo-core-web-vitals-rehberi",
+    excerpt:
+      "Google'ın sıralama sinyallerinden Core Web Vitals (LCP, INP, CLS) nedir, sitenizi nasıl 100'e yaklaştırırsınız?",
+    category: "SEO",
+    tags: ["Teknik SEO", "Core Web Vitals", "Hız"],
+    author: "NKolay Medya SEO Ekibi",
+    publishedAt: "2026-07-05",
+    readTime: "9 dk",
+    coverEmoji: "🚀",
+    content: [
+      {
+        body: "Teknik SEO, sıralamanın görünmeyen temelidir. İçerik ne kadar iyi olursa olsun, yavaş ve dengesiz bir site Google'da üst sıralara çıkamaz. İşte Core Web Vitals üçlüsü.",
+      },
+      {
+        heading: "LCP — Largest Contentful Paint",
+        body: "En büyük görselin yüklenme süresi. Hedef: 2.5 sn altı. Görseli sıkıştırın, lazy-load kullanın ve CDN ile sunun.",
+      },
+      {
+        heading: "INP — Interaction to Next Paint",
+        body: "2024'te FID'nin yerini aldı. Tıklama/etkileşim gecikmesi. Ağır JavaScript'i azaltın, kodu bölebilir (code-split) hale getirin.",
+      },
+      {
+        heading: "CLS — Cumulative Layout Shift",
+        body: "Görsel kaymalar. Görsellere boyut belirtin, reklam slotlarını rezerve edin.",
+      },
+      {
+        heading: "Pratik İyileştirme Adımları",
+        body: "1) Görseli WebP'ye çevirin. 2) Kritik CSS'i içe gömün. 3) Render-blocking scriptleri erteleyin. 4) Sunucu yanıt süresini düşürün (NVMe + önbellek).",
+      },
+      {
+        body: "NKolay Medya olarak WordPress ve özel geliştirme projelerinde 90+ PageSpeed skoru hedefliyoruz.",
+      },
+    ],
+  },
+  {
+    id: "blog-3",
+    title: "Instagram Reels Stratejisi: Viral İçerik Nasıl Üretilir?",
+    slug: "instagram-reels-viral-strateji",
+    excerpt:
+      "Algoritmayı çözün: Reels üretiminde kancalar, ritim ve ilk 3 saniye kuralıyla erişiminizi katlayın.",
+    category: "Sosyal Medya",
+    tags: ["Instagram", "Reels", "Video"],
+    author: "NKolay Medya İçerik Ekibi",
+    publishedAt: "2026-07-10",
+    readTime: "6 dk",
+    coverEmoji: "🎬",
+    content: [
+      {
+        body: "Reels, 2026'da markalar için en düşük maliyetli erişim kanalı. Ancak rastgele içerik üretmek işe yaramaz; algoritma belirli sinyalleri ödüllendirir.",
+      },
+      {
+        heading: "İlk 3 Saniye Kuralı",
+        body: "İzleyici kararını 3 saniyede verir. Soru, çarpıcı görsel veya 'hook' (kanca) ile başlayın.",
+      },
+      {
+        heading: "Kanalın Ritmini Yakalayın",
+        body: "Trend sesleri ve formatları hızlıca uyarlayın; orijinallik kadar hız da önemlidir.",
+      },
+      {
+        heading: "Caption ve Hashtag Stratejisi",
+        body: "5-10 niş hashtag + 1-2 genel hashtag yeterli. Aşırı hashtag spam olarak algılanır.",
+      },
+      {
+        body: "Müşterilerimizin Reels kampanyalarında ilk ayda +340% organik erişim ortalaması yakaladık.",
+      },
+    ],
+  },
+  {
+    id: "blog-4",
+    title: "E-Ticarette Sepet Terk Etme Oranını Düşürmenin Yolları",
+    slug: "eticaret-sepet-terk-etme-cozumleri",
+    excerpt:
+      "Sepetinize eklenen ürünler neden satın alınmadan çıkıyor? CRO ve pazaryeri entegrasyonu ile AOV'yi artırın.",
+    category: "E-Ticaret",
+    tags: ["E-Ticaret", "CRO", "Pazaryeri"],
+    author: "NKolay Medya E-Ticaret Ekibi",
+    publishedAt: "2026-07-14",
+    readTime: "8 dk",
+    coverEmoji: "🛒",
+    content: [
+      {
+        body: "Ortalama sepet terk etme oranı Türkiye'de %70 civarında. Bu, her 10 ziyaretten 7'sinin gelir potansiyelini kaybettiği anlamına gelir.",
+      },
+      {
+        heading: "Kargo ve Ödeme Adımlarını Sadeleştirin",
+        body: "Misafir ödeme, tek ekranlı checkout ve çoklu ödeme yöntemi (havale, kart, kapıda) dönüşümü doğrudan artırır.",
+      },
+      {
+        heading: "Terkenilen Sepet Hatırlatması",
+        body: "E-posta ve WhatsApp otomasyonu ile 24 saat içinde hatırlatma gönderin; kupon ile geri çağırın.",
+      },
+      {
+        heading: "Pazaryeri Entegrasyonu",
+        body: "Trendyol, Hepsiburada ve kendi siteniz arasında stok ve fiyat senkronizasyonu için entegrasyon kurun.",
+      },
+      {
+        body: "NKolay Medya olarak CRO odaklı e-ticaret danışmanlığıyla ortalama sepet tutarını (AOV) ortalama %28 artırıyoruz.",
+      },
+    ],
+  },
+  {
+    id: "blog-5",
+    title: "UI/UX Tasarımda 2026 Trendleri: Sadelik ve Hız",
+    slug: "ui-ux-tasarim-2026-trendleri",
+    excerpt:
+      "Web tasarımında yeni nesil eğilimler: mikro etkileşimler, koyu mod, erişilebilirlik ve yapay zeka destekli arayüzler.",
+    category: "Tasarım & Teknoloji",
+    tags: ["UI/UX", "Tasarım", "Trend"],
+    author: "NKolay Medya Tasarım Ekibi",
+    publishedAt: "2026-07-16",
+    readTime: "5 dk",
+    coverEmoji: "🎨",
+    content: [
+      {
+        body: "İyi tasarım satar; kötü tasarım terk ettirir. 2026'da kullanıcıların beklediği deneyim daha akıcı, daha hızlı ve daha erişilebilir.",
+      },
+      {
+        heading: "Mikro Etkileşimler",
+        body: "Buton hover, yükleme animasyonu gibi küçük dokunuşlar güven ve akıcılık hissi verir.",
+      },
+      {
+        heading: "Erişilebilirlik (A11y)",
+        body: "Kontrast, klavye navigasyonu ve ekran okuyucu uyumu artık sıralama ve yasal gereklilik.",
+      },
+      {
+        heading: "Yapay Zeka Destekli Arayüzler",
+        body: "Kişiselleştirilmiş içerik ve sohbet tabanlı navigasyon yaygınlaşıyor.",
+      },
+      {
+        body: "NKolay Medya olarak Figma tabanlı, kodlanabilir ve responsive prototipler sunuyoruz.",
+      },
+    ],
+  },
+];
+
+export const getBlogPost = (slug: string) =>
+  BLOG_POSTS.find((p) => p.slug === slug);

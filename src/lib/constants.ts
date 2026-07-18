@@ -15,6 +15,8 @@ export const ROUTES = {
   services: "/hizmetler",
   service: (id: string) => `/hizmet/${id}`,
   references: "/referanslar",
+  blog: "/blog",
+  blogPost: (slug: string) => `/blog/${slug}`,
   contact: "/iletisim",
   legal: (id: "kvkk" | "terms" | "privacy") => `/${id}`,
 } as const;
