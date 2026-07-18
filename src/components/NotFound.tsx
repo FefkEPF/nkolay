@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { Home, ArrowLeft } from "lucide-react";
-import GeometricBackground from "./GeometricBackground";
 import { useNavigate } from "react-router-dom";
 import { useReducedMotion } from "../lib/useReducedMotion";
 
@@ -13,11 +12,9 @@ export default function NotFound() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface">
-      {/* Geometric background — no blur */}
-      <div className="absolute inset-0 z-0">
-        <GeometricBackground color1="#FEF2F2" color2="#FCA5A5" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent" />
-      </div>
+      {/* Geometric background — simple gradient */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#FEF2F2] to-[#FCA5A5]" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-white via-white/60 to-transparent" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
         <motion.div
