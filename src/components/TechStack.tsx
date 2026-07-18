@@ -155,10 +155,9 @@ function TechMarqueeRow({ items, reduced }: { items: Tech[]; reduced: boolean })
       <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       <div ref={marqueeRef} className="tech-marquee flex items-center overflow-hidden">
         <div
-          className="flex items-center gap-4 will-change-transform"
+          className="flex items-center gap-4 gpu-accelerated"
           style={{
             animation: reduced ? "none" : "tech-scroll 28s linear infinite",
-            animationPlayState: "running",
             width: "max-content",
           }}
         >

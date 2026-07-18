@@ -146,6 +146,21 @@ body {
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
+/* Infinite marquee used for tech pills */
+@keyframes tech-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-marquee {
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
 /* GPU acceleration for animated elements */
 .gpu-accelerated {
   will-change: transform;
