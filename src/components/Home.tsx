@@ -13,7 +13,9 @@ export default function Home() {
 
   return (
     <>
-      <HeroGeometric />
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#FFF1F2] to-[#FCA5A5]">
+        <HeroGeometric />
+      </div>
       <ReferencesTicker />
       <Services />
     </>
