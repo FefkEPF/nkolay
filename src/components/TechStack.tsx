@@ -1,6 +1,5 @@
-import { motion } from "motion/react";
-import { useReducedMotion } from "../lib/useReducedMotion";
-import type { ServiceCategory } from "../types";
+import { useRef } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 type Tech = {
   name: string;
@@ -8,8 +7,8 @@ type Tech = {
   svg: JSX.Element;
 };
 
-const TechLogo = ({ d, children }: { d?: string; children?: React.ReactNode }) => (
-  <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor" aria-hidden="true">
+const TechLogo = ({ d, children, className }: { d?: string; children?: React.ReactNode; className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className ?? "w-6 h-6"} fill="currentColor" aria-hidden="true">
     {d ? <path d={d} /> : children}
   </svg>
 );
@@ -88,6 +87,15 @@ const TECHS: Tech[] = [
     ),
   },
   {
+    name: "Redis",
+    group: "Backend",
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-6 h-6" aria-hidden="true">
+        <text x="12" y="16" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#DC382D" fontFamily="monospace">R</text>
+      </svg>
+    ),
+  },
+  {
     name: "Vercel",
     group: "Platform",
     svg: <TechLogo d="M12 2 22 21H2L12 2z" />,
@@ -111,15 +119,6 @@ const TECHS: Tech[] = [
       </svg>
     ),
   },
-  {
-    name: "Redis",
-    group: "Platform",
-    svg: (
-      <svg viewBox="0 0 24 24" className="w-6 h-6" aria-hidden="true">
-        <text x="12" y="16" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#DC382D" fontFamily="monospace">R</text>
-      </svg>
-    ),
-  },
 ];
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -128,6 +127,50 @@ const CATEGORY_LABELS: Record<string, string> = {
   Platform: "Platform",
 };
 
+function TechPill({ tech, style, className }: { tech: Tech; style?: React.CSSProperties; className?: string }) {
+  return (
+    <span
+      className={[
+        "inline-flex items-center gap-2.5 select-none",
+        "rounded-full border border-gray-200/70 bg-white",
+        "px-5 py-2.5",
+        "text-gray-600 hover:text-gray-900 hover:border-gray-300",
+        "transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_8px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]",
+        className ?? "",
+      ].join(" ")}
+      style={style}
+    >
+      <span className="text-gray-500 group-hover:text-primary transition-colors">{tech.svg}</span>
+      <span className="font-display font-semibold text-[15px] tracking-tight">{tech.name}</span>
+    </span>
+  );
+}
+
+function TechMarqueeRow({ items, reduced }: { items: Tech[]; reduced: boolean }) {
+  const marqueeRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div className="relative">
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <div ref={marqueeRef} className="tech-marquee flex items-center overflow-hidden">
+        <div
+          className="flex items-center gap-4 will-change-transform"
+          style={{
+            animation: reduced ? "none" : "tech-scroll 28s linear infinite",
+            animationPlayState: "running",
+            width: "max-content",
+          }}
+        >
+          {[...items, ...items].map((tech, i) => (
+            <TechPill key={`${tech.name}-${i}`} tech={tech} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function TechStack() {
   const reduced = useReducedMotion();
   const noMotion = { opacity: 1 } as const;
@@ -135,61 +178,45 @@ export default function TechStack() {
   const groups = Object.entries(CATEGORY_LABELS);
 
   return (
-    <section className="bg-white border-y border-gray-100 py-12 md:py-14 overflow-hidden" id="teknolojiler">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8">
+    <section className="bg-white border-y border-gray-100 py-14 md:py-16 overflow-hidden" id="teknolojiler">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10">
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2.5 bg-gray-50 border border-gray-200/60 rounded-full px-4 py-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span className="text-[13px] font-medium text-gray-600 tracking-wide">
-              Teknik Uzmanlık
-            </span>
+            <span className="text-[13px] font-medium text-gray-600 tracking-wide">Teknik Uzmanlık</span>
           </div>
           <h2 className="font-display font-bold text-3xl md:text-4xl text-gray-900 tracking-tight">
             Kullandığımız <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark">Teknolojiler</span>
           </h2>
+          <p className="font-sans text-gray-500 text-base font-light leading-relaxed">
+            Modern, ölçeklenebilir ve güvenilir çözümler için seçtiğimiz teknoloji yığını.
+          </p>
         </div>
       </div>
 
-      <div className="space-y-6">
-        {groups.map(([key, label], gIdx) => {
+      <div className="space-y-5">
+        {groups.map(([key, label]) => {
           const items = TECHS.filter((t) => t.group === key as Tech["group"]);
-          const double = [...items, ...items];
           return (
             <div key={key}>
               <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-3">
-                <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.18em]">
-                  {label}
-                </span>
+                <span className="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.18em]">{label}</span>
               </div>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-                <div className="flex w-max items-center overflow-hidden">
-                  <motion.div
-                    initial={reduced ? noMotion : { opacity: 0 }}
-                    whileInView={reduced ? noMotion : { opacity: 1 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={reduced ? instant : { duration: 0.4, delay: gIdx * 0.1 }}
-                    className="flex space-x-10 sm:space-x-14 animate-marquee whitespace-nowrap hover:[animation-play-state:paused] px-8"
-                  >
-                    {double.map((tech, i) => (
-                      <span
-                        key={`${tech.name}-${i}`}
-                        className="inline-flex items-center gap-2.5 text-gray-700 select-none"
-                      >
-                        <span className="text-gray-500">{tech.svg}</span>
-                        <span className="font-display font-semibold text-[15px] tracking-tight">
-                          {tech.name}
-                        </span>
-                      </span>
-                    ))}
-                  </motion.div>
-                </div>
-              </div>
+              <TechMarqueeRow items={items} reduced={!!reduced} />
             </div>
           );
         })}
       </div>
+
+      <style>{`
+        @keyframes tech-scroll {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .tech-marquee:hover [style*="animation"] {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }
