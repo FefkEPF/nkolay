@@ -1,5 +1,4 @@
 import HeroGeometric from "./HeroGeometric";
-import ReferencesTicker from "./ReferencesTicker";
 import TechStack from "./TechStack";
 import Services from "./Services";
 import ProcessSection from "./ProcessSection";
@@ -27,7 +26,6 @@ export default function Home() {
       <div className="relative overflow-hidden bg-gradient-to-br from-[#FFF1F2] to-[#FCA5A5]">
         <HeroGeometric />
       </div>
-      <ReferencesTicker />
       <TechStack />
       <ImpactBand />
       <WhyUs />
