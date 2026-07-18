@@ -14,12 +14,15 @@ import {
   Server,
   Instagram,
   Shield,
+  ShieldCheck,
   Briefcase,
   ShoppingBag,
   Mic,
   Target,
   Bot,
   Lock,
+  FileCheck,
+  BarChart,
   type LucideIcon,
 } from "lucide-react";
 
@@ -38,12 +41,15 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Server,
   Instagram,
   Shield,
+  ShieldCheck,
   Briefcase,
   ShoppingBag,
   Mic,
   Target,
   Bot,
   Lock,
+  FileCheck,
+  BarChart,
 };
 
 export function ServiceIcon({

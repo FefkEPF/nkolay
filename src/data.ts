@@ -561,3 +561,56 @@ export const HOME_FAQ: { question: string; answer: string }[] = [
       "Merkezimiz İstanbul Esenyurt'ta olmakla birlikte tüm Türkiye'ye uzaktan dijital ajans hizmeti sunuyoruz.",
   },
 ];
+
+export const IMPACT_STATS: {
+  value: string;
+  suffix?: string;
+  label: string;
+  highlight?: boolean;
+}[] = [
+  { value: "4.8", suffix: "x", label: "Ortalama ROAS Oranı", highlight: true },
+  { value: "340", suffix: "%+", label: "Erişim Artışı" },
+  { value: "2.4", suffix: "M", label: "Aylık Aktif Etkileşim" },
+  { value: "16", suffix: "+", label: "Dijital Hizmet" },
+];
+
+export const WHY_US: {
+  iconName: string;
+  title: string;
+  description: string;
+}[] = [
+  {
+    iconName: "FileCheck",
+    title: "Ücretsiz Strateji Raporu",
+    description:
+      "Taahhütsüz, markanıza özel ilk strateji raporunuzu 7 gün içinde teslim ediyoruz.",
+  },
+  {
+    iconName: "BarChart",
+    title: "Şeffaf Raporlama",
+    description:
+      "Her kuruşun dönüşümünü gösteren haftalık ve aylık şeffaf performans raporları sunuyoruz.",
+  },
+  {
+    iconName: "Users",
+    title: "Uzman Hesap Ekibi",
+    description:
+      "Her biri alanında uzman, size özel atanmış hesap sorumlularıyla doğrudan iletişim kuruyorsunuz.",
+  },
+  {
+    iconName: "ShieldCheck",
+    title: "Esnek İptal Politikası",
+    description:
+      "Kendinizi bağlı hissetmeyin; sonuç alamazsanız dilediğiniz zaman ayrılabilme özgürlüğünüz var.",
+  },
+];
+
+export const TRUST_BADGES: {
+  label: string;
+  sub: string;
+}[] = [
+  { label: "İstanbul", sub: "Esenyurt Merkez" },
+  { label: "Tüm Türkiye", sub: "Uzaktan Hizmet" },
+  { label: "Google & Meta", sub: "Sertifikalı Ekip" },
+  { label: "KVKK Uyumlu", sub: "Güvenli Veri" },
+];

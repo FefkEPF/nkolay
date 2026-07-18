@@ -4,6 +4,12 @@ import Services from "./Services";
 import ProcessSection from "./ProcessSection";
 import CtaBanner from "./CtaBanner";
 import HomeFaq from "./HomeFaq";
+import ImpactBand from "./ImpactBand";
+import ResultSpotlight from "./ResultSpotlight";
+import WhyUs from "./WhyUs";
+import TrustBadges from "./TrustBadges";
+import TestimonialCarousel from "./TestimonialCarousel";
+import StickyCta from "./StickyCta";
 import { useSeo } from "../lib/seo";
 
 export default function Home() {
@@ -20,10 +26,16 @@ export default function Home() {
         <HeroGeometric />
       </div>
       <ReferencesTicker />
+      <ImpactBand />
+      <WhyUs />
       <Services />
+      <ResultSpotlight />
       <ProcessSection />
+      <TestimonialCarousel />
       <CtaBanner variant="split" />
       <HomeFaq />
+      <TrustBadges />
+      <StickyCta />
     </>
   );
 }
