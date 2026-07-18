@@ -1,6 +1,7 @@
 import HeroGeometric from "./HeroGeometric";
 import TechStack from "./TechStack";
 import ServicesPreview from "./ServicesPreview";
+import FeaturedWork from "./FeaturedWork";
 import ProcessSection from "./ProcessSection";
 import CtaBanner from "./CtaBanner";
 import HomeFaq from "./HomeFaq";
@@ -30,6 +31,7 @@ export default function Home() {
       <ImpactBand />
       <WhyUs />
       <ServicesPreview />
+      <FeaturedWork />
       <ResultSpotlight />
       <ProcessSection />
       <TestimonialCarousel />
