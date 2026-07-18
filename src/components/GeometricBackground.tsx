@@ -30,7 +30,7 @@ uniform vec3 u_color2;
 
 vec3 mod289(vec3 x){return x - floor(x*(1.0/289.0))*289.0;}
 vec2 mod289(vec2 x){return x - floor(x*(1.0/289.0))*289.0;}
-vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);}
+vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);} 
 float snoise(vec2 v){
   const vec4 C = vec4(0.211324865405187,0.366025403784439,-0.577350269189626,0.024390243902439);
   vec2 i = floor(v + dot(v, C.yy));
@@ -93,10 +93,19 @@ export default function GeometricBackground({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // ensure canvas fills its parent and has a fallback gradient background
+    canvas.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
+    canvas.style.backgroundSize = "cover";
+    canvas.style.backgroundRepeat = "no-repeat";
+    canvas.style.backgroundPosition = "center";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.display = "block";
+
     const gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" }) ||
       (canvas.getContext("experimental-webgl") as WebGLRenderingContext | null);
     if (!gl) {
-      canvas.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
       return;
     }
 
@@ -226,7 +235,7 @@ export default function GeometricBackground({
       ref={canvasRef}
       className="absolute inset-0 w-full h-full block"
       aria-hidden="true"
-      style={{ display: "block" }}
+      style={{ display: "block", width: "100%", height: "100%" }}
     />
   );
 }
