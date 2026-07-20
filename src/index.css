@@ -165,16 +165,27 @@ body {
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
-/* Infinite marquee used for tech pills */
+/* Infinite marquee used for tech logos */
 @keyframes tech-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
 
 .tech-marquee {
-  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   overflow: hidden;
+}
+
+.tech-logo {
+  fill: #9CA3AF;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), fill 0.3s ease;
+  transform-origin: center;
+}
+
+.tech-logo-cell:hover .tech-logo {
+  transform: scale(1.6);
+  fill: var(--brand);
 }
 
 /* GPU acceleration for animated elements */
