@@ -261,7 +261,7 @@ export default function HeroGeometric({
         <div
             ref={containerRef}
             className={cn("relative w-full overflow-hidden", className)}
-            style={{ minHeight: "100vh", minHeight: "100dvh", backgroundColor: color1 }}
+            style={{ minHeight: "100dvh", backgroundColor: color1 }}
         >
             {/* WebGL animated background — componentry.dev Hero Geometric shader layer */}
             {inView && <WebGLBackground color1={color1} color2={color2} speed={speed} />}
@@ -270,7 +270,7 @@ export default function HeroGeometric({
             {/* Page content */}
             <div
                 className="relative flex flex-col justify-center"
-                style={{ zIndex: 10, minHeight: "100vh", minHeight: "100dvh", paddingTop: "7rem", paddingBottom: "4rem" }}
+                style={{ zIndex: 10, minHeight: "100dvh", paddingTop: "7rem", paddingBottom: "4rem" }}
             >
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
