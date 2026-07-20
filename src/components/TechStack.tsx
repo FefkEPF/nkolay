@@ -132,7 +132,7 @@ function TechMarquee() {
         <div
           className="flex items-center gap-6"
           style={{
-            animation: reduced ? "none" : "tech-scroll 30s linear infinite",
+            animation: reduced ? "none" : "tech-scroll 25s linear infinite",
             width: "max-content",
           }}
         >
@@ -155,7 +155,7 @@ function TechHoverPill({ tech }: { tech: Tech }) {
       <motion.div
         className="p-3 rounded-2xl border border-gray-100 bg-white shadow-sm transition-colors"
         style={{ color: tech.color }}
-        whileHover={{ 
+        whileHover={{
           backgroundColor: `${tech.color}15`,
           borderColor: `${tech.color}40`,
           boxShadow: `0 8px 30px ${tech.color}20`,
