@@ -125,22 +125,18 @@ function TechMarquee() {
   const items = [...TECHS, ...TECHS];
 
   return (
-    <div className="relative">
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-      <div className="flex items-center overflow-hidden py-6">
-        <div
-          className="flex items-center"
-          style={{
-            animation: reduced ? "none" : "tech-scroll 20s linear infinite",
-            width: "max-content",
-            gap: 0,
-          }}
-        >
-          {items.map((tech, i) => (
-            <TechHoverPill key={`${tech.name}-${i}`} tech={tech} />
-          ))}
-        </div>
+    <div className="relative overflow-hidden">
+      <div
+        className="flex items-center"
+        style={{
+          animation: reduced ? "none" : "tech-scroll 20s linear infinite",
+          width: "max-content",
+          gap: 0,
+        }}
+      >
+        {items.map((tech, i) => (
+          <TechHoverPill key={`${tech.name}-${i}`} tech={tech} />
+        ))}
       </div>
     </div>
   );
