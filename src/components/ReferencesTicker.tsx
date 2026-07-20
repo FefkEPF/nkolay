@@ -29,13 +29,14 @@ export default function ReferencesTicker() {
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
       <div className="flex w-max items-center overflow-hidden">
-        <div className="flex space-x-16 sm:space-x-24 animate-marquee whitespace-nowrap hover:[animation-play-state:paused] px-10">
+        <div className="flex space-x-16 sm:space-x-24 animate-marquee whitespace-nowrap hover:[animation-play-state:paused] px-10 will-change-transform">
           {doubleData.map((item, index) => (
             <button
               key={`${item.id}-${index}`}
               onClick={() => onLogoClick(item.id)}
               className="flex items-center gap-3 cursor-pointer transition-all duration-500 transform opacity-30 hover:opacity-100 hover:scale-105 active:scale-95 group"
               title={`${item.company} hakkımızda ne dedi? Öğrenmek için tıklayın.`}
+              aria-label={`${item.company} referansı`}
             >
               <div className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:border-primary/20 group-hover:bg-primary-light transition-colors">
                 <Building2 className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" />

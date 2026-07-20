@@ -23,7 +23,6 @@ function CountUp({
 
   useEffect(() => {
     if (reduced) {
-      setDisplay(num);
       return;
     }
     const el = ref.current;

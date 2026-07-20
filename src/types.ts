@@ -67,6 +67,8 @@ export interface ServiceItem {
   category: ServiceCategory;
   detailedContent?: string;
   benefits?: string[];
+  detailSections?: { heading: string; body: string }[];
+  faq?: { question: string; answer: string }[];
 }
 
 export interface TestimonialItem {

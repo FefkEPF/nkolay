@@ -11,7 +11,9 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(hover: none)").matches
+  );
   const location = useLocation();
   const navigate = useNavigate();
   const reduced = useReducedMotion();
@@ -28,7 +30,6 @@ export default function Navbar() {
 
   useEffect(() => {
     const mq = window.matchMedia("(hover: none)");
-    setIsTouchDevice(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsTouchDevice(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);

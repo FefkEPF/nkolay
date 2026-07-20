@@ -7,14 +7,13 @@ interface Props {
 
 interface State {
   hasError: boolean;
-  error: Error | null;
 }
 
 export default class ErrorBoundary extends Component<Props, State> {
-  state: State = { hasError: false, error: null };
+  state: State = { hasError: false };
 
-  static getDerivedStateFromError(error: Error): State {
-    return { hasError: true, error };
+  static getDerivedStateFromError(): State {
+    return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: { componentStack: string }) {
@@ -36,7 +35,7 @@ export default class ErrorBoundary extends Component<Props, State> {
               </p>
               <button
                 onClick={() => {
-                  this.setState({ hasError: false, error: null });
+                  this.setState({ hasError: false });
                   window.location.href = "/";
                 }}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold text-[15px] px-8 py-3.5 rounded-full hover:bg-primary-dark transition-all"

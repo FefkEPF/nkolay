@@ -49,10 +49,21 @@ export function useSeo(options: SeoOptions = {}) {
       ensureMeta("name", "description", description);
       ensureMeta("property", "og:description", description);
       ensureMeta("name", "twitter:description", description);
+    } else {
+      // Clear description tags if the current page omits them, otherwise a
+      // stale description from a previous route leaks across SPA navigation.
+      ["name=description", "property=og:description", "name=twitter:description"].forEach(
+        (sel) => {
+          const tag = document.querySelector(`meta[${sel}]`);
+          if (tag) tag.setAttribute("content", "");
+        }
+      );
     }
 
     ensureMeta("property", "og:title", fullTitle);
+    ensureMeta("property", "og:type", "website");
     ensureMeta("name", "twitter:title", fullTitle);
+    ensureMeta("name", "twitter:card", "summary_large_image");
     ensureMeta("property", "og:url", canonical);
     ensureMeta("property", "og:image", ogImage);
     ensureMeta("name", "twitter:image", ogImage);

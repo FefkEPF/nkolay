@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface LogoProps {
   className?: string;
@@ -7,10 +7,6 @@ interface LogoProps {
 
 export default function Logo({ className = "", lightBackground = true }: LogoProps) {
   const [errored, setErrored] = useState(false);
-
-  useEffect(() => {
-    setErrored(false);
-  }, []);
 
   if (errored) {
     return (

@@ -14,6 +14,8 @@ export default function ResultSpotlight() {
 
   const featured = TESTIMONIALS_DATA[0];
 
+  if (!featured) return null;
+
   const goReferences = () => {
     navigate(ROUTES.references);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -42,7 +44,7 @@ export default function ResultSpotlight() {
                   Öne Çıkan Başarı Hikayesi
                 </span>
               </div>
-              <div className="flex items-center space-x-1 mb-5">
+              <div className="flex items-center space-x-1 mb-5" role="img" aria-label="5 yıldız">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                 ))}

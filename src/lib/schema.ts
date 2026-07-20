@@ -89,7 +89,7 @@ export const blogPostSchema = (post: {
   "@type": "BlogPosting",
   headline: post.title,
   description: post.excerpt,
-  author: { "@type": "Organization", name: post.author },
+  author: { "@type": "Person", name: post.author },
   publisher: {
     "@type": "Organization",
     name: "NKolay Medya",
@@ -98,7 +98,6 @@ export const blogPostSchema = (post: {
   datePublished: post.publishedAt,
   dateModified: post.publishedAt,
   mainEntityOfPage: { "@type": "WebPage", "@id": post.url },
-  keywords: "",
 });
 
 export const blogListSchema = (posts: { title: string; url: string }[]) => ({

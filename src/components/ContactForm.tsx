@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, Sparkles, Check, AlertCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { SERVICES_DATA } from "../data";
@@ -23,12 +23,6 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
     type: "idle" | "loading" | "success" | "error";
     message: string;
   }>({ type: "idle", message: "" });
-
-  useEffect(() => {
-    if (prefilledService) {
-      setSubject(prefilledService);
-    }
-  }, [prefilledService]);
 
   const validate = () => {
     const next: { name?: string; email?: string; phone?: string; message?: string } = {};
@@ -60,9 +54,12 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
         }),
       });
 
-      const result = await response.json();
+      const result = (await response.json().catch(() => null)) as {
+        success?: boolean;
+        error?: string;
+      } | null;
 
-      if (response.ok && result.success) {
+      if (response.ok && result?.success) {
         setFormStatus({
           type: "success",
           message: "Mesajınız başarıyla bize ulaştı! Sizi en kısa sürede arayacağız.",
@@ -75,7 +72,7 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
       } else {
         setFormStatus({
           type: "error",
-          message: result.error || "Gönderim sırasında bir sorun oluştu. Lütfen doğrudan bizi arayın.",
+          message: result?.error || "Gönderim sırasında bir sorun oluştu. Lütfen doğrudan bizi arayın.",
         });
       }
     } catch (err: unknown) {

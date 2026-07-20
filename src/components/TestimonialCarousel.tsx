@@ -7,6 +7,7 @@ export default function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    if (TESTIMONIALS_DATA.length === 0) return;
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % TESTIMONIALS_DATA.length);
     }, 4500);
@@ -14,6 +15,8 @@ export default function TestimonialCarousel() {
   }, []);
 
   const item = TESTIMONIALS_DATA[index];
+
+  if (!item) return null;
 
   return (
     <section className="py-16 md:py-20 bg-surface" id="yorumlar">

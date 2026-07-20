@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Check, Sparkles, PhoneCall } from "lucide-react";
 import { SERVICES_DATA } from "../data";
 import { ServiceIcon } from "../lib/serviceIcons";
 import { useSeo } from "../lib/seo";
-import { serviceSchema, breadcrumbSchema } from "../lib/schema";
+import { serviceSchema, breadcrumbSchema, faqSchema } from "../lib/schema";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { COMPANY, ROUTES } from "../lib/constants";
 import { useReducedMotion } from "../lib/useReducedMotion";
@@ -39,13 +38,6 @@ export default function ServiceDetail() {
     path: id ? ROUTES.service(id) : ROUTES.services,
   });
 
-  useEffect(() => {
-    // Seo hook already sets the title; cleanup restores site name.
-    return () => {
-      document.title = "NKolay Medya";
-    };
-  }, [service?.id]);
-
   if (!service) {
     return <Navigate to={ROUTES.services} replace />;
   }
@@ -62,6 +54,8 @@ export default function ServiceDetail() {
     { name: service.title, url: `https://nkolaymedya.com${ROUTES.service(service.id)}` },
   ]);
 
+  const faqJsonLd = service.faq && service.faq.length > 0 ? faqSchema(service.faq) : null;
+
   return (
     <div className="bg-surface min-h-screen">
       <script
@@ -72,7 +66,12 @@ export default function ServiceDetail() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      {/* HERO HEADER */}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 bg-gradient-to-br from-gray-50 via-white to-primary/[0.03] overflow-hidden">
         <div className="absolute top-[-15%] left-[-8%] w-[450px] h-[450px] bg-primary/[0.06] rounded-full blur-[100px]"></div>
         <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
@@ -200,6 +199,56 @@ export default function ServiceDetail() {
               {service.detailedContent || service.description}
             </p>
           </motion.div>
+
+          {/* In-depth sections */}
+          {service.detailSections && service.detailSections.length > 0 && (
+            <div className="mt-14 space-y-8">
+              {service.detailSections.map((sec, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={reduced ? noMotion : { opacity: 0, y: 20 }}
+                  whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={reduced ? instant : { duration: 0.5, delay: idx * 0.05 }}
+                >
+                  <h2 className="font-display font-semibold text-xl md:text-2xl text-gray-900 tracking-tight mb-3">
+                    {sec.heading}
+                  </h2>
+                  <p className="text-[16px] md:text-lg text-gray-600 leading-relaxed font-light">
+                    {sec.body}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          )}
+
+          {/* FAQ */}
+          {service.faq && service.faq.length > 0 && (
+            <div className="mt-16">
+              <h2 className="font-display font-bold text-2xl md:text-3xl text-gray-900 tracking-tight mb-8">
+                Sıkça Sorulan Sorular
+              </h2>
+              <div className="space-y-4">
+                {service.faq.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={reduced ? noMotion : { opacity: 0, y: 16 }}
+                    whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={reduced ? instant : { duration: 0.4, delay: idx * 0.05 }}
+                    className="bg-white border border-gray-200/60 rounded-2xl p-6 shadow-[var(--shadow-subtle)]"
+                  >
+                    <h3 className="font-display font-semibold text-[17px] text-gray-900 tracking-tight mb-2">
+                      {item.question}
+                    </h3>
+                    <p className="text-[15px] text-gray-600 font-light leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* CTA banner */}
           <motion.div

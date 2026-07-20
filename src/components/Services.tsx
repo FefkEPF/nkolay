@@ -13,7 +13,7 @@ export default function Services() {
   const reduced = useReducedMotion();
   const noMotion = { opacity: 1, y: 0 } as const;
   const instant = { duration: 0.01 } as const;
-  const spring = { type: "spring", stiffness: 80, damping: 18, mass: 0.8 } as const;
+  const spring = { type: "spring" as const, stiffness: 80, damping: 18, mass: 0.8 };
 
   const handleServiceClick = (id: string) => {
     navigate(ROUTES.service(id));
@@ -78,11 +78,13 @@ function CategoryGroup({
   reduced: boolean;
   noMotion: { opacity: number; y: number };
   instant: { duration: number };
-  spring: { type: string; stiffness: number; damping: number; mass: number };
+  spring: { type: "spring"; stiffness: number; damping: number; mass: number };
   onServiceClick: (id: string) => void;
 }) {
   const services = SERVICES_DATA.filter((s) => s.category === category);
   const isPrimary = category === "performance";
+
+  if (services.length === 0) return null;
 
   return (
     <div>

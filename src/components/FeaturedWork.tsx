@@ -70,7 +70,7 @@ export default function FeaturedWork() {
               whileHover={reduced ? undefined : { y: -6, transition: { type: "spring", stiffness: 120, damping: 14 } }}
               viewport={{ once: true, margin: "-40px" }}
               transition={reduced ? instant : { ...spring, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-gray-200/60 bg-gradient-to-br bg-white cursor-pointer transition-all duration-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_8px_24px_rgba(0,0,0,0.06)]"
+              className="group relative overflow-hidden rounded-[2rem] border border-gray-200/60 bg-white cursor-pointer transition-all duration-300 hover:shadow-[0_2px_8px_rgba(0,0,0,0.03),0_8px_24px_rgba(0,0,0,0.06)]"
             >
               <div className={`h-44 bg-gradient-to-br ${item.gradient} flex items-center justify-center text-6xl relative overflow-hidden`}>
                 <span className="relative z-10 transition-transform duration-500 group-hover:scale-110">{item.emoji}</span>

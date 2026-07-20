@@ -55,9 +55,6 @@ function TechLogo({ icon }: { icon: SimpleIcon }) {
         <title>{icon.title}</title>
         <path d={icon.path} />
       </svg>
-      <span className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 translate-y-2 whitespace-nowrap text-[11px] font-medium text-gray-500 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-        {icon.title}
-      </span>
     </div>
   );
 }

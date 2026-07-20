@@ -1,4 +1,4 @@
-import { ServiceItem, TestimonialItem, LegalDoc } from "./types";
+import { ServiceItem, TestimonialItem, LegalDoc, BlogPost } from "./types";
 
 export const LEGAL_DOCS: Record<LegalDoc["id"], LegalDoc> = {
   kvkk: {
@@ -118,7 +118,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Yüksek ROI Garantisi",
     iconName: "Search",
     detailedContent: "İşletmenizi arayan müşterilerinizin tam zamanında karşısına çıkmanızı sağlıyoruz. Google Ads danışmanlık hizmetimizle yalnızca tıklama değil, yüksek nitelikli müşteri ve satış (ROI) odaklı kampanyalar tasarlıyoruz. Kapsamlı anahtar kelime araştırması, negatif kelime filtrelemesi ve ileri düzey A/B testleriyle her kuruşunuzun verimini en üst düzeye çıkarıyoruz.",
-    benefits: ["Maksimum Dönüşüm Oranı (CRO)", "Nokta Atışı Maliyet Kontrolü", "Kapsamlı Sektörel Rekabet Analizi", "Sürekli Optimizasyon ve Şeffaf Raporlama"]
+    benefits: ["Maksimum Dönüşüm Oranı (CRO)", "Nokta Atışı Maliyet Kontrolü", "Kapsamlı Sektörel Rekabet Analizi", "Sürekli Optimizasyon ve Şeffaf Raporlama"],
+    detailSections: [
+      {
+        heading: "Google Ads Neden İşletmeniz İçin Kritik?",
+        body: "Google, her gün milyarlarca aramaya ev sahipliği yapan dünyanın en büyük arama motorudur. Bir kullanıcı 'İstanbul su tesisatçısı' veya 'en iyi muhasebe yazılımı' yazdığında, satın alma niyeti en yüksek anındadır. Google Ads, tam bu kritik anda markanızı kullanıcının karşısına çıkararak, soğuk kitlelere reklam yapmak yerine, sizi zaten arayan potansiyel müşterileri yakalamanızı sağlar. Bu yönüyle Google Ads, en ölçülebilir ve en yüksek geri dönüş potansiyeli olan pazarlama kanallarından biridir.",
+      },
+      {
+        heading: "Kampanya Kurulum ve Optimizasyon Sürecimiz",
+        body: "Her kampanyaya kapsamlı bir keşif ve analiz aşamasıyla başlıyoruz. Sektörünüzü, rakiplerinizi ve hedef kitlenizin arama davranışlarını inceliyor; ardından en yüksek dönüşüm potansiyeli olan anahtar kelimeleri belirliyoruz. Reklam metinleri, açılış sayfaları ve teklif stratejileri A/B testleriyle sürekli optimize edilir. Negatif kelime listelerini haftalık güncelleyerek bütçenizin ilgisiz aramalara harcanmasını engelliyoruz. Böylece her kuruşunuzun en verimli şekilde çalışmasını sağlıyoruz.",
+      },
+      {
+        heading: "Şeffaf Raporlama ve Sürekli İyileştirme",
+        body: "Reklam bütçenizin nereye gittiğini bilme hakkınız var. Aylık detaylı raporlarla harcama, tıklama, dönüşüm ve maliyet metriklerini şeffaf biçimde paylaşıyoruz. Dönüşüm izleme (conversion tracking) ve Enhanced Conversions kurulumlarıyla telefon, form ve satın alma gibi tüm değerli aksiyonları ölçüyor; veriye dayalı kararlarla kampanyaları sürekli iyileştiriyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Google Ads reklamları için minimum bütçe ne kadar olmalı?",
+        answer: "Bütçe sektöre, rekabete ve hedeflerinize göre değişir. Genellikle anlamlı veri toplayıp optimizasyon yapabilmek için aylık belirli bir eşik öneriyoruz. Ücretsiz ön analizde işletmenize uygun ideal başlangıç bütçesini birlikte belirliyoruz.",
+      },
+      {
+        question: "Sonuçları ne kadar sürede görürüm?",
+        answer: "Google Ads, SEO'nun aksine anında görünürlük sağlar; reklamlar yayına girdiği gün trafik gelmeye başlar. Ancak kampanyanın makine öğrenimiyle tam verimine ulaşması ve optimizasyonların oturması genellikle ilk birkaç haftayı bulur.",
+      },
+      {
+        question: "Rakiplerim de reklam veriyor, yine de öne çıkabilir miyim?",
+        answer: "Kesinlikle. Google Ads'te başarı yalnızca bütçeyle değil, kalite puanı, doğru anahtar kelime seçimi ve güçlü açılış sayfalarıyla belirlenir. İyi optimize edilmiş bir kampanya, daha yüksek bütçeli ama kötü yönetilen rakipleri geride bırakabilir.",
+      },
+    ]
   },
   {
     id: "meta-ads",
@@ -135,7 +163,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "+%340 Organik Erişim",
     iconName: "Share2",
     detailedContent: "Dünyanın en büyük sosyal ağlarında markanızı sadece 'gösteren' değil, 'satan' reklamlar kurguluyoruz. META Pixel kurulumundan dönüşüm API'lerine (CAPI) kadar tüm teknik detayları uzmanlıkla entegre ediyoruz. Özel (Custom) ve Benzer (Lookalike) hedef kitleler oluşturarak, ürünlerinize ilgi duyma ihtimali en yüksek kitleye kreatif reklam görselleriyle ulaşıyoruz.",
-    benefits: ["Ölçeklenebilir Satış Hacmi", "Gelişmiş Retargeting Stratejileri", "Video ve Görsel A/B Testleri", "Düzenli Meta Algoritma Uyum Güncellemeleri"]
+    benefits: ["Ölçeklenebilir Satış Hacmi", "Gelişmiş Retargeting Stratejileri", "Video ve Görsel A/B Testleri", "Düzenli Meta Algoritma Uyum Güncellemeleri"],
+    detailSections: [
+      {
+        heading: "Instagram ve Facebook'un Satış Gücü",
+        body: "Meta ekosistemi (Instagram ve Facebook), Türkiye'de on milyonlarca aktif kullanıcıya ev sahipliği yapar. Google Ads satın alma niyetini yakalarken, Meta reklamları henüz ürününüzü aramayan ama ilgi alanları, davranışları ve demografisi tam sizin müşteri profilinize uyan kişilerde talep yaratır. Görsel ve videonun gücüyle markanızı keşfettirir, ilgi uyandırır ve satışa dönüştürür.",
+      },
+      {
+        heading: "Pixel, CAPI ve Doğru Veri Altyapısı",
+        body: "Başarılı bir Meta kampanyasının temeli sağlam veri altyapısıdır. Meta Pixel ve Conversions API (CAPI) kurulumlarıyla web sitenizdeki her değerli aksiyonu (görüntüleme, sepete ekleme, satın alma) eksiksiz ölçüyoruz. iOS gizlilik güncellemelerinin ardından CAPI, dönüşüm verisinin doğru toplanması için hayati önem taşır ve algoritmanın doğru kişileri bulmasını sağlar.",
+      },
+      {
+        heading: "Kitle Stratejisi ve Kreatif Üretimi",
+        body: "Özel (Custom) kitlelerle sitenizi ziyaret edenleri yeniden hedefliyor, Benzer (Lookalike) kitlelerle mevcut müşterilerinize benzeyen yeni kişilere ulaşıyoruz. Her kampanyada birden fazla görsel, video ve metin varyasyonunu A/B testine tabi tutarak en yüksek performanslı kreatifi buluyor ve bütçeyi kazanan varyasyona yönlendiriyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Instagram mı Facebook mu benim işim için daha uygun?",
+        answer: "İkisi de aynı reklam yöneticisi üzerinden yönetilir ve genellikle her iki platformda birlikte yayınlamak en verimli sonucu verir. Hedef kitlenizin yaşı ve davranışlarına göre bütçe dağılımını optimize ediyoruz.",
+      },
+      {
+        question: "Reklamlarım için görselleri siz mi hazırlıyorsunuz?",
+        answer: "Evet, kreatif üretim hizmetimize dahildir. Markanıza özel dönüşüm odaklı reklam görselleri ve kısa videolar tasarlıyor, sürekli test ederek en etkili olanları öne çıkarıyoruz.",
+      },
+      {
+        question: "Satış gelmezse ne oluyor?",
+        answer: "İlk dönemde veri toplayıp algoritmayı eğitiyoruz. Performans düşükse kitle, kreatif ve teklif stratejisini revize ediyoruz. Şeffaf raporlamayla her adımı sizinle paylaşır, sürekli optimizasyonla sonucu iyileştiririz.",
+      },
+    ]
   },
   {
     id: "ui-ux-design",
@@ -152,7 +208,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Kullanıcı Dostu Tasarım",
     iconName: "PenTool",
     detailedContent: "Kurumsal kimliğinizin dijitaldeki ilk izlenimi saniyeler sürer. Müşterilerinizin markanızla olan etkileşimini kusursuzlaştırmak için kullanıcı merkezli (UX) ve estetik olarak mükemmel (UI) tasarımlar yapıyoruz. Apple sadeliğinden modern web 3.0 esintilerine kadar, kurumunuza en uygun görsel dili bulup kodlanabilir Figma prototipleri halinde sunuyoruz.",
-    benefits: ["Yüksek Kullanıcı Bağlılığı", "Satış Artıran Arayüz Stratejileri", "Modern, Sade ve Özgün Kurumsal Kimlik", "Ekran Uyumlu (Responsive) Tasarım Mimarisi"]
+    benefits: ["Yüksek Kullanıcı Bağlılığı", "Satış Artıran Arayüz Stratejileri", "Modern, Sade ve Özgün Kurumsal Kimlik", "Ekran Uyumlu (Responsive) Tasarım Mimarisi"],
+    detailSections: [
+      {
+        heading: "Kullanıcı Odaklı Arayüz Tasarımı",
+        body: "NKolay Medya olarak Figma ile modern ve kullanıcı odaklı arayüzler tasarlıyoruz. Web ve mobil UI çalışmalarımızda sadelik, erişilebilirlik ve dönüşüm odaklı tasarım ilkelerini benimsiyoruz. Kurumsal kimlikten etkileşimli prototiplere kadar her süreci stratejik planlıyoruz. Amacımız markanızı en iyi şekilde yansıtan, kullanıcıların kolayca etkileşime girdiği deneyimler sunmak.",
+      },
+      {
+        heading: "Kurumsal Kimlik ve Logo Tasarımı",
+        body: "Güçlü bir marka görünümü için logo, renk paleti ve tipografi dahil bütüncül kurumsal kimlik çalışması yapıyoruz. NKolay Medya tasarım ekibi, sektörünüze özel görsel diller geliştirerek rakiplerinizden ayrışmanızı sağlar. Tutarlı bir marka dili tüm dijital ve basılı mecralarınızda müşteri güvenini pekiştirir ve bilinirliğinizi artırır.",
+      },
+      {
+        heading: "Etkileşimli Prototipleme ve Test",
+        body: "Tasarım sürecinde tıklanabilir prototipler üreterek kullanıcı testleri gerçekleştiriyoruz. NKolay Medya olarak yazılıma geçmeden önce deneyimi doğruluyor, hataları erken yakalıyoruz. Bu sayede geliştirme maliyetini düşürür ve beklentileri tam karşılayan ürünler teslim ederiz. Detaylı geri bildirim döngüleriyle mükemmel sonuçlara ulaşırız.",
+      },
+    ],
+    faq: [
+      {
+        question: "UI/UX tasarım süreci ne kadar sürer?",
+        answer: "Projenin kapsamına göre 1 ile 4 hafta arasında değişir. NKolay Medya olarak keşif, wireframe, tasarım ve prototip aşamalarını net bir takvimle yürütürüz. İhtiyaç analizi sonrası size kesin süre ve teslim planı sunarız.",
+      },
+      {
+        question: "Hangi tasarım araçlarını kullanıyorsunuz?",
+        answer: "Ağırlıklı olarak Figma kullanıyoruz; ayrıca Adobe XD, Illustrator ve Photoshop ile destekliyoruz. NKolay Medya ekibi, iş birliğine açık ve teslim edilebilir kaynak dosyalar üreterek süreç boyunca şeffaf bir çalışma yürütür.",
+      },
+      {
+        question: "Mevcut sitemizi yeniden tasarlatabilir miyim?",
+        answer: "Evet, mevcut arayüzünüzü analiz edip kullanıcı deneyimini iyileştiren yeni bir tasarım sunuyoruz. NKolay Medya olarak dönüşüm odaklı yenilemelerle markanızı modernleştirir ve performansı artırırız.",
+      },
+    ]
   },
   {
     id: "software-dev",
@@ -169,7 +253,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Maksimum Hız",
     iconName: "Code",
     detailedContent: "İşletmenizin benzersiz ihtiyaçlarına göre özel olarak kodlanmış, bulut tabanlı ve ölçeklenebilir yazılım çözümleri üretiyoruz. Eski sistemlerinizi modernize ediyor, harici platformlarla sorunsuz API entegrasyonları sağlıyor ve veri güvenliğini en üst planda tutuyoruz. React, Node.js, ve modern veritabanı teknolojileriyle hantallıktan uzak, ışık hızında çalışan sistemler kuruyoruz.",
-    benefits: ["Gelişmiş İş Süreci Otomasyonu", "Ölçeklenebilir Bulut Altyapısı", "Uçtan Uca Veri Güvenliği", "Modern Teknoloji Yığını"]
+    benefits: ["Gelişmiş İş Süreci Otomasyonu", "Ölçeklenebilir Bulut Altyapısı", "Uçtan Uca Veri Güvenliği", "Modern Teknoloji Yığını"],
+    detailSections: [
+      {
+        heading: "Ölçeklenebilir Web Yazılımları",
+        body: "NKolay Medya olarak işletmenize özel bulut tabanlı web yazılımları geliştiriyoruz. React ve Node.js teknolojileriyle hızlı, güvenli ve ölçeklenebilir çözümler üretiyoruz. Müşteri portallarından iç operasyon sistemlerine kadar ihtiyacınıza göre esnek mimariler kuruyoruz. Performans ve bakım kolaylığını merkeze alan yazılımlarla büyümenizi destekliyoruz.",
+      },
+      {
+        heading: "CRM ve ERP Entegrasyonu",
+        body: "İş süreçlerinizi dijitalleştirmek için özel CRM ve ERP çözümleri tasarlıyoruz. NKolay Medya ekibi, mevcut sistemlerinizle sorunsuz entegrasyon sağlayarak verimliliği artırır. Otomasyon, raporlama ve veri yönetimi modülleriyle işlerinizi kolaylaştırıyoruz. Doğru yazılım yatırımıyla maliyetleri düşürür ve karar süreçlerinizi güçlendirirsiniz.",
+      },
+      {
+        heading: "API ve Üçüncü Parti Entegrasyonlar",
+        body: "Ödeme sistemleri, kargo, muhasebe ve pazarlama araçları gibi servisleri birbirine bağlıyoruz. NKolay Medya olarak güvenli RESTful ve GraphQL API geliştiriyor, üçüncü parti entegrasyonları kuruyoruz. Böylece verileriniz tek kaynaktan akar, manuel iş yükü azalır. Esnek yapımızla yeni entegrasyonları kolayca ekleyebilirsiniz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hangi teknolojileri kullanıyorsunuz?",
+        answer: "React, Node.js, TypeScript ve bulut altyapıları tercih ediyoruz. NKolay Medya olarak ölçeklenebilir ve bakımı kolay mimariler kurarız. Proje gereksinimine göre en uygun teknoloji yığınını önerir ve uygularız.",
+      },
+      {
+        question: "Yazılım bakımını da yapıyor musunuz?",
+        answer: "Evet, yayın sonrası bakım, güncelleme ve teknik destek sağlıyoruz. NKolay Medya olarak yazılımınızın güvenli ve güncel kalmasını sağlayarak kesintisiz çalışmasını garanti ederiz.",
+      },
+      {
+        question: "Fiyatlandırma nasıl belirleniyor?",
+        answer: "Projenin kapsamı, modülleri ve entegrasyon sayısına göre teklif sunuyoruz. NKolay Medya olarak şeffaf bir fiyatlandırma modeliyle ihtiyacınıza uygun çözüm üretiriz.",
+      },
+    ]
   },
   {
     id: "mobile-app",
@@ -186,7 +298,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "5 Yıldızlı Deneyim",
     iconName: "Smartphone",
     detailedContent: "Müşterilerinize doğrudan dokunmanın en etkili yolu mobil uygulamalardır. Hem App Store hem de Google Play için native performansına yakın cross-platform (React Native/Flutter) ya da direkt native uygulamalar geliştiriyoruz. Push notification entegrasyonları, uygulama içi satın alma ve kullanıcı analizleriyle uygulamanızı bir gelir merkezine dönüştürüyoruz.",
-    benefits: ["Hızlı ve Pürüzsüz Kullanıcı Deneyimi", "App Store ve Play Store Optimizasyonu (ASO)", "Kesintisiz Push Notification Altyapısı", "Yüksek Dönüşümlü Ödeme Entegrasyonları"]
+    benefits: ["Hızlı ve Pürüzsüz Kullanıcı Deneyimi", "App Store ve Play Store Optimizasyonu (ASO)", "Kesintisiz Push Notification Altyapısı", "Yüksek Dönüşümlü Ödeme Entegrasyonları"],
+    detailSections: [
+      {
+        heading: "iOS ve Android Geliştirme",
+        body: "NKolay Medya olarak native ve cross-platform mobil uygulamalar geliştiriyoruz. React Native ve Flutter ile tek kod tabanından hem iOS hem Android için yüksek performanslı ürünler üretiyoruz. Kullanıcı dostu arayüzler, akıcı animasyonlar ve kararlı altyapıyla markanızı cep telefonlarına taşıyoruz. Mobil varlığınızı güçlendirerek müşterilerinize her an ulaşma imkanı sunuyoruz.",
+      },
+      {
+        heading: "Push Bildirim ve Uygulama İçi Satın Alma",
+        body: "Kullanıcı etkileşimini artırmak için push notification ve in-app purchase altyapıları kuruyoruz. NKolay Medya olarak kişiselleştirilmiş bildirimlerle sadakat yaratıyor, abonelik ve satın alma modelleriyle gelirinizi artırıyoruz. Uygulama içi deneyimi optimize ederek dönüşüm oranlarınızı yükseltmenize yardımcı oluyoruz.",
+      },
+      {
+        heading: "ASO ve Mağaza Optimizasyonu",
+        body: "Uygulamanızın keşfedilebilirliğini artırmak için App Store Optimization çalışmaları yürütüyoruz. NKolay Medya ekibi anahtar kelime, görseller ve açıklama optimizasyonuyla indirme sayınızı artırır. Rakip analizi ve sürekli iyileştirmeyle mağaza sıralamanızı yükselterek organik büyüme sağlıyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Tek kod ile iki platform mümkün mü?",
+        answer: "Evet, React Native ve Flutter ile iOS ve Android için tek kod tabanından uygulama geliştiriyoruz. NKolay Medya olarak maliyet ve süreyi optimize ederken kaliteden ödün vermeyiz.",
+      },
+      {
+        question: "Uygulamayı mağazalara siz mi yüklüyorsunuz?",
+        answer: "Evet, App Store ve Google Play yayın süreçlerini yönetiyoruz. NKolay Medya olarak gereken tüm hesap, açıklama ve görselleri hazırlayarak sorunsuz yayın sağlarız.",
+      },
+      {
+        question: "ASO neden önemlidir?",
+        answer: "ASO, uygulamanızın mağazalarda görünür olmasını sağlar ve organik indirmeleri artırır. NKolay Medya olarak doğru stratejiyle reklam bütçesinden tasarruf ettiririz.",
+      },
+    ]
   },
   {
     id: "seo-services",
@@ -203,7 +343,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "1. Sayfa Garantili Çözümler",
     iconName: "TrendingUp",
     detailedContent: "Arama motoru sonuç sayfalarında (SERP) kalıcı bir yer edinmek stratejik bir çaba gerektirir. Sitenizin teknik altyapısını hız ve güvenlik açısından denetliyor (Technical SEO), içeriklerinizi Google algoritmalarına uygun hale getiriyor (On-Page SEO) ve kaliteli backlink kaynaklarıyla marka otoritenizi inşa ediyoruz (Off-Page SEO). Böylece uzun vadeli ve ücretsiz trafik akışı sağlıyoruz.",
-    benefits: ["Sürekli ve Organik Ziyaretçi Artışı", "Sektörde Otorite Konumu", "Hedef Kitleyle Doğrudan Eşleşme", "Rakip Analizi ile Stratejik Üstünlük"]
+    benefits: ["Sürekli ve Organik Ziyaretçi Artışı", "Sektörde Otorite Konumu", "Hedef Kitleyle Doğrudan Eşleşme", "Rakip Analizi ile Stratejik Üstünlük"],
+    detailSections: [
+      {
+        heading: "Teknik SEO ve Site Sağlığı",
+        body: "NKolay Medya olarak web sitenizin teknik altyapısını SEO uyumlu hale getiriyoruz. Sayfa hızı, mobil uyum, crawl hataları ve yapısal veri gibi kritik konuları optimize ediyoruz. Sağlıklı bir teknik temel, arama motorlarının sizi doğru anlamasını sağlar. Düzenli denetimlerle sıralamanızı koruyor ve organik trafiğinizi sürekli artırıyoruz.",
+      },
+      {
+        heading: "On-Page ve İçerik Optimizasyonu",
+        body: "Başlıklar, meta açıklamaları, iç bağlantılar ve kaliteli içerikle sayfalarınızı güçlendiriyoruz. NKolay Medya olarak hedef anahtar kelimelerinizi doğal biçimde kullanarak kullanıcıya ve Google'a değer katıyoruz. İçerik stratejimizle otoritenizi artırıyor, ziyaretçilerinizi müşteriye dönüştüren sayfalar üretiyoruz.",
+      },
+      {
+        heading: "Backlink ve Yerel SEO",
+        body: "Otoritenizi artırmak için kaliteli backlink inşası ve yerel SEO çalışmaları yürütüyoruz. NKolay Medya olarak Google İşletme Profili ve yerel dizinleri optimize ederek bölgenizde görünürlüğünüzü artırır. Google birinci sayfa hedefiyle organik büyümenizi sürdürülebilir şekilde destekliyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "SEO sonuçları ne zaman görünür?",
+        answer: "Genellikle 3 ila 6 ay içinde organik artış başlar. NKolay Medya olarak stratejik planlama ve düzenli raporlama ile süreci şeffaf şekilde yönetir, sıralamanızı kalıcılaştırırız.",
+      },
+      {
+        question: "Yerel SEO nedir ve kimler için uygundur?",
+        answer: "Bölgesel müşterilere ulaşmak isteyen işletmeler için idealdir. NKolay Medya olarak Google Haritalar ve yerel aramalarda öne çıkarak mağazanıza trafik çekeriz.",
+      },
+      {
+        question: "Backlink çalışması güvenli mi?",
+        answer: "Evet, yalnızca kaliteli ve ilgili sitelerden doğal backlink üretiyoruz. NKolay Medya olarak ceza riski taşımayan, sürdürülebilir otorite inşası yapıyoruz.",
+      },
+    ]
   },
   {
     id: "printing-services",
@@ -220,7 +388,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "1. Sınıf Kalite",
     iconName: "Printer",
     detailedContent: "Dijital varlığınızın yanı sıra, fiziksel dünyada bıraktığınız etki kurumsal duruşunuzu destekler. Şirket profilinize yakışır premium matbaa ürünleri, modern baskı teknikleri (gofre, lak, yaldız vb.) ile üretilerek markanızın somut kalitesini artırır. Ambalaj tasarımından dev afişlere kadar tüm fiziksel kurumsal materyalleriniz özenle tasarlanıp basılır.",
-    benefits: ["Akılda Kalıcı Fiziksel Deneyim", "Premium Kalitede Kurumsal Evraklar", "Fark Yaratan Promosyon ve Ambalajlar", "Marka Prestijinde Bütünlük"]
+    benefits: ["Akılda Kalıcı Fiziksel Deneyim", "Premium Kalitede Kurumsal Evraklar", "Fark Yaratan Promosyon ve Ambalajlar", "Marka Prestijinde Bütünlük"],
+    detailSections: [
+      {
+        heading: "Kurumsal Baskı ve Kartvizit",
+        body: "NKolay Medya olarak kartvizit, antetli kağıt ve kurumsal matbu evraklarınızı premium kalitede basıyoruz. Markanıza uygun görseller ve doğru malzeme seçimiyle profesyonel bir ilk izlenim yaratıyoruz. Hızlı teslimat ve uygun fiyat avantajıyla ihtiyaçlarınızı karşılıyoruz. Baskılı tüm ürünlerinizde tutarlı kurumsal kimlik sağlayarak güveninizi pekiştiriyoruz.",
+      },
+      {
+        heading: "Katalog ve Promosyon Ürünleri",
+        body: "Ürünlerinizi en iyi anlatan katalog, broşür ve promosyon materyallerini tasarlayıp basıyoruz. NKolay Medya ekibi, göz alıcı görseller ve ikna edici düzenlerle satışlarınızı destekler. Müşteri eline geçen her dokunuşun marka değerine katkı sağlamasını hedefliyoruz. Toplu siparişlerde avantajlı fiyatlar sunuyoruz.",
+      },
+      {
+        heading: "Ambalaj ve Kutu Tasarımı",
+        body: "Ürününüzü koruyan ve markanızı yansıtan özel ambalaj ve kutu tasarımları üretiyoruz. NKolay Medya olarak gofre, lak ve yaldız gibi premium baskı teknikleriyle raflarda öne çıkmanızı sağlıyoruz. Etkileyici ambalaj, müşteri deneyimini zenginleştirir ve satın alma kararını olumlu etkiler.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hangi baskı tekniklerini sunuyorsunuz?",
+        answer: "Gofre, lak, yaldız, ofset ve dijital baskı gibi pek çok teknikle hizmet veriyoruz. NKolay Medya olarak ihtiyacınıza en uygun yöntemi önererek kaliteli sonuçlar üretiriz.",
+      },
+      {
+        question: "Minimum sipariş miktarı nedir?",
+        answer: "Ürün türüne göre değişmekle birlikte küçük ve büyük tirajları destekliyoruz. NKolay Medya olarak esnek üretimle hem yeni girişimlere hem kurumsal müşterilere hitap ederiz.",
+      },
+      {
+        question: "Tasarımı siz mi hazırlıyorsunuz?",
+        answer: "Evet, baskıya uygun profesyonel tasarımları biz üretiyoruz. NKolay Medya olarak markanızı yansıtan özgün görsellerle matbu ürünlerinizi hazır hale getiririz.",
+      },
+    ]
   },
   {
     id: "wordpress",
@@ -237,7 +433,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "SEO Uyumlu Altyapı",
     iconName: "Layout",
     detailedContent: "Dünyanın en popüler içerik yönetim sistemi olan WordPress üzerinde, yavaş çalışan hazır temalar yerine işletmenize özel tasarlanmış, ultra hızlı (Core Web Vitals uyumlu) ve tam SEO optimize siteler kuruyoruz. Mevcut WP siteleriniz için hızlandırma, zararlı yazılım temizleme, güvenlik önlemleri alma ve aylık bakım paketleri sunuyoruz.",
-    benefits: ["Ultra Hızlı Sayfa Yüklenmesi", "Kullanıcı Dostu İçerik Yönetimi", "Yüksek Güvenlik ve Düzenli Yedekleme", "Geniş Ölçeklenebilirlik (WooCommerce vb.)"]
+    benefits: ["Ultra Hızlı Sayfa Yüklenmesi", "Kullanıcı Dostu İçerik Yönetimi", "Yüksek Güvenlik ve Düzenli Yedekleme", "Geniş Ölçeklenebilirlik (WooCommerce vb.)"],
+    detailSections: [
+      {
+        heading: "Hızlı ve Güvenli WordPress Siteleri",
+        body: "NKolay Medya olarak ultra hızlı, güvenli ve SEO uyumlu WordPress siteleri kuruyoruz. Önbellekleme, görsel optimizasyonu ve temiz kod yapısıyla açılış sürelerini minimize ediyoruz. Google sıralamasında avantaj sağlayan altyapıyla ziyaretçilerinizi memnun ediyoruz. Sağlam güvenlik önlemleriyle sitenizi tehditlere karşı koruyor, kesintisiz yayın sağlıyoruz.",
+      },
+      {
+        heading: "Özel Tema ve WooCommerce",
+        body: "Markanıza özel WordPress temaları ve WooCommerce altyapısı geliştiriyoruz. NKolay Medya olarak satış odaklı, dönüşüm optimize edilmiş e-ticaret deneyimleri sunuyoruz. Ürün yönetimi, ödeme entegrasyonu ve stok takibi gibi modülleri sorunsuz kuruyoruz. İhtiyacınıza göre esnek ve ölçeklenebilir çözümler üretiyoruz.",
+      },
+      {
+        heading: "Bakım ve Performans Optimizasyonu",
+        body: "Yayın sonrası düzenli bakım, güncelleme ve yedekleme hizmeti veriyoruz. NKolay Medya olarak hız ve güvenlik optimizasyonuyla sitenizin her zaman zirvede kalmasını sağlıyoruz. Olası sorunları önceden tespit edip müdahale ediyor, size sadece işinizi büyütmek kalıyor. Kesintisiz destekle güvence sunuyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "WordPress sitesi ne kadar sürede hazır olur?",
+        answer: "Basit siteler birkaç günde, kapsamlı projeler birkaç haftada teslim edilir. NKolay Medya olarak net bir planlama ile süreci hızlandırır ve beklentilerinizi karşılarız.",
+      },
+      {
+        question: "WooCommerce ile e-ticaret yapabilir miyim?",
+        answer: "Evet, tam donanımlı WooCommerce mağazaları kuruyoruz. NKolay Medya olarak ödeme, kargo ve stok entegrasyonlarını sağlayarak satışa hemen başlamanızı mümkün kılarız.",
+      },
+      {
+        question: "Bakım hizmeti zorunlu mu?",
+        answer: "Zorunlu değil ancak önerilir. NKolay Medya olarak düzenli bakım ve güncellemeyle güvenliği artırır, beklenmedik sorunları önleriz.",
+      },
+    ]
   },
   {
     id: "server-services",
@@ -254,7 +478,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "%99.9 Uptime",
     iconName: "Server",
     detailedContent: "Trafiğiniz ne kadar artarsa artsın siteniz asla çökmemeli. Özel olarak optimize edilmiş bulut (cloud) altyapımızla projelerinize tahsis edilmiş, yüksek hızlı, NVMe diskli ve %99.9 kesintisiz uptime garantili sunucu çözümleri sunuyoruz. Günlük yedekleme politikalarımız ve proaktif güvenlik izlememiz ile dijital varlıklarınız tamamen güvende.",
-    benefits: ["Arama Motorlarına Olumlu Hız Sinyali", "Kesintisiz Uptime (Erişilebilirlik)", "Veri Kaybına Karşı Felaret Kurtarma (Disaster Recovery)", "DDoS ve Malware Koruması"]
+    benefits: ["Arama Motorlarına Olumlu Hız Sinyali", "Kesintisiz Uptime (Erişilebilirlik)", "Veri Kaybına Karşı Felaret Kurtarma (Disaster Recovery)", "DDoS ve Malware Koruması"],
+    detailSections: [
+      {
+        heading: "Bulut Sunucu ve Barındırma",
+        body: "NKolay Medya olarak NVMe destekli bulut sunucu ve barındırma hizmetleri sunuyoruz. Yüksek performanslı altyapımızla web sitenizin ve uygulamalarınızın hızlı yanıt vermesini sağlıyoruz. Esnek kaynak yönetimiyle ihtiyacınıza göre ölçeklenen sistemler kuruyoruz. Kesintisiz hizmet anlayışıyla işletmenizin dijital varlığını güvenle büyütmenizi destekliyoruz.",
+      },
+      {
+        heading: "Yedekleme ve Felaket Kurtarma",
+        body: "Verilerinizin güvende olması için otomatik yedekleme ve felaket kurtarma çözümleri uyguluyoruz. NKolay Medya olarak düzenli snapshot ve uzak konum yedekleriyle veri kaybını önlüyoruz. Olası arıza senaryolarında hızlı geri yükleme yaparak iş sürekliliğinizi koruyoruz. Güvenilir altyapıyla içiniz rahat olsun.",
+      },
+      {
+        heading: "SSL ve DDoS Koruması",
+        body: "Web sitenizi ve kullanıcı verilerinizi korumak için SSL sertifikaları ve DDoS koruma sistemleri kuruyoruz. NKolay Medya olarak %99.9 uptime garantisiyle kesintisiz erişim sağlıyoruz. Gelişmiş güvenlik katmanlarıyla saldırıları engelliyor, güvenliği sürekli izliyoruz. Marka itibarınızı koruyan altyapıyı sunuyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Sunucu hizmeti nasıl çalışır?",
+        answer: "İhtiyacınıza uygun bulut sunucu kaynağı tahsis edip yapılandırıyoruz. NKolay Medya olarak kurulum, taşıma ve 7/24 izleme ile kesintisiz hizmet sağlarız.",
+      },
+      {
+        question: "Uptime garantisi nedir?",
+        answer: "%99.9 uptime ile hizmet kesintilerini en aza indiriyoruz. NKolay Medya olarak yedekli altyapı ve izlemeyle sitenizin her zaman erişilebilir olmasını garanti ederiz.",
+      },
+      {
+        question: "Mevcut sunucumu taşıyabilir miyim?",
+        answer: "Evet, mevcut sitenizi ve verilerinizi sorunsuz şekilde yeni altyapımıza taşıyoruz. NKolay Medya olarak veri kaybı yaşatmadan geçiş sürecini yönetiriz.",
+      },
+    ]
   },
   {
     id: "social-media",
@@ -271,7 +523,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "1M+ Aktif Erişim Ağı",
     iconName: "Instagram",
     detailedContent: "Sadece paylaşım yapmak markanızı büyütmez. Hedef kitlenizin dinamiklerini analiz eden ve onların dilinden konuşan, estetik olarak markanızı yukarı taşıyan bir sosyal medya stratejisi uyguluyoruz. Konsept tasarımlar, etkileşim artıran metinler (copywriting) ve düzenli kriz/fırsat yönetimiyle sadık bir takipçi kitlesi inşa ediyoruz.",
-    benefits: ["Tutarlı Kurumsal Kimlik", "Algoritma Uyumlu İçerik Üretimi", "Aktif Müşteri İletişimi ve Topluluk Yönetimi", "Viral Olma Potansiyeli Taşıyan Kurgular"]
+    benefits: ["Tutarlı Kurumsal Kimlik", "Algoritma Uyumlu İçerik Üretimi", "Aktif Müşteri İletişimi ve Topluluk Yönetimi", "Viral Olma Potansiyeli Taşıyan Kurgular"],
+    detailSections: [
+      {
+        heading: "Aylık İçerik Planlama",
+        body: "NKolay Medya olarak markanıza özel aylık içerik takvimi oluşturuyoruz. Hedef kitlenizi analiz ederek doğru zamanda doğru mesajı veriyoruz. Görsel ve metin üretimini stratejik planla yürütüyoruz. Tutarlı paylaşım ritmiyle farkındalığı artırıyor, marka sesinizi güçlendiriyoruz. İçeriklerimiz etkileşimi teşvik eder ve takipçi kitlenizi organik biçimde büyütür.",
+      },
+      {
+        heading: "Görsel ve Copywriting Üretimi",
+        body: "Etkileyici görseller ve ikna edici metinlerle markanızı anlatıyoruz. NKolay Medya ekibi, platforma uygun tasarım ve SEO dostu copywriting ile dikkat çeker. Reklam ve organik içeriklerde dönüşüm odaklı yaklaşım benimsiyoruz. Kaliteli içerik, takipçilerinizle kurduğunuz bağı güçlendirir ve satışa katkı sağlar.",
+      },
+      {
+        heading: "Topluluk Yönetimi ve Raporlama",
+        body: "Yorumları yanıtlıyor, soruları çözüyor ve sadık bir topluluk inşa ediyoruz. NKolay Medya olarak düzenli performans raporlarıyla büyümenizi şeffaf şekilde gösteriyoruz. Analizlere dayalı iyileştirmelerle stratejiyi sürekli optimize ediyoruz. Topluluk yönetimiyle müşteri memnuniyetini artırıyor, marka sadakatini pekiştiriyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Sosyal medya yönetimi neleri kapsar?",
+        answer: "İçerik planlama, görsel ve metin üretimi, topluluk yönetimi ve raporlama dahil tüm süreci yönetiyoruz. NKolay Medya olarak markanızı profesyonelce temsil ederiz.",
+      },
+      {
+        question: "Hangi platformlarda hizmet veriyorsunuz?",
+        answer: "Instagram, Facebook, LinkedIn, X ve TikTok gibi ana platformlarda çalışıyoruz. NKolay Medya olarak hedef kitlenize en uygun mecraları seçip yönetiriz.",
+      },
+      {
+        question: "Performansı nasıl ölçüyorsunuz?",
+        answer: "Erişim, etkileşim ve dönüşüm metriklerini raporluyoruz. NKolay Medya olarak veriye dayalı kararlarla stratejinizi sürekli iyileştirir, sonuçları şeffaf sunarız.",
+      },
+    ]
   },
   {
     id: "reputation-management",
@@ -288,7 +568,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Güçlü İmaj",
     iconName: "Shield",
     detailedContent: "Bir markanın itibarı, onun en değerli varlığıdır. Şikayet platformları, sosyal medya yorumları ve haber sitelerinde markanız hakkında oluşan olumsuz algıları yönetiyoruz. Profesyonel dijital PR stratejileri, SEO bazlı manipülasyon engelleme (olumsuz içeriklerin arka sayfalara itilmesi) ve marka elçiliği çalışmalarıyla kurumsal itibarınızı koruma altına alıyoruz.",
-    benefits: ["Sarsılmaz Marka Güveni", "Kriz Anlarında Hızlı Müdahale", "Google Aramalarında Pozitif Algı", "Gelişmiş PR Entegrasyonları"]
+    benefits: ["Sarsılmaz Marka Güveni", "Kriz Anlarında Hızlı Müdahale", "Google Aramalarında Pozitif Algı", "Gelişmiş PR Entegrasyonları"],
+    detailSections: [
+      {
+        heading: "Dijital İtibar Yönetimi ve Marka Algısı",
+        body: "NKolay Medya olarak markanızın dijital dünyadaki algısını profesyonel araçlarla ölçüyor ve güçlendiriyoruz. Google arama sonuçlarında, sosyal medyada ve sektörel platformlarda marka algısı analizi yaparak olumsuz içerikleri tespit ediyoruz. Pozitif imajınızı öne çıkaran dijital PR çalışmalarıyla arama sonuçlarınızı iyileştiriyoruz. Böylece müşterileriniz sizi her zaman en iyi haliyle görüyor.",
+      },
+      {
+        heading: "Kriz Yönetimi ve Hızlı Müdahale",
+        body: "Çevrimiçi krizler anında büyüyebilir; biz NKolay Medya ekibi olarak 7/24 izleme yaparak olumsuz yayılımları erkenden yakalıyoruz. Kriz yönetimi sürecinde şeffaf bir iletişim stratejisi geliştiriyor, doğru açıklamalarla marka güvenini koruyoruz. Hazırladığımız aksiyon planı sayesinde itibar zararını en aza indiriyor ve markanızın kontrolünü hızla geri kazanmasını sağlıyoruz.",
+      },
+      {
+        heading: "Olumsuz İçerik Optimizasyonu ve Pozitif SEO",
+        body: "Arama motorlarında markanızla ilgili olumsuz içerikleri tespit edip olumsuz içerik optimizasyonu teknikleriyle etkisiz hale getiriyoruz. NKolay Medya olarak pozitif basın bültenleri, müşteri yorumları ve güçlü içerik stratejisiyle arama sonuçlarınızı yeniden şekillendiriyoruz. Uzun vadede Google'da markanız için güven veren, kalıcı bir dijital varlık oluşturuyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "İtibar yönetimi hizmeti ne kadar sürede sonuç verir?",
+        answer: "Marka algısı analizi ve dijital PR çalışmalarımız genellikle ilk ay içinde olumlu sinyaller verir. Kalıcı sonuçlar için 3 ila 6 aylık stratejik bir süreç öneriyoruz. NKolay Medya olarak her aşamayı düzenli raporlarla şeffaf şekilde paylaşıyoruz.",
+      },
+      {
+        question: "Google'da hakkımızdaki olumsuz yorumları kaldırtabilir misiniz?",
+        answer: "Yasal olmayan içerikler için hukuki süreçleri yönetiyoruz; arama sonuçlarındaki olumsuz içerikleri optimizasyon ve pozitif içerikle geri plana itiyoruz. NKolay Medya, markanızın kontrolünü dijital PR ile güçlendirir.",
+      },
+      {
+        question: "Kriz anında nasıl destek oluyorsunuz?",
+        answer: "7/24 izleme sistemimizle krizleri anında tespit ediyor, hazır aksiyon planımızla hızlı müdahale ediyoruz. NKolay Medya kriz yönetimi ekibi, marka sesinizi koruyan açıklama ve iletişim stratejisi geliştirir.",
+      },
+    ]
   },
   {
     id: "brand-consulting",
@@ -305,7 +613,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Sektörel Liderlik",
     iconName: "Briefcase",
     detailedContent: "Markanızın sektördeki konumunu belirliyor, rekabet avantajlarınızı ortaya çıkarıyoruz. Logonuzdan sloganınıza, müşteri iletişim dilinizden (tone of voice) ürün ambalajınıza kadar her temas noktasını 'tek bir marka ruhu' etrafında birleştiriyoruz. Hem pazara yeni giren hem de kabuk değiştirmek isteyen firmalar için pazar analizi eşliğinde vizyoner bir rota çiziyoruz.",
-    benefits: ["Sektörde Keskin Farkındalık", "Tüketici Zihninde Net Konumlandırma", "Bütünsel Kurumsal İmaj", "Uzun Vadeli Büyüme Vizyonu"]
+    benefits: ["Sektörde Keskin Farkındalık", "Tüketici Zihninde Net Konumlandırma", "Bütünsel Kurumsal İmaj", "Uzun Vadeli Büyüme Vizyonu"],
+    detailSections: [
+      {
+        heading: "Marka Konumlandırma ve Strateji",
+        body: "NKolay Medya marka danışmanlığı ekibi olarak işletmenizi rakiplerden ayıran değerleri belirliyor ve güçlü bir marka konumlandırma stratejisi kuruyoruz. Hedef kitle ve rakip analizi yaparak pazardaki boşlukları tespit ediyor, markanızın sesini ve vaatlerini netleştiriyoruz. Böylece müşterilerinizle duygusal bağ kuran, akılda kalıcı ve sürdürülebilir bir kurumsal kimlik oluşturuyoruz.",
+      },
+      {
+        heading: "Hedef Kitle ve Rakiplerin Derinlemesine Analizi",
+        body: "Başarılı bir pazarlama stratejisi için doğru veri şarttır. NKolay Medya olarak hedef kitlenizin davranışlarını, beklentilerini ve satın alma motivasyonlarını analiz ediyoruz. Rakiplerin güçlü ve zayıf yönlerini kıyaslayarak size avantaj sağlayacak fırsatları belirliyoruz. Bu analizler ışığında markanızı doğru kanallarda, doğru mesajlarla konumlandırıyor ve büyümenizi hızlandırıyoruz.",
+      },
+      {
+        heading: "Kurumsal Kimlik Kılavuzu ve Yeniden Konumlandırma",
+        body: "Markanızın tutarlılığını korumak için detaylı kurumsal kimlik kılavuzu hazırlıyoruz; renkten tonlamaya kadar her detayı belirliyoruz. NKolay Medya, zamanla eskiyen markalar için yeniden konumlandırma projeleri yürütür. Güncel trendlere uygun pazarlama stratejisiyle imajınızı tazeler, müşteri sadakatini artırır ve pazarda güçlü bir yenilik algısı yaratırız.",
+      },
+    ],
+    faq: [
+      {
+        question: "Marka danışmanlığı süreci nasıl ilerler?",
+        answer: "Önce marka konumlandırma ve rakip analizi yaparız, ardından kurumsal kimlik kılavuzu ve pazarlama stratejisi oluştururuz. NKolay Medya olarak her aşamayı onayınıza sunar, markanıza özel yol haritasıyla uygulamaya geçeriz.",
+      },
+      {
+        question: "Yeni bir marka mı yoksa mevcut marka yenilemesi mi yapıyorsunuz?",
+        answer: "Her ikisini de yapıyoruz. Sıfırdan marka kuran ekibimiz, ayrıca yeniden konumlandırma ihtiyacı olan işletmelere modern kimlik ve strateji hizmeti sunar. NKolay Medya her markaya uygun çözüm üretir.",
+      },
+      {
+        question: "Marka danışmanlığı fiyatları nelerdir?",
+        answer: "Ücretler; marka konumlandırma kapsamı, analiz derinliği ve teslim edilecek kurumsal kimlik dokümanlarına göre değişir. NKolay Medya, ihtiyaçlarınıza göre esnek ve şeffaf teklifler sunar.",
+      },
+    ]
   },
   {
     id: "ecommerce-consulting",
@@ -322,7 +658,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Yüksek Sepet Ortalaması",
     iconName: "ShoppingBag",
     detailedContent: "E-ticaret sadece ürün eklemekten ibaret değildir. Ziyaretçilerin müşteriye, müşterilerin sadık savunuculara dönüşmesini sağlayacak 'Kullanıcı Yolculuğu' (User Journey) optimizasyonları yapıyoruz. Terk edilen sepet kurtarma stratejileri, pazaryeri (Trendyol, Hepsiburada vb.) entegrasyonları, performans pazarlaması bütçe dağıtımı ve sadakat programlarıyla gelirlerinizi ölçekliyoruz.",
-    benefits: ["Artan Ortalama Sepet Tutarı (AOV)", "Düşük Sepet Terk Etme Oranı", "Gelişmiş Çok Kanallı Satış (Omnichannel)", "Optimum Karlılık Analizi"]
+    benefits: ["Artan Ortalama Sepet Tutarı (AOV)", "Düşük Sepet Terk Etme Oranı", "Gelişmiş Çok Kanallı Satış (Omnichannel)", "Optimum Karlılık Analizi"],
+    detailSections: [
+      {
+        heading: "E-Ticaret Platform Seçimi ve Kurulum",
+        body: "NKolay Medya e-ticaret danışmanlığı ekibi olarak işletmenize en uygun platformu seçiyor ve sorunsuz kurulumunu gerçekleştiriyoruz. Shopify, WooCommerce veya özel altyapı arasında doğru tercihi yaparak teknik altyapınızı güçlendiriyoruz. Pazaryeri entegrasyonlarıyla Trendyol ve Hepsiburada üzerinde de satışa başlıyor, çok kanallı bir satış ağı kurarak işletmenizin dijital büyümesini sağlam temeller üzerine oturtuyoruz.",
+      },
+      {
+        heading: "Dönüşüm Oranı Optimizasyonu (CRO)",
+        body: "Ziyaretçilerinizi müşteriye dönüştürmek e-ticarette kârlılığın anahtarıdır. NKolay Medya olarak dönüşüm oranı optimizasyonu çalışmalarıyla ürün sayfalarını, ödeme akışını ve çağrı butonlarını iyileştiriyoruz. A/B testleri ve ısı haritası analizleriyle kullanıcı davranışını anlayıp sepet optimizasyonu yapıyoruz. Böylece ortalama sipariş tutarını (AOV) artırarak satışlarınızı ölçülebilir şekilde yükseltiyoruz.",
+      },
+      {
+        heading: "Pazaryeri Entegrasyonu ve Sepet Optimizasyonu",
+        body: "Trendyol, Hepsiburada ve diğer pazaryerlerinde güçlü görünmek için entegrasyonları kusursuz yönetiyoruz. NKolay Medya sepet optimizasyonu ile terk edilen sepet oranını düşürür, ödeme sürecini sadeleştirir. Stok ve fiyat senkronizasyonunu otomatikleştirerek operasyonel hataları önleriz. AOV artırma stratejileriyle müşterinizi daha fazla ürün almaya teşvik eden akıllı öneriler sunuyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hangi e-ticaret platformlarını öneriyorsunuz?",
+        answer: "İşletme ölçeğine göre Shopify, WooCommerce veya özel altyapı öneriyoruz. NKolay Medya; Trendyol ve Hepsiburada pazaryeri entegrasyonlarını da ekleyerek çok kanallı satış stratejinizi kurar.",
+      },
+      {
+        question: "Dönüşüm oranını ne kadar artırabilirim?",
+        answer: "CRO ve sepet optimizasyonu çalışmalarımızla ortalama yüzde 20 ila 40 arası iyileşme sağlıyoruz. NKolay Medya, A/B testleriyle ölçülebilir sonuçlar sunar ve AOV artırma hedeflerine odaklanır.",
+      },
+      {
+        question: "Pazaryeri entegrasyonu ne kadar sürer?",
+        answer: "Stok ve fiyat senkronizasyonu dahil entegrasyonlar genellikle 2 ila 4 haftada tamamlanır. NKolay Medya süreci yönetir, testleri yaparak kesintisiz çok kanallı satış geçişi sağlar.",
+      },
+    ]
   },
   {
     id: "video-production",
@@ -339,7 +703,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Sinematik Kalite",
     iconName: "Video",
     detailedContent: "Modern pazarlamada metinlerin yerini dinamik videolar aldı. Yüksek çözünürlüklü kameralar, profesyonel aydınlatma ve drone ekipmanlarımızla kurumunuza değer katıyoruz. Uzun metrajlı kurumsal belgesellerden tutun, sosyal medyada patlama yapacak 15 saniyelik 'kanca odaklı' dikey kurgulara (Reels/TikTok) kadar tüm çekim, senaryo, ve post-prodüksiyon (color grading, sound design) süreçlerini üstleniyoruz.",
-    benefits: ["Duygusal Bağ Kuran Görsellik", "Profesyonel Senaryo ve Seslendirme Uyum", "Platforma Özel Format Üretimi (Yatay/Dikey)", "Yüksek Dönüşüm Getiren Reklam Materyalleri"]
+    benefits: ["Duygusal Bağ Kuran Görsellik", "Profesyonel Senaryo ve Seslendirme Uyum", "Platforma Özel Format Üretimi (Yatay/Dikey)", "Yüksek Dönüşüm Getiren Reklam Materyalleri"],
+    detailSections: [
+      {
+        heading: "Profesyonel Senaryo ve Yönetmenlik",
+        body: "NKolay Medya video prodüksiyon ekibi olarak markanızın hikayesini etkileyici senaryolarla kurguluyoruz. Hedef kitlenize hitap eden, akıcı ve ikna edici metinler yazıp görsel dilinizi belirliyoruz. Kurumsal tanıtım filmlerinden sosyal medya içeriklerine kadar her projede stratejik bir yaklaşım benimsiyoruz. Böylece izleyiciyi harekete geçiren, marka bilinirliğinizi artıran kaliteli videolar üretiyoruz.",
+      },
+      {
+        heading: "Kamera ve Drone Çekimi",
+        body: "Yüksek çözünürlüklü ekipmanlarımız ve deneyimli ekibimizle sinematik görüntüler kaydediyoruz. NKolay Medya drone çekimiyle etkileyici havadan planlar sunar, mekan ve ürünlerinizi en iyi açılardan görüntüler. İç ve dış mekan çekimlerinde ışık ve kompozisyonu profesyonelce yöneterek her karede markanıza yakışan görseller oluşturuyoruz. Hareketli sahnelerde bile netlik ve estetik ön planda tutulur.",
+      },
+      {
+        heading: "Post-Prodüksiyon ve Dikey İçerik Üretimi",
+        body: "Çekilen görüntüleri post-prodüksiyon aşamasında birleştiriyor, color grading ile renkleri zenginleştiriyoruz. NKolay Medya, Reels ve TikTok gibi platformlar için dikey içerik formatları üretir. Ses tasarımı, grafik ve montajla videolarınızı optimize ederek organik erişiminizi artırıyoruz. Kısa, dikkat çekici ve paylaşılabilir içeriklerle sosyal medya hesaplarınızı canlandırıyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Video prodüksiyon süresi ne kadar sürer?",
+        answer: "Senaryo, çekim ve post-prodüksiyon dahil kurumsal videolar genelde 1 ila 3 haftada tamamlanır. NKolay Medya, color grading ve montajı da kapsayan şeffaf bir üretim takvimi sunar.",
+      },
+      {
+        question: "Drone çekimi yapıyor musunuz?",
+        answer: "Evet, profesyonel drone çekimiyle havadan etkileyici görüntüler kaydediyoruz. NKolay Medya; kurumsal tanıtım ve mekan videolarında sinematik planlar için drone kullanır.",
+      },
+      {
+        question: "Reels ve TikTok için içerik üretiyor musunuz?",
+        answer: "Evet, dikey içerik formatında Reels ve TikTok videoları hazırlıyoruz. NKolay Medya; post-prodüksiyon ve trend analiziyle markanıza uygun, paylaşılabilir kısa videolar üretir.",
+      },
+    ]
   },
   {
     id: "voiceover",
@@ -356,7 +748,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Net ve Etkili",
     iconName: "Mic",
     detailedContent: "Markanızın görseli kadar sesi de önemlidir. Profesyonel dublaj ve seslendirme sanatçılarımızdan oluşan geniş havuzumuzla, projenize en uygun 'ses rengini' buluyoruz. Kurumsal tanıtım filmleri, radyo ve TV reklamları, e-öğrenme (e-learning) modülleri ve profesyonel telefon santral (IVR) anonsları için stüdyo ortamında pürüzsüz kalitede seslendirme gerçekleştiriyoruz.",
-    benefits: ["Geniş Sanatçı ve Dil Seçeneği", "Kusursuz Ses Kalitesi ve Mastering", "Kurumsal Kimliğe Uygun Ses Rengi", "Hızlı Teslimat"]
+    benefits: ["Geniş Sanatçı ve Dil Seçeneği", "Kusursuz Ses Kalitesi ve Mastering", "Kurumsal Kimliğe Uygun Ses Rengi", "Hızlı Teslimat"],
+    detailSections: [
+      {
+        heading: "Reklam ve Tanıtım Seslendirmesi",
+        body: "NKolay Medya seslendirme hizmetleriyle markanızın sesini profesyonel stüdyo kalitesinde duyuruyoruz. Reklam filmi, radyo spotu ve tanıtım videoları için geniş sanatçı havuzumuzdan markanıza en uygun sesi seçiyoruz. Doğru tonlama ve duygusal vurguyla mesajınızı güçlendiriyor, hedef kitlenizle güçlü bir bağ kuruyoruz. Kaliteli ses tasarımı marka algınızı premium bir seviyeye taşır.",
+      },
+      {
+        heading: "IVR ve Santral Anonsları",
+        body: "Müşteri deneyiminin ilk adımı net ve dostça bir sestir. NKolay Medya olarak IVR ve santral anonslarını markanızın kurumsal tonuna uygun şekilde hazırlıyoruz. Çoklu dil desteğiyle yabancı müşterilerinizi de karşılıyor, çağrı merkezi süreçlerinizi profesyonelleştiriyoruz. Stüdyo kaydı ve düzenlemeyle anlaşılır, sıcak ve güven veren bir iletişim deneyimi sunuyoruz.",
+      },
+      {
+        heading: "Çoklu Dil ve Stüdyo Kalitesi",
+        body: "Global pazara açılan markalar için çoklu dil seslendirme çözümleri sunuyoruz. NKolay Medya bünyesindeki geniş sanatçı havuzu; Türkçe ve yabancı dillerde uzman sesler barındırır. Profesyonel stüdyo kalitesinde, gürültüsüz ve net kayıtlar yapıyor; post-prodüksiyonda sesi mükemmelleştiriyoruz. Böylece her kanalda tutarlı, etkileyici ve uluslararası standartta bir marka sesi yaratıyoruz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Hangi dillerde seslendirme yapıyorsunuz?",
+        answer: "Türkçe başta olmak üzere İngilizce, Almanca, Arapça ve birçok dilde çoklu dil seslendirme sunuyoruz. NKolay Medya geniş sanatçı havuzuyla markanıza uygun yabancı sesler sağlar.",
+      },
+      {
+        question: "Seslendirme kayıt kalitesi nasıldır?",
+        answer: "Tüm kayıtlar profesyonel stüdyo kalitesinde, gürültüsüz ve net yapılır. NKolay Medya post-prodüksiyon sürecinde sesi düzenleyerek reklam ve IVR standartlarına uygun sonuç verir.",
+      },
+      {
+        question: "IVR anonslarını kimin sesiyle hazırlıyorsunuz?",
+        answer: "Markanızın kurumsal tonuna uygun sanatçıyı geniş havuzumuzdan seçiyoruz. NKolay Medya; santral anonsları ve IVR için doğru tonda, güven veren profesyonel sesler sunar.",
+      },
+    ]
   },
   {
     id: "strategy-dev",
@@ -373,7 +793,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "Sürdürülebilir Büyüme",
     iconName: "Target",
     detailedContent: "Taktikler geçici, strateji kalıcıdır. Markanızın sektördeki veri dinamiklerini inceliyor, rakiplerin boşluklarını buluyor ve işletmenize büyüme kazandıracak 'Growth Hacking' metodolojilerini uyguluyoruz. Performans göstergelerini (KPI's) net olarak belirliyor, aylık ve yıllık yol haritaları çıkararak, işletmenizin dijital ve geleneksel pazardaki adımlarını güvence altına alıyoruz.",
-    benefits: ["Riski Minimize Edilmiş Adımlar", "Net Geri Dönüş (ROI) Odaklılık", "Pazardaki Boşlukları Yakalama Fırsatı", "Karar Almada Veri Tabanlı Rehberlik"]
+    benefits: ["Riski Minimize Edilmiş Adımlar", "Net Geri Dönüş (ROI) Odaklılık", "Pazardaki Boşlukları Yakalama Fırsatı", "Karar Almada Veri Tabanlı Rehberlik"],
+    detailSections: [
+      {
+        heading: "Büyüme Stratejileri ve Growth Hacking",
+        body: "NKolay Medya strateji geliştirme ekibi olarak işletmenize özel büyüme (growth) stratejileri tasarlıyoruz. Veriye dayalı deneyimlerle müşteri edinme ve elde tutma süreçlerinizi optimize ediyor, growth hacking teknikleriyle hızlı ve ölçeklenebilir sonuçlar alıyoruz. Kanallar arası entegrasyonu güçlendirerek markanızın sürdürülebilir büyümesini destekliyor, her yatırımın getirisini net şekilde raporluyoruz.",
+      },
+      {
+        heading: "Veri Analizi ve Pazar Araştırması",
+        body: "Doğru kararlar sağlam veriyle alınır. NKolay Medya olarak pazar araştırması ve veri analizi yaparak sektör trendlerini, müşteri davranışlarını ve fırsatları netleştiriyoruz. Rakiplerinizi izleyip hedef kitlenizin gerçek ihtiyaçlarını ortaya koyuyoruz. Bu içgörüler ışığında stratejinizi şekillendiriyor, dijital dönüşüm yol haritasıyla işletmenizi geleceğe hazırlıyoruz.",
+      },
+      {
+        heading: "Dijital Dönüşüm ve KPI Yönetimi",
+        body: "NKolay Medya, dijital dönüşüm yol haritasıyla iş süreçlerinizi modernleştiriyor ve KPI yönetimiyle performansı ölçülebilir kılıyoruz. Belirlediğimiz temel performans göstergeleriyle stratejilerinizi sürekli iyileştiriyor, sürdürülebilir büyüme için çevik aksiyonlar alıyoruz. Şeffaf raporlama sayesinde yatırımlarınızın etkisini anlık takip ediyor, büyümenizi istikrarlı şekilde yönetiyorsunuz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Strateji geliştirme süreci nasıl başlar?",
+        answer: "Pazar araştırması ve veri analiziyle mevcut durumu inceleriz, ardından dijital dönüşüm yol haritası oluştururuz. NKolay Medya, KPI yönetimiyle ölçülebilir büyüme stratejisi sunar.",
+      },
+      {
+        question: "Growth stratejileri neden önemlidir?",
+        answer: "Growth yaklaşımıyla müşteri edinimi ve elde tutma maliyetlerinizi düşürür, sürdürülebilir büyüme sağlarsınız. NKolay Medya veriye dayalı deneyimlerle hızlı sonuç getirir.",
+      },
+      {
+        question: "KPI yönetimini nasıl raporluyorsunuz?",
+        answer: "Belirlenen temel göstergeleri şeffaf panolarla düzenli raporluyoruz. NKolay Medya, strateji performansınızı anlık izlemenizi ve aksiyon almanızı kolaylaştırır.",
+      },
+    ]
   },
   {
     id: "automation",
@@ -390,7 +838,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "7/24 Kesintisiz Hizmet",
     iconName: "Bot",
     detailedContent: "İnsan gücünün sınırlarını aşın. Özellikle müşteri destek kanallarınızda (WhatsApp, Instagram DM, Web Chat) 7/24 kesintisiz hizmet verebilen NLP (Doğal Dil İşleme) ve yapay zeka entegre botlar geliştiriyoruz. Müşterileriniz anında cevap alırken, sipariş alma, randevu oluşturma ve sıkça sorulan sorular gibi süreçleri %100 otomatikleştirerek çalışan maliyetlerinizi düşürüyoruz.",
-    benefits: ["Müşteri Memnuniyetinde Anında Artış", "Satışları Kaçırmama (7/24 Aktif)", "Operasyonel Maliyetlerde Büyük Düşüş", "Hata Payı Sıfır Süreç Yönetimi"]
+    benefits: ["Müşteri Memnuniyetinde Anında Artış", "Satışları Kaçırmama (7/24 Aktif)", "Operasyonel Maliyetlerde Büyük Düşüş", "Hata Payı Sıfır Süreç Yönetimi"],
+    detailSections: [
+      {
+        heading: "WhatsApp ve Sosyal Medya DM Botları",
+        body: "NKolay Medya otomasyon bot hizmetleriyle müşterilerinizle anında iletişim kuruyorsunuz. Geliştirdiğimiz WhatsApp ve DM botları, gelen mesajları otomatik yanıtlar; soruları hızlı çözüp satış hunisini besler. Yapay zeka (AI/NLP) destekli bu sistemler doğal dilde anlaşır, müşteri memnuniyetini artırır. 7/24 çalışan botlarımızla hiçbir fırsatı kaçırmadan lead oluşturursunuz.",
+      },
+      {
+        heading: "CRM Otomasyon Entegrasyonları",
+        body: "Müşteri ilişkileri yönetimini otomatikleştirmek satışları artırır. NKolay Medya olarak CRM otomasyon entegrasyonları kurarak verilerinizi tek merkezde topluyoruz. Lead takibi, e-posta akışları ve görev atamalarını sistemleştirip manuel iş yükünü azaltıyoruz. İş süreçleri otomasyonu sayesinde ekibiniz stratejiye odaklanır, müşteri yolculuğu kesintisiz ve kişiselleştirilmiş hale gelir.",
+      },
+      {
+        heading: "Yapay Zeka Destekli 7/24 İş Süreçleri",
+        body: "NKolay Medya, AI/NLP teknolojileriyle iş süreçleri otomasyonunu bir üst seviyeye taşır. 7/24 yanıt veren akıllı asistanlarımızla destek taleplerini yönetir, sipariş ve randevu süreçlerini otomatikleştiririz. Tekrarlayan görevleri ortadan kaldırarak maliyetleri düşürür, verimliliği artırırız. Ölçeklenebilir bot mimarimizle işletmeniz büyürken operasyonel yükünüz sabit kalır.",
+      },
+    ],
+    faq: [
+      {
+        question: "WhatsApp botu kurmak zor mudur?",
+        answer: "Hayır, NKolay Medya olarak entegrasyonu sizin adınıza kuruyoruz. AI/NLP destekli botlarımız 7/24 çalışır, gelen mesajları otomatik yanıtlar ve satış sürecini destekler.",
+      },
+      {
+        question: "Kullandığınız CRM sistemleri nelerdir?",
+        answer: "Popüler CRM platformlarının çoğuyla CRM otomasyon entegrasyonu yapabiliyoruz. NKolay Medya, mevcut altyapınıza uygun iş süreçleri otomasyonu kurar.",
+      },
+      {
+        question: "Botlar gerçekten insanlarla mı iletişim kurar?",
+        answer: "Evet, AI/NLP destekli botlarımız doğal dilde anlar ve 7/24 yanıt verir. NKolay Medya; karmaşık taleplerde insan ekibinize sorunsuz yönlendirme yapar.",
+      },
+    ]
   },
   {
     id: "cyber-security",
@@ -407,7 +883,35 @@ export const SERVICES_DATA: ServiceItem[] = [
     metric: "0 Veri Sızıntısı",
     iconName: "Lock",
     detailedContent: "Dijitalleşen dünyada en büyük risk, veri hırsızlığı ve itibar kaybıdır. Web siteleriniz, mobil uygulamalarınız ve sunucularınız için beyaz şapkalı hackerlarımız tarafından gerçekleştirilen sızma (Penetrasyon) testleri (Pentest) ile güvenlik açıklarınızı sizden önce biz buluyoruz. İleri düzey firewall konfigürasyonları, veri tabanı şifrelemesi ve aktif DDoS koruması ile işletmenizi siber tehditlerden arındırıyoruz.",
-    benefits: ["KVKK ve GDPR Uyumluluğu", "Sıfır Gün (Zero-Day) Açıklarına Karşı Önlem", "Kurumsal Veri Mahremiyeti", "Kesintisiz Güvenli İş Akışı"]
+    benefits: ["KVKK ve GDPR Uyumluluğu", "Sıfır Gün (Zero-Day) Açıklarına Karşı Önlem", "Kurumsal Veri Mahremiyeti", "Kesintisiz Güvenli İş Akışı"],
+    detailSections: [
+      {
+        heading: "Sızma Testleri ve Güvenlik Açığı Taraması",
+        body: "NKolay Medya siber güvenlik ekibi olarak işletmenizin zafiyetlerini sızma (penetrasyon) testleriyle gerçek saldırgan gözüyle ortaya çıkarıyoruz. Düzenli güvenlik açığı taraması yaparak sistemlerinizi, uygulamalarınızı ve ağınızı sürekli denetliyoruz. Bulunan açıkları önceliklendirip somut çözüm önerileri sunuyoruz. Böylece verilerinizi korur, müşteri güvenini güvence altına alır ve olası ihlalleri engellersiniz.",
+      },
+      {
+        heading: "DDoS ve Bot Koruması",
+        body: "Online varlığınızı hedef alan saldırılar işinizi durdurabilir. NKolay Medya olarak DDoS ve bot koruması çözümleriyle sunucularınızı ve web sitenizi sürekli izliyor, anormal trafiği anında engelliyoruz. Gelişmiş filtreleme ve rate-limiting ile kötü niyetli botları durdurup gerçek kullanıcılarınızın kesintisiz erişimini sağlıyoruz. Böylece hizmet sürekliliğinizi ve itibarınızı koruyoruz.",
+      },
+      {
+        heading: "Veri Şifreleme ve KVKK/GDPR Uyumluluğu",
+        body: "Kişisel verileriniz en değerli varlığınızdır. NKolay Medya veri şifreleme yöntemleriyle bilgilerinizi aktarım ve depolama sırasında korur. KVKK ve GDPR uyumluluğu danışmanlığıyla mevzuata tam uyum sağlar, gerekli politikaları ve aydınlatma metinlerini hazırlarız. Düzenli denetimlerle uyumunuzu sürdürür, olası cezaları önler ve müşterilerinize güven verirsiniz.",
+      },
+    ],
+    faq: [
+      {
+        question: "Sızma testi ne sıklıkla yapılmalıdır?",
+        answer: "Önerimiz yılda en az bir kez ve her büyük güncellemede penetrasyon testi yapmaktır. NKolay Medya düzenli güvenlik açığı taramasıyla sisteminizi sürekli korur.",
+      },
+      {
+        question: "KVKK ve GDPR uyumluluğu sağlıyor musunuz?",
+        answer: "Evet, KVKK ve GDPR uyumluluğu için gerekli politikaları ve aydınlatma metinlerini hazırlıyoruz. NKolay Medya veri şifreleme ve denetimlerle uyumunuzu sürdürür.",
+      },
+      {
+        question: "DDoS saldırılarına karşı nasıl korunuyoruz?",
+        answer: "Gelişmiş DDoS ve bot koruması ile trafiği izleyip anormal akışları anında engelliyoruz. NKolay Medya, hizmet sürekliliğinizi ve erişilebilirliğinizi garanti altına alır.",
+      },
+    ]
   }
 ];
 
@@ -624,6 +1128,227 @@ export const BLOG_CATEGORIES = [
 ] as const;
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "blog-6",
+    title: "Dijital Pazarlama Nedir? 2026 İçin Kapsamlı Başlangıç Rehberi",
+    slug: "dijital-pazarlama-nedir-rehber",
+    excerpt:
+      "Dijital pazarlama nedir, hangi kanallardan oluşur ve küçük işletmeler nereden başlamalı? SEO'dan sosyal medyaya, Google Ads'ten e-posta pazarlamasına eksiksiz rehber.",
+    category: "Dijital Pazarlama",
+    tags: ["Dijital Pazarlama", "Strateji", "Başlangıç", "Pazarlama Kanalları"],
+    author: "NKolay Medya Strateji Ekibi",
+    publishedAt: "2026-07-18",
+    readTime: "12 dk",
+    coverEmoji: "📈",
+    content: [
+      {
+        body: "Dijital pazarlama, bir markanın ürün veya hizmetlerini internet üzerinden hedef kitlesine ulaştırmak için kullandığı tüm strateji ve kanalların bütünüdür. Arama motorları, sosyal medya, e-posta, içerik ve ücretli reklamlar bu ekosistemin temel taşlarıdır. Türkiye'de internet kullanım oranının %85'i aştığı bu dönemde, dijital varlığı olmayan bir işletme rakiplerinin gerisinde kalmaya mahkûmdur.",
+      },
+      {
+        heading: "Dijital Pazarlama Neden Bu Kadar Önemli?",
+        body: "Geleneksel reklam yöntemlerinin aksine dijital pazarlama ölçülebilir, hedeflenebilir ve esnektir. Kime, ne zaman, hangi mesajı gösterdiğinizi bilebilir; her harcanan liranın geri dönüşünü (ROI) net biçimde takip edebilirsiniz. Küçük bir bütçeyle bile doğru kitleye ulaşmak mümkündür.",
+      },
+      {
+        heading: "1. Arama Motoru Optimizasyonu (SEO)",
+        body: "SEO, web sitenizin Google gibi arama motorlarında organik olarak üst sıralara çıkmasını sağlar. Kullanıcı bir ürün ararken markanızı ilk sayfada görürse, hiç reklam vermeden düzenli ve ücretsiz trafik kazanırsınız. Uzun vadeli en yüksek ROI'yi sunan kanaldır.",
+      },
+      {
+        heading: "2. Ücretli Reklamlar (Google Ads & Meta Ads)",
+        body: "Hızlı sonuç isteyen markalar için ücretli reklam vazgeçilmezdir. Google Ads ile satın alma niyeti yüksek kullanıcıları, Meta (Instagram/Facebook) reklamlarıyla ise ilgi alanına göre potansiyel müşterileri yakalarsınız. Doğru kurulan kampanyalar günler içinde satış getirir.",
+      },
+      {
+        heading: "3. Sosyal Medya Pazarlaması",
+        body: "Instagram, TikTok, LinkedIn ve YouTube markanızın kişiliğini gösterdiği alanlardır. Düzenli ve değer katan içerik, topluluk oluşturur ve marka sadakati yaratır. Sosyal medya aynı zamanda müşteri hizmetleri ve itibar yönetimi için de kritiktir.",
+      },
+      {
+        heading: "4. İçerik Pazarlaması",
+        body: "Blog yazıları, rehberler, videolar ve infografikler hem SEO'yu besler hem de markanızı sektörde otorite konumuna taşır. 'Satmadan satan' bu yaklaşım, müşteri güvenini en sağlam şekilde inşa eder.",
+      },
+      {
+        heading: "5. E-Posta Pazarlaması",
+        body: "En yüksek geri dönüş oranına sahip kanallardan biridir. Doğru segmentlenmiş listeler ve otomasyonlarla, mevcut müşterilerinizi tekrar satın almaya teşvik eder, terk edilen sepetleri geri kazanırsınız.",
+      },
+      {
+        heading: "Küçük İşletmeler Nereden Başlamalı?",
+        body: "Önce hedeflerinizi netleştirin: marka bilinirliği mi, satış mı, potansiyel müşteri toplama mı? Ardından hedef kitlenizin en çok vakit geçirdiği 1-2 kanala odaklanın. Her şeyi aynı anda yapmaya çalışmak yerine, ölçülebilir küçük adımlarla başlayıp veriye göre büyüyün.",
+      },
+      {
+        body: "NKolay Medya olarak markanıza özel dijital pazarlama stratejisini ücretsiz strateji raporuyla sunuyoruz. Hangi kanalın işletmeniz için en verimli olduğunu birlikte belirleyelim.",
+      },
+    ],
+  },
+  {
+    id: "blog-7",
+    title: "Yerel SEO Nedir? Google Haritalar'da Üst Sıralara Çıkma Rehberi",
+    slug: "yerel-seo-google-haritalar-rehberi",
+    excerpt:
+      "İşletmenizi 'yakınımdaki' aramalarında ilk sıraya taşıyın. Google İşletme Profili optimizasyonu, yorumlar ve yerel SEO taktikleriyle bölgesel müşteri kazanın.",
+    category: "SEO",
+    tags: ["Yerel SEO", "Google İşletme Profili", "Google Haritalar", "Yorumlar"],
+    author: "NKolay Medya SEO Ekibi",
+    publishedAt: "2026-07-15",
+    readTime: "10 dk",
+    coverEmoji: "📍",
+    content: [
+      {
+        body: "Yerel SEO, belirli bir coğrafi bölgede hizmet veren işletmelerin 'yakınımdaki restoran', 'İstanbul diş hekimi' gibi konum bazlı aramalarda öne çıkmasını sağlayan optimizasyon çalışmalarıdır. Google aramalarının %46'sı yerel niyet taşır ve bu aramaların büyük çoğunluğu 24 saat içinde bir satın alma veya ziyaretle sonuçlanır.",
+      },
+      {
+        heading: "Google İşletme Profili'ni Eksiksiz Doldurun",
+        body: "Yerel SEO'nun kalbi Google İşletme Profili'dir (eski adıyla Google My Business). İşletme adı, adres, telefon, çalışma saatleri, kategori ve hizmet bilgilerini eksiksiz ve tutarlı girin. Profilinizi doğrulamayı unutmayın; doğrulanmamış işletmeler haritada görünmez.",
+      },
+      {
+        heading: "NAP Tutarlılığı Sağlayın",
+        body: "NAP; Name (isim), Address (adres) ve Phone (telefon) demektir. Bu bilgiler web siteniz, sosyal medyanız ve tüm rehber sitelerinde birebir aynı olmalıdır. Küçük farklılıklar bile Google'ın işletmenize duyduğu güveni zedeler.",
+      },
+      {
+        heading: "Müşteri Yorumlarını Aktif Yönetin",
+        body: "Yorumlar yerel sıralamanın en güçlü sinyallerinden biridir. Memnun müşterilerden düzenli yorum isteyin, hem olumlu hem olumsuz tüm yorumlara profesyonelce yanıt verin. Yüksek puan ve yorum sayısı hem sıralamayı hem tıklamayı artırır.",
+      },
+      {
+        heading: "Yerel Anahtar Kelimeleri Kullanın",
+        body: "Web sitenizin başlık, açıklama ve içeriklerinde şehir ve semt adlarını doğal biçimde kullanın. 'Esenyurt web tasarım', 'İstanbul dijital ajans' gibi konum + hizmet kombinasyonları hedefleyin.",
+      },
+      {
+        heading: "Yerel İçerik ve Backlink Üretin",
+        body: "Bölgenizle ilgili blog yazıları, yerel etkinlik sponsorlukları ve bölgesel iş rehberlerine kayıt, yerel otoritenizi güçlendirir. Yerel gazete ve bloglardan alınan bağlantılar altın değerindedir.",
+      },
+      {
+        body: "NKolay Medya olarak İstanbul ve tüm Türkiye'deki işletmeler için yerel SEO yönetimi sunuyoruz. Google Haritalar'da ilk 3'e girmenin yolunu birlikte açalım.",
+      },
+    ],
+  },
+  {
+    id: "blog-8",
+    title: "TikTok Pazarlaması: Markanızı Milyonlara Ulaştırma Rehberi",
+    slug: "tiktok-pazarlama-marka-buyume",
+    excerpt:
+      "TikTok artık sadece dans videoları değil; ciddi bir satış kanalı. Algoritma mantığı, içerik formatları ve TikTok Ads ile markanızı büyütün.",
+    category: "Sosyal Medya",
+    tags: ["TikTok", "Video Pazarlama", "Sosyal Medya", "Gen Z"],
+    author: "NKolay Medya İçerik Ekibi",
+    publishedAt: "2026-07-12",
+    readTime: "8 dk",
+    coverEmoji: "🎵",
+    content: [
+      {
+        body: "TikTok, 1 milyarı aşan aktif kullanıcısıyla dünyanın en hızlı büyüyen sosyal platformu. Türkiye'de de her yaş grubundan kullanıcıyı bünyesinde barındırıyor. Doğru kullanıldığında, sıfır takipçiyle başlayan bir marka bile tek videoyla milyonlara ulaşabilir.",
+      },
+      {
+        heading: "TikTok Algoritması Nasıl Çalışır?",
+        body: "TikTok, takipçi sayınızdan çok içeriğinizin ilk saatlerdeki performansına bakar. İzlenme süresi, tamamlanma oranı, beğeni, yorum ve paylaşım sinyalleri videonuzu 'Sana Özel' akışında daha geniş kitlelere taşır. Bu yüzden viral olma şansı herkese eşittir.",
+      },
+      {
+        heading: "İlk 2 Saniye Her Şeydir",
+        body: "İzleyicinin dikkatini kaybetmemek için videoya güçlü bir kanca ile başlayın. Merak uyandıran bir soru, şaşırtıcı bir görsel veya net bir vaat ilk saniyelerde verilmeli.",
+      },
+      {
+        heading: "Trendleri Markaya Uyarlayın",
+        body: "Güncel sesler, formatlar ve hashtag akımlarını takip edip kendi ürününüze uyarlayın. Trendi erken yakalamak organik erişim için büyük avantaj sağlar.",
+      },
+      {
+        heading: "TikTok Ads ile Ölçekleyin",
+        body: "Organik olarak işe yarayan içerikleri Spark Ads ile ücretli olarak destekleyin. TikTok reklam platformu, düşük maliyetli görüntülenme ve yüksek etkileşim potansiyeli sunar.",
+      },
+      {
+        body: "NKolay Medya olarak TikTok içerik üretimi ve reklam yönetimiyle markaların Gen Z ve genç kitleye ulaşmasını sağlıyoruz. Viral potansiyelinizi birlikte keşfedelim.",
+      },
+    ],
+  },
+  {
+    id: "blog-9",
+    title: "Web Sitesi Maliyeti 2026: Fiyatları Belirleyen Faktörler",
+    slug: "web-sitesi-maliyeti-fiyatlari",
+    excerpt:
+      "Web sitesi ne kadara mal olur? Kurumsal siteden e-ticarete, fiyatları etkileyen tüm faktörleri ve nelere dikkat edilmesi gerektiğini açıklıyoruz.",
+    category: "Tasarım & Teknoloji",
+    tags: ["Web Tasarım", "Maliyet", "E-Ticaret", "Kurumsal Site"],
+    author: "NKolay Medya Tasarım Ekibi",
+    publishedAt: "2026-07-08",
+    readTime: "9 dk",
+    coverEmoji: "💻",
+    content: [
+      {
+        body: "Bir web sitesinin maliyeti, tıpkı bir ev inşaatı gibi, kapsamına göre büyük farklılık gösterir. Tek sayfalık bir tanıtım sitesiyle yüzlerce ürünlü bir e-ticaret platformu aynı bütçeyle yapılamaz. Bu yazıda fiyatı belirleyen faktörleri şeffaf biçimde açıklıyoruz.",
+      },
+      {
+        heading: "1. Site Türü ve Kapsamı",
+        body: "Kurumsal tanıtım sitesi, blog, açılış sayfası (landing page), e-ticaret sitesi veya özel web uygulaması — her biri farklı iş yükü ve maliyet gerektirir. Sayfa sayısı ve fonksiyon karmaşıklığı doğrudan fiyata yansır.",
+      },
+      {
+        heading: "2. Tasarım: Şablon mu, Özel mi?",
+        body: "Hazır şablonlar hızlı ve uygun maliyetlidir ancak markanıza özgü değildir. Özel (custom) tasarım, rakiplerinizden ayrışmanızı sağlar ama daha fazla emek ve bütçe ister. Marka değeriniz büyüdükçe özel tasarım yatırıma dönüşür.",
+      },
+      {
+        heading: "3. Fonksiyonel Gereksinimler",
+        body: "Üyelik sistemi, ödeme entegrasyonu, çok dillilik, rezervasyon, CRM entegrasyonu gibi özellikler geliştirme süresini uzatır. Her ek özellik hem maliyeti hem de bakım gereksinimini artırır.",
+      },
+      {
+        heading: "4. Altyapı: Hosting, Alan Adı ve Bakım",
+        body: "İlk kurulum maliyetinin yanında hosting, SSL sertifikası, alan adı yenileme ve düzenli bakım/güncelleme giderlerini de bütçeye eklemek gerekir. Ucuz hosting çoğu zaman hız ve güvenlik sorunlarıyla geri döner.",
+      },
+      {
+        heading: "5. SEO ve Hız Optimizasyonu",
+        body: "Sadece güzel görünen değil, Google'da bulunan ve hızlı açılan bir site istiyorsanız, teknik SEO ve performans optimizasyonu da yatırımın parçasıdır. Bu, uzun vadede en çok geri dönüş sağlayan kalemdir.",
+      },
+      {
+        body: "NKolay Medya olarak ihtiyacınıza göre şeffaf ve net fiyatlandırma sunuyoruz. Projenize özel ücretsiz teklif için bizimle iletişime geçin.",
+      },
+    ],
+  },
+  {
+    id: "blog-10",
+    title: "Marka Bilinirliği Nasıl Artırılır? Kanıtlanmış 8 Strateji",
+    slug: "marka-bilinirligi-artirma-stratejileri",
+    excerpt:
+      "Güçlü bir marka, fiyat rekabetinden kurtulmanın anahtarıdır. Konumlandırmadan içerik pazarlamasına, marka bilinirliğini artıran 8 etkili yöntem.",
+    category: "Dijital Pazarlama",
+    tags: ["Marka", "Branding", "Marka Bilinirliği", "Konumlandırma"],
+    author: "NKolay Medya Strateji Ekibi",
+    publishedAt: "2026-07-02",
+    readTime: "10 dk",
+    coverEmoji: "✨",
+    content: [
+      {
+        body: "Marka bilinirliği, hedef kitlenizin markanızı tanıma ve hatırlama düzeyidir. Güçlü bir marka; tüketicinin zihninde ilk sırada yer alır, fiyat rekabetinin dışına çıkar ve müşteri sadakati yaratır. İşte bilinirliği artırmanın kanıtlanmış yolları.",
+      },
+      {
+        heading: "1. Net Bir Marka Konumlandırması Yapın",
+        body: "Rakiplerinizden nasıl ayrıştığınızı tek cümleyle ifade edebilmelisiniz. 'Kime, hangi değeri, neden farklı sunuyorsunuz?' sorusunun cevabı tüm iletişiminizin temeli olmalı.",
+      },
+      {
+        heading: "2. Tutarlı Görsel Kimlik Oluşturun",
+        body: "Logo, renk paleti, tipografi ve ton — tüm kanallarda tutarlı olmalı. Tutarlılık, tanınırlığı ve profesyonellik algısını güçlendirir.",
+      },
+      {
+        heading: "3. Değer Katan İçerik Üretin",
+        body: "Sürekli satış yapmaya çalışmak yerine, kitlenizin sorunlarını çözen içerikler üretin. Bu yaklaşım markanızı otorite konumuna taşır ve güven inşa eder.",
+      },
+      {
+        heading: "4. Sosyal Medyada Topluluk Kurun",
+        body: "Takipçiyle etkileşime geçin, yorumlara yanıt verin, kullanıcı içeriklerini paylaşın. Bir marka değil, bir topluluk hissi yaratmak sadakati güçlendirir.",
+      },
+      {
+        heading: "5. İş Birlikleri ve Influencer Pazarlaması",
+        body: "Kitlenizle örtüşen mikro influencer'larla çalışmak, güvenilir bir tavsiye etkisi yaratır ve yeni kitlelere erişim sağlar.",
+      },
+      {
+        heading: "6. Google ve Sosyal Medya Reklamları",
+        body: "Görüntülenme (impression) odaklı marka kampanyaları, markanızı kısa sürede geniş kitlelere tanıtır. Retargeting ile hatırlanabilirliği pekiştirir.",
+      },
+      {
+        heading: "7. Müşteri Deneyimini Kusursuzlaştırın",
+        body: "En güçlü pazarlama, memnun müşterinin tavsiyesidir. Kaliteli hizmet ve pürüzsüz deneyim, ağızdan ağıza yayılan organik bilinirlik yaratır.",
+      },
+      {
+        heading: "8. Ölçün ve Optimize Edin",
+        body: "Marka arama hacmi, sosyal medya erişimi ve doğrudan trafik gibi metriklerle bilinirliğinizi düzenli takip edin ve stratejinizi veriye göre güncelleyin.",
+      },
+      {
+        body: "NKolay Medya olarak marka stratejisi, kimlik tasarımı ve içerik yönetimiyle markanızı hedef kitlenizin zihninde ilk sıraya taşıyoruz.",
+      },
+    ],
+  },
   {
     id: "blog-1",
     title: "2026'da Google Ads ile Dönüşüm Oranını Artırmanın 7 Yolu",

@@ -12,7 +12,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-dark-surface border-t border-white/5 pt-16 pb-8 text-gray-400" id="footer-section">
+    <footer className="bg-dark-surface border-t border-white/5 pt-16 pb-8 text-gray-400 relative" id="footer-section">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
 

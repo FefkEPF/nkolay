@@ -93,7 +93,7 @@ export default function References() {
 
                 <div className="space-y-8 text-left relative z-10">
                   <div className="flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center space-x-1" role="img" aria-label="5 yıldız">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-6 h-6 fill-primary text-primary" />
                       ))}
@@ -170,7 +170,7 @@ export default function References() {
 
                 <div className="space-y-6 relative z-10">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center space-x-1" role="img" aria-label="5 yıldız">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                       ))}

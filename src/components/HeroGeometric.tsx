@@ -8,6 +8,11 @@ import { COMPANY, ROUTES } from "../lib/constants";
 import { cn } from "../lib/utils";
 import { useReducedMotion } from "../lib/useReducedMotion";
 
+// Fullscreen triangle/quad geometry is static — hoist to module scope so it is
+// not re-allocated on every render (R3F rebuilds the attribute when args identity changes).
+const POSITION_ARRAY = new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0]);
+const UV_ARRAY = new Float32Array([0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1]);
+
 // ─── Shader (componentry.dev Hero Geometric — exact spec) ────────────────────
 
 const vertexShader = `
@@ -153,11 +158,11 @@ function GradientPlane({
             <bufferGeometry>
                 <bufferAttribute
                     attach="attributes-position"
-                    args={[new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0]), 3]}
+                    args={[POSITION_ARRAY, 3]}
                 />
                 <bufferAttribute
                     attach="attributes-uv"
-                    args={[new Float32Array([0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1]), 2]}
+                    args={[UV_ARRAY, 2]}
                 />
             </bufferGeometry>
             <shaderMaterial
@@ -233,18 +238,16 @@ export default function HeroGeometric({
 
     useEffect(() => {
         const el = containerRef.current;
-        if (!el || reduced) return;
+        if (!el) return;
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
-                    setInView(true);
-                }
+                setInView(entry.isIntersecting);
             },
             { threshold: 0.1 }
         );
         observer.observe(el);
         return () => observer.disconnect();
-    }, [reduced]);
+    }, []);
 
     const noMotion = { opacity: 1, y: 0 } as const;
     const instant = { duration: 0.01 } as const;
@@ -264,7 +267,7 @@ export default function HeroGeometric({
             style={{ minHeight: "100dvh", backgroundColor: color1 }}
         >
             {/* WebGL animated background — componentry.dev Hero Geometric shader layer */}
-            {inView && <WebGLBackground color1={color1} color2={color2} speed={speed} />}
+            {inView && !reduced && <WebGLBackground color1={color1} color2={color2} speed={speed} />}
             <div className="absolute inset-0 z-[5] pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.15) 100%)" }} />
 
             {/* Page content */}
