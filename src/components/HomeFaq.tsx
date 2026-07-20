@@ -30,17 +30,17 @@ export default function HomeFaq() {
         </div>
 
         <div className="space-y-3">
-          {HOME_FAQ.map((faq, index) => {
-            const isOpen = openIndex === index;
+          {HOME_FAQ.map((faq) => {
+            const isOpen = openIndex === HOME_FAQ.indexOf(faq);
             return (
               <div
-                key={index}
+                key={faq.question}
                 className={`rounded-2xl border transition-colors duration-300 ${
                   isOpen ? "border-primary/30 bg-primary-light/40" : "border-gray-200/60 bg-gray-50/60"
                 }`}
               >
                 <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  onClick={() => setOpenIndex(isOpen ? null : HOME_FAQ.indexOf(faq))}
                   aria-expanded={isOpen}
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
                 >

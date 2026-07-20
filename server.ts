@@ -23,6 +23,7 @@ const PORT = 3000;
           "font-src": ["'self'", "data:", "https:"],
           "style-src": ["'self'", "https:", "'unsafe-inline'"],
           "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+          "connect-src": ["'self'", "ws:", "wss:"],
         },
       },
     })

@@ -64,7 +64,7 @@ export default function LegalPage({ page }: { page: "kvkk" | "terms" | "privacy"
           <div className="mt-12 space-y-10">
             {doc.sections.map((section, idx) => (
               <motion.section
-                key={idx}
+                key={section.heading}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

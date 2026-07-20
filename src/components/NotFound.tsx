@@ -34,7 +34,7 @@ export default function NotFound() {
             </p>
             <p className="text-gray-500 text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed">
               Girdiğiniz adres yanlış olabilir, sayfa taşınmış veya kaldırılmış olabilir.
-              Endişe etmeyin — yanlızca birkaç tık uzağınızdayız.
+              Endişe etmeyin — yalnızca birkaç tık uzağınızdayız.
             </p>
           </div>
 

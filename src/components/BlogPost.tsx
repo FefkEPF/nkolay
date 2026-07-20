@@ -100,7 +100,7 @@ export default function BlogPost() {
         <div className="space-y-6">
           {post.content.map((block, i) => (
             <motion.div
-              key={i}
+              key={`${block.heading ?? "para"}-${i}`}
               initial={reduced ? noMotion : { opacity: 0, y: 16 }}
               whileInView={reduced ? noMotion : { opacity: 1, y: 0 }}
               viewport={{ once: true }}

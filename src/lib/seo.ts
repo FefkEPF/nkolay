@@ -52,12 +52,9 @@ export function useSeo(options: SeoOptions = {}) {
     } else {
       // Clear description tags if the current page omits them, otherwise a
       // stale description from a previous route leaks across SPA navigation.
-      ["name=description", "property=og:description", "name=twitter:description"].forEach(
-        (sel) => {
-          const tag = document.querySelector(`meta[${sel}]`);
-          if (tag) tag.setAttribute("content", "");
-        }
-      );
+      ensureMeta("name", "description", "");
+      ensureMeta("property", "og:description", "");
+      ensureMeta("name", "twitter:description", "");
     }
 
     ensureMeta("property", "og:title", fullTitle);
