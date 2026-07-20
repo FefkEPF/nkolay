@@ -171,8 +171,8 @@ function TechHoverPill({ tech }: { tech: Tech }) {
 
 export default function TechStack() {
   return (
-    <section className="py-24 md:py-32 bg-white overflow-hidden" id="teknolojiler">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <section className="py-16 md:py-24 bg-white overflow-hidden" id="teknolojiler">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="text-center max-w-3xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2.5 bg-gray-50 border border-gray-200/60 rounded-full px-5 py-2">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
