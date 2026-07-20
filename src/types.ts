@@ -93,5 +93,6 @@ export interface BlogPost {
   publishedAt: string;
   readTime: string;
   coverEmoji: string;
+  coverImage?: string;
   content: { heading?: string; body: string }[];
 }
