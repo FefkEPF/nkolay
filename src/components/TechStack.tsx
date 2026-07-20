@@ -166,13 +166,11 @@ const CATEGORY_LABELS: Record<string, string> = {
   Platform: "Platform",
 };
 
-function TechCard({ tech, index }: { tech: Tech; index: number }) {
-  const reduced = useReducedMotion();
-
+function TechCard({ tech, index, reduced }: { tech: Tech; index: number; reduced: boolean }) {
   return (
     <motion.div
-      initial={reduced ? false : { opacity: 0, y: 30 }}
-      whileInView={reduced ? false : { opacity: 1, y: 0 }}
+      initial={reduced ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      whileInView={reduced ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={reduced ? { duration: 0 } : { duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
       className="group relative bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-300 hover:shadow-lg hover:shadow-gray-200/50 hover:-translate-y-1"
@@ -183,19 +181,19 @@ function TechCard({ tech, index }: { tech: Tech; index: number }) {
           background: `linear-gradient(135deg, ${tech.color}08 0%, transparent 60%)`,
         }}
       />
-      
+
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
-          <div 
+          <div
             className="p-3 rounded-xl transition-all duration-300 group-hover:scale-110"
-            style={{ 
+            style={{
               backgroundColor: `${tech.color}15`,
               color: tech.color,
             }}
           >
             {tech.icon}
           </div>
-          <div 
+          <div
             className="w-2 h-2 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
             style={{ backgroundColor: tech.color }}
           />
@@ -246,7 +244,7 @@ export default function TechStack() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {TECHS.map((tech, index) => (
-            <TechCard key={tech.name} tech={tech} index={index} />
+            <TechCard key={tech.name} tech={tech} index={index} reduced={reduced} />
           ))}
         </div>
       </div>
