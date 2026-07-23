@@ -1,15 +1,41 @@
-import React, { useState } from "react";
+let csrfToken: string | null = null;
+
+export async function fetchCsrfToken() {
+  try {
+    const res = await fetch("/api/csrf-token", { method: "GET", credentials: "same-origin" });
+    if (res.ok) {
+      const data = await res.json();
+      if (data?.csrfToken) csrfToken = data.csrfToken;
+    }
+  } catch {
+    // non-critical; if fetch fails the server will reject with a clear error
+  }
+  return csrfToken;
+}
+
+export function getCsrfHeaders() {
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (csrfToken) headers["X-CSRF-Token"] = csrfToken;
+  return headers;
+}
+import React, { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, Send, Sparkles, Check, AlertCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { SERVICES_DATA } from "../data";
 import { COMPANY } from "../lib/constants";
 import { useReducedMotion } from "../lib/useReducedMotion";
+import { useSeo } from "../lib/seo";
 
 interface ContactFormProps {
   prefilledService?: string;
 }
 
 export default function ContactForm({ prefilledService = "" }: ContactFormProps) {
+  useSeo({
+    title: "İletişim",
+    description: "NKolay Medya ile iletişime geçin. Ücretsiz teklif, danışmanlık ve iletişim bilgileri.",
+    path: "/iletisim",
+  });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -23,6 +49,10 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
     type: "idle" | "loading" | "success" | "error";
     message: string;
   }>({ type: "idle", message: "" });
+
+  useEffect(() => {
+    fetchCsrfToken();
+  }, []);
 
   const validate = () => {
     const next: { name?: string; email?: string; phone?: string; message?: string } = {};
@@ -44,7 +74,7 @@ export default function ContactForm({ prefilledService = "" }: ContactFormProps)
       // environment variables exclusively for mail transport.
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: getCsrfHeaders(),
         body: JSON.stringify({
           name,
           email,

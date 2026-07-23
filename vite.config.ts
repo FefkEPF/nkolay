@@ -11,6 +11,21 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, './src'),
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Vendor chunks: keep heaviest libs in their own file for parallel download + caching
+            three: ['three', '@react-three/fiber', '@react-three/drei'],
+            motion: ['motion', 'framer-motion'],
+            router: ['react-router-dom'],
+            icons: ['lucide-react', 'simple-icons'],
+          },
+        },
+      },
+      // Raise warning only above 1MB so we don't drown in noise during active development.
+      chunkSizeWarningLimit: 1024,
+    },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify — file watching is disabled to prevent flickering during agent edits.

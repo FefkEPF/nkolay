@@ -34,7 +34,12 @@ export const localBusinessSchema = {
   },
   telephone: "+905464773815",
   email: "info@nkolaymedya.com",
-  openingHours: "Mo-Fr 09:00-18:00",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
   priceRange: "₺₺₺",
 };
 

@@ -1323,7 +1323,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Google Ads', 'Reklam', 'AI', '2026'],
     readTime: "10 dk",
     coverEmoji: "🤖",
-    coverImage: "/images/blog/google-ads-ai-2026.jpg",
+    coverImage: "/hero_n.512.webp",
     content: [
       { heading: "Yapay Zeka Destekli Teklif Stratejileri", body: "Google Ads'in 2026 sürümü, makine öğrenimi ve yapay zeka destekli özellikleriyle reklamcıların çalışma şeklini tamamen değiştirdi. Target CPA (Cost Per Action) ve Target ROAS (Return on Ad Spend) stratejileri, sistemin doğru veriyle otomatik optimize etmesiyle bütçenizi en verimli şekilde kullanmanızı sağlar. NKolay Medya olarak önce veri altyapınızı (GTM, GA4, CAPI) sağlayarak sistemin öğrenmesini hızlandırırız. Veriye dayanmayan her optimizasyon yanlıştır; doğru ölçüm ile akıllı sistem sizi rakibinizden öne çıkarır." },
       { heading: "Responsive Search Ads ve A/B Test Otomasyonu", body: "Google Ads artık sadece sabit başlıklar yerine yüzlerce başlık ve açıklama kombinasyonunu test eden Responsive Search Ads önceliğe sahip. Algoritma, kullanıcının arama terimine göre en uygun kombinasyonu otomatik seçer; bu da tıklama oranınızı önemli ölçüde artırır. NKolay Medya olarak reklam metinlerinizi düzenli olarak yeniler, A/B testleriyle en yüksek performanslı varyasyonları ölçeklendiririz. Yaratıcı yorgunluğunu önlemek için stratejik bir içerik planı izleriz." },
@@ -1343,7 +1343,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Meta Ads', 'Facebook', 'Instagram', '2026'],
     readTime: "9 dk",
     coverEmoji: "📱",
-    coverImage: "/images/blog/meta-ads-2026.jpg",
+    coverImage: "/hero_n.512.webp",
     content: [
       { heading: "Meta Pixel ve CAPI: Doğru Veri ile Doğru Hedefleme", body: "Meta reklamlarının en kritik öğesi doğru veri toplamaktır. iOS güncellemeleri ve çerez kısıtlamaları nedeniyle yalnızca Pixel yeterli değildir. Sunucu Taraflı Conversions API (CAPI) kurulumu ile sunucudan sunucuya veri aktarımı sağlayarak dönüşüm raporlama doğruluğunu ciddi ölçüde artırırız. NKolay Medya olarak her kampanya için CAPI kurulumunu standart hizmet olarak sunarız. Doğru veri ile Meta algoritması en doğru kitleyi öğrenir ve reklam harcamanızın geri dönüşü maksimum olur." },
       { heading: "Lookalike Kitleler ve Akıllı Hedefleme", body: "Meta'nın en güçlü özelliği mevcut müşteri verinizden yeni kitleler üretmesidir. Satın alan müşterilerinizden Lookalike kitleler oluşturarak, markanıza en yakın potansiyel alıcıları buluruz. Yüzde 1, yüzde 3 ve yüzde 5 Lookalike'ları test ederek en yüksek dönüşümü veren segmenti ölçeklendiririz. NKolay Medya olarak en karlı müşteri segmentinizi seçerek, kaliteli Lookalike kitleler oluşturmanızı sağlarız. Böylece soğuk kitle reklamlarından kazançlı çıkarsınız." },
@@ -1363,7 +1363,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['SEO', 'Core Web Vitals', 'Schema', 'Site Hızı'],
     readTime: "8 dk",
     coverEmoji: "🔍",
-    coverImage: "/images/blog/technical-seo-2026.jpg",
+    coverImage: "/hero_n.512.webp",
     content: [
       { heading: "Core Web Vitals ve Kullanıcı Deneyimi", body: "Google 2024'te Core Web Vitals'ı resmi olarak arama sıralaması faktörü haline getirdi; Largest Contentful Paint (LCP), First Input Delay (FID) ve Cumulative Layout Shift (CLS) üç metriği ile kullanıcı deneyimini ölçer. NKolay Medya olarak Google PageSpeed Insights ve Search Console verilerini analiz eder, LCP'yi 2.5 saniyeden düşürmek için görsel optimizasyonu, önbellekleme ve CDN kurarız. FID'yi iyileştirmek için JavaScript yükünü azaltır, CLS için görsel ve reklam alanlarını önceden tanımlarız. Kullanıcı deneyimi artık bir SEO faktörüdür." },
       { heading: "Schema.org Yapısal Veri ve Zengin Sonuçlar", body: "Schema.org işaretleme, arama sonuçlarında zengin snippet'ler (yıldız derecelendirme, SSS, nasıl yapılır, ürün fiyatı) görünmesini sağlar. Bu zengin sonuçlar, tıklama oranınızı önemli ölçüde artırır. NKolay Medya olarak JSON-LD formatında schema işaretlemeleri ekler; SSS, makale, ürün, yemek tarifi ve yerel işletme schema'ları uygularız. Test ederek schema hatalarını giderir, arama sonuçlarında öne çıkmanızı sağlarız. Zengin sonuçlar, organik tıklama oranınızı artırır." },
@@ -1383,7 +1383,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['E-Ticaret', 'Dönüşüm', 'CRO', 'Müşteri Sadakati'],
     readTime: "7 dk",
     coverEmoji: "🛒",
-    coverImage: "/images/blog/ecommerce-success-2026.jpg",
+    coverImage: "/hero_n.512.webp",
     content: [
       { heading: "Dönüşüm Hunisi ve Kullanıcı Deneyimi", body: "E-ticaret dönüşüm hunisi, ziyaretçinin ilk temasından satın almaya kadar geçen süreci kapsar. NKolay Medya olarak her adımı optimize eder; sayfa yüklenme hızını artırır, ürün arama ve filtreleme deneyimini iyileştiririz. Sepeti terk etmeyi önlemek için çoklu ödeme seçenekleri, güven badge'leri ve müşteri yorumları ekleriz. A/B testleriyle ödeme sürecini sürekleştiririz. Sonuç; daha düşük terk oranı ve daha yüksek ortalama sipariş tutarı." },
       { heading: "Müşteri Sadakati ve Tekrar Satış Stratejileri", body: "E-ticarette kazanç, ilk satıştan sonra başlar. Müşteri yaşam boyu değerini (CLV) yükseltmek için sadakat programları, özel indirimler ve kişiselleştirilmiş iletişim kurarız. NKolay Medya olarak e-posta pazarlaması otomasyonları ile müşteri yolculuğunun her adımında otomatik ve doğru mesajlar göndeririz. İade oranlarını düşürmek için açıklayıcı ürün bilgileri ve kolay iade süreci sunarız. Müşteri sadakati ile markanızı bir alışveriş deneyimine dönüştürürüz." },
@@ -1403,7 +1403,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Sosyal Medya', 'İçerik', 'Algoritma', '2026'],
     readTime: "6 dk",
     coverEmoji: "📲",
-    coverImage: "/images/blog/social-media-2026.jpg",
+    coverImage: "/hero_n.512.webp",
     content: [
       { heading: "Algoritma Odaklı İçerik Stratejisi", body: "2026'da sosyal medya algoritmaları, izleyiciyi ilk saniyede yakalayan, etkileşim yaratan ve değer sunan içerikleri ödüllendirir. NKolay Medya olarak her platform için özel içerik stratejisi geliştiririz: Instagram'da estetik ve hikaye odaklı, TikTok'ta viral ve kısa formatlı, LinkedIn'de profesyonel ve B2B odaklı içerikler üretiriz. İçerik takvimimizi aylık planlar, marka sesinizi tutarlı kılarız. Algoritma öğrenme sürecini hızlandırmak için doğru hashtag'ler ve zamanlamalar kullanırız." },
       { heading: "Video İçerikleri ve Short Form Trendleri", body: "Short form video içerikleri (Reels, Shorts, TikTok), 2026'da sosyal medyada en yüksek etkileşim oranına sahiptir. NKolay Medya olarak 15-60 saniyelik video içerikleri üretir, izleyiciyi ilk saniyede yakalayan güçlü açılışlar ve çağrı butonlarıyla dönüşüm odaklı içerikler hazırlarız. Ürün tanıtımından arka plan hikayelerine, müşteri testimonial'larından eğitici içeriklere kadar her formatı özgün bir anlatımla üretiriz. Video içerikleri ile marka bilinirliğinizi önemli ölçüde artırırız." },
@@ -1423,7 +1423,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: ['Dijital Dönüşüm', 'Otomasyon', 'Veri', '2026'],
     readTime: "8 dk",
     coverEmoji: "🚀",
-    coverImage: "/images/blog/digital-transformation-2026.jpg",
+    coverImage: "/hero_n.512.webp",
     content: [
       { heading: "Dijital Dönüşüm Nedir ve Neden Önemli?", body: "Dijital dönüşüm, işletmenizin tüm süreçlerini dijital teknolojilerle yenilemesi ve optimize etmesi demektir. Sadece yazılım yüklemek değil, tüm organizasyonu geleceğe uyarlamaktır. 2026'da dijital dönüşüm, küçük işletmeler için bile büyük fark yaratır; otomasyon ve verimlilik artışı bütçeyi destekler. NKolay Medya olarak işletmenizin mevcut durumunu analiz eder, dijital olmayan süreçleri belirler ve hedefler doğrultusunda dönüşüm yol haritası çıkarırız." },
       { heading: "İş Süreçleri Otomasyonu ve Verimlilik", body: "İşletmelerin zamanını en çok alan şey tekrarlayan, manuel ve hataya açık süreçlerdir. RPA ve iş akışı otomasyonu ile veri girişi, fatura işleme, e-posta yönetimi ve raporlama süreçlerini otomatikleştiririz. NKolay Medya olarak Zapier ve Make araçlarıyla farklı yazılımlarınızı birbirine bağlar, kod yazmadan yapılandırılabilir otomasyonlar sunarız. Otomasyon ile ekibiniz daha stratejik işlere odaklanır, tekrarlayan görevlerden kurtulur." },

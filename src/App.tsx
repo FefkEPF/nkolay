@@ -1,12 +1,12 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SeoSchema from "./components/SeoSchema";
 import ErrorBoundary from "./components/ErrorBoundary";
+import LoadingSkeleton from "./components/LoadingSkeleton";
 import { useReducedMotion } from "./lib/useReducedMotion";
-
 
 const Home = React.lazy(() => import("./components/Home"));
 const Services = React.lazy(() => import("./components/Services"));
@@ -37,7 +37,7 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 function AnimatedRoutes() {
   const location = useLocation();
   return (
-    <Suspense fallback={<div className="min-h-screen bg-surface flex items-center justify-center"><div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" /></div>}>
+    <Suspense fallback={<LoadingSkeleton />}>
       <ErrorBoundary>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
@@ -60,6 +60,9 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  useEffect(() => {
+    import("./components/ContactForm").then((m) => m.fetchCsrfToken?.()).catch(() => undefined);
+  }, []);
 
   return (
     <div className="min-h-screen bg-surface text-gray-900 selection:bg-primary selection:text-white font-sans overflow-x-hidden antialiased flex flex-col justify-between">
